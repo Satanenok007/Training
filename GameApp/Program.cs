@@ -1,4 +1,5 @@
 ﻿using System;
+
 // Pyramid.Run();
 // Square.Run();
 // Temp.Run();
@@ -7,4 +8,4 @@
 // CopyArray.Run();
 // ArraySwap.Run();
 // FindingTheSameValues.Run();
-CountingTheSameValues.Run();
+//CountingTheSameValues.Run();
