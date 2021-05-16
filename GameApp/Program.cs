@@ -8,4 +8,5 @@
 // CopyArray.Run();
 // ArraySwap.Run();
 // FindingTheSameValues.Run();
-//CountingTheSameValues.Run();
+// CountingTheSameValues.Run();
+ReturningAnArray.Run();
