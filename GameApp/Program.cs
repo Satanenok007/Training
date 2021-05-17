@@ -9,4 +9,5 @@
 // ArraySwap.Run();
 // FindingTheSameValues.Run();
 // CountingTheSameValues.Run();
-ReturningAnArray.Run();
+// ReturningAnArray.Run();
+CombiningTwoArraysIntoOne.Run();
