@@ -3,6 +3,38 @@ using System;
 static class Function
 {
 
+    public static int[] SortingTheOtherWayAround(int[] array)
+    {
+        int[] Array = new int[array.Length];
+        int i = 0;
+        for (int x = array.Length - 1; x >= 0; x--)
+        {
+            Array[i] = array[x];
+            i++;
+        }
+        return Array;
+    }
+    public static int[] SortInAscendingOrder(int[] array, int length)
+    {
+        int[] Array = new int[length];
+        for (int i = 0; i < length; i++)
+        {
+            Array[i] = array[i];
+        }
+        for (int x = 0; x < Array.Length; x++)
+        {
+            for (int y = 1; y < Array.Length - 1; y++)
+            {
+                if (Array[x] > Array[y])
+                {
+                    int temp = Array[x];
+                    Array[x] = Array[y];
+                    Array[y] = temp;
+                }
+            }
+        }
+        return Array;
+    }
     public static int[] CombiningArraysIntoOne(int[] array1, int[] array2)
     {
         int[] CombiningArray = new int[array1.Length + array2.Length];
