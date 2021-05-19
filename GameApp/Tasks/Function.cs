@@ -3,6 +3,21 @@ using System;
 static class Function
 {
 
+    public static int[] DuplicateElements(int[] array, int number)
+    {
+        int[] NumberOfRepetitions = new int[array.Length];
+        int y = 0;
+        for (int x = 0; x < array.Length; x++)
+        {
+            if (array[x] == number)
+            {
+                NumberOfRepetitions[y] = x;
+                y++;
+            }
+        }
+        return NumberOfRepetitions;
+    }
+
     public static int[] SortingTheOtherWayAround(int[] array)
     {
         int[] Array = new int[array.Length];
@@ -78,5 +93,19 @@ static class Function
         }
         return array;
     }
+    public static bool ArrayContainsNumber(int[] m1, int value)
+    {
+        bool IsContained = false;
 
+        for (int i = 0; i < m1.Length; i++)
+        {
+            if (m1[i] == value)
+            {
+                IsContained = true;
+                break;
+            }
+        }
+        return IsContained;
+
+    }
 }

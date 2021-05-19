@@ -11,4 +11,5 @@
 // CountingTheSameValues.Run();
 // ReturningAnArray.Run();
 // CombiningTwoArraysIntoOne.Run();
-SortingAnArray.Run();
+// SortingAnArray.Run();
+FindingDuplicateElements.Run();
