@@ -2,20 +2,45 @@ using System;
 
 static class Function
 {
-
     public static int[] DuplicateElements(int[] array, int number)
     {
-        int[] NumberOfRepetitions = new int[array.Length];
+        int[] numberOfRepetitions = new int[array.Length];
         int y = 0;
         for (int x = 0; x < array.Length; x++)
         {
             if (array[x] == number)
             {
-                NumberOfRepetitions[y] = x;
+                numberOfRepetitions[y] = x;
                 y++;
             }
         }
-        return NumberOfRepetitions;
+        int[] copyArray = ArrayWithoutZeros(numberOfRepetitions);
+        return copyArray;
+    }
+    public static int[] ArrayWithoutZeros(int[] array)
+    {
+        int n = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] > 0)
+            {
+                n++;
+            }
+        }
+
+        int[] newArray = new int[n];
+        int j = 0;
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (j <= n - 1)
+            {
+                newArray[j] = array[i];
+                j++;
+            }
+        }
+
+        return newArray;
     }
 
     public static int[] SortingTheOtherWayAround(int[] array)

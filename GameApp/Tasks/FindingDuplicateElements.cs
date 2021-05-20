@@ -11,7 +11,7 @@ public static class FindingDuplicateElements
         Function.PrintArray(m1);
         Console.WriteLine();
         repetitions = Function.DuplicateElements(m1, Number);
-        Console.Write("Итерации на которых встречается число " + Number + ": ");
+        Console.Write("Iterations where a number occurs " + Number + ": ");
         Function.PrintArray(repetitions);
         Console.WriteLine();
     }
