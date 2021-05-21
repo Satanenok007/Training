@@ -12,4 +12,6 @@
 // ReturningAnArray.Run();
 // CombiningTwoArraysIntoOne.Run();
 // SortingAnArray.Run();
-FindingDuplicateElements.Run();
+// FindingDuplicateElements.Run();
+// FindingAnArrayInAnArray.Run();
+ArithmeticMeanOfTheArray.Run();

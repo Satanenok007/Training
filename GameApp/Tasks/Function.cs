@@ -2,6 +2,38 @@ using System;
 
 static class Function
 {
+    public static int ArithmeticMean(int[] array)
+    {
+        int amount = 0;
+        int result;
+        for (int i = 0; i < array.Length; i++)
+        {
+            amount = amount + array[i];
+        }
+        result = amount / array.Length;
+        return result;
+    }
+    public static bool FindingAnArrayInAnArray(int[] array, int[] key)
+    {
+        bool result = false;
+        int numberOfMatchingElements = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            for (int j = 0; j < key.Length; j++)
+            {
+                if (array[i] == key[j])
+                {
+                    numberOfMatchingElements++;
+                }
+            }
+            continue;
+        }
+        if (numberOfMatchingElements == key.Length)
+        {
+            result = true;
+        }
+        return result;
+    }
     public static int[] DuplicateElements(int[] array, int number)
     {
         int[] numberOfRepetitions = new int[array.Length];
