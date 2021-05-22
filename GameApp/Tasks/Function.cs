@@ -2,6 +2,26 @@ using System;
 
 static class Function
 {
+    public static int[] FindingMatchingNumbersInAnArray(int[] array1, int[] array2)
+    {
+        int[] repetitions = new int[array1.Length];
+        int y = 0;
+        for (int x = 0; x < array1.Length; x++)
+        {
+            for (int j = 0; j < array2.Length; j++)
+            {
+
+                if (array1[x] == array2[j] && y < array2.Length)
+                {
+                    repetitions[y] = array2[j];
+
+                    y++;
+                }
+            }
+        }
+        int[] copyArray = ArrayWithoutZeros(repetitions);
+        return copyArray;
+    }
     public static int ArithmeticMean(int[] array)
     {
         int amount = 0;
