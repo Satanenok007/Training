@@ -5,17 +5,20 @@ static class Function
     public static int[] FindingMatchingNumbersInAnArray(int[] array1, int[] array2)
     {
         int[] repetitions = new int[array1.Length];
+        int[] Result = new int[array1.Length];
         int y = 0;
         for (int x = 0; x < array1.Length; x++)
         {
             for (int j = 0; j < array2.Length; j++)
             {
-
                 if (array1[x] == array2[j] && y < array2.Length)
                 {
-                    repetitions[y] = array2[j];
-
-                    y++;
+                    bool isContaiend = IsArrayContainsNumber(repetitions, array1[x]);
+                    if (isContaiend == false)
+                    {
+                        repetitions[y] = array1[x];
+                        y++;
+                    }
                 }
             }
         }
@@ -185,4 +188,19 @@ static class Function
         return IsContained;
 
     }
+    public static bool IsArrayContainsNumber(int[] m1, int value)
+        {
+            bool isContained = false;
+
+            for (int i = 0; i < m1.Length; i++)
+            {
+                if (m1[i] == value)
+                {
+                    isContained = true;
+                    break;
+                }
+            }
+
+            return isContained;
+        }
 }
