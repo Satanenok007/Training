@@ -15,4 +15,5 @@
 // FindingDuplicateElements.Run();
 // FindingAnArrayInAnArray.Run();
 // ArithmeticMeanOfTheArray.Run();
-FindingMatchesInAnArray.Run();
+// FindingMatchesInAnArray.Run();
+FindingMismatchesInAnArray.Run();

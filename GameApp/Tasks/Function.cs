@@ -2,6 +2,46 @@ using System;
 
 static class Function
 {
+    public static int[] FindingMismatchedValues(int[] array1, int[] array2)
+    {
+        int[] mismatches = new int[array1.Length];
+        int iterationForMisMatchesArray1 = 0;
+        
+        for (int x = 0; x < array1.Length; x++)
+        {
+            for (int y = 0; y < array2.Length; y++)
+            {
+                if (iterationForMisMatchesArray1 < array1.Length)
+                {
+                    bool isNonContained = IsArrayContainsNumber(array2, array1[x]);
+                    bool isDoesContained = IsArrayContainsNumber(mismatches, array1[x]);
+
+                    if (isNonContained != true && isDoesContained != true)
+                    {
+                        mismatches[iterationForMisMatchesArray1] = array1[x];
+                        iterationForMisMatchesArray1++;
+                    }
+                }
+            }
+        }
+        int iterationForMisMatchesArray2 = iterationForMisMatchesArray1;
+        for (int x = 0; x < array2.Length; x++)
+        {
+            for (int y = 0; y < array1.Length; y++)
+            {
+                bool isNonContained = IsArrayContainsNumber(array1, array2[x]);
+                bool isDoesContained = IsArrayContainsNumber(mismatches, array2[x]);
+
+                if (isNonContained != true && isDoesContained != true && iterationForMisMatchesArray2 < mismatches.Length)
+                {
+                    mismatches[iterationForMisMatchesArray2] = array2[x];
+                    iterationForMisMatchesArray2++;
+                }
+            }
+        }
+        int[] copyMismatches = ArrayWithoutZeros(mismatches);
+        return copyMismatches;
+    }
     public static int[] FindingMatchingNumbersInAnArray(int[] array1, int[] array2)
     {
         int[] repetitions = new int[array1.Length];
@@ -11,7 +51,7 @@ static class Function
         {
             for (int j = 0; j < array2.Length; j++)
             {
-                if (array1[x] == array2[j] && y < array2.Length)
+                if (array1[x] == array2[j] && y < array1.Length)
                 {
                     bool isContaiend = IsArrayContainsNumber(repetitions, array1[x]);
                     if (isContaiend == false)
@@ -169,38 +209,23 @@ static class Function
         Random random = new Random();
         for (int i = 0; i < length; i++)
         {
-            array[i] = random.Next(0, 10);
+            array[i] = random.Next(1, 10);
         }
         return array;
     }
-    public static bool ArrayContainsNumber(int[] m1, int value)
+    public static bool IsArrayContainsNumber(int[] m1, int value)
     {
-        bool IsContained = false;
+        bool isContained = false;
 
         for (int i = 0; i < m1.Length; i++)
         {
             if (m1[i] == value)
             {
-                IsContained = true;
+                isContained = true;
                 break;
             }
         }
-        return IsContained;
 
+        return isContained;
     }
-    public static bool IsArrayContainsNumber(int[] m1, int value)
-        {
-            bool isContained = false;
-
-            for (int i = 0; i < m1.Length; i++)
-            {
-                if (m1[i] == value)
-                {
-                    isContained = true;
-                    break;
-                }
-            }
-
-            return isContained;
-        }
 }
