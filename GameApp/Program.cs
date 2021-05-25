@@ -16,4 +16,5 @@
 // FindingAnArrayInAnArray.Run();
 // ArithmeticMeanOfTheArray.Run();
 // FindingMatchesInAnArray.Run();
-FindingMismatchesInAnArray.Run();
+// FindingMismatchesInAnArray.Run();
+AlternatelyWritingArrayValues.Run();

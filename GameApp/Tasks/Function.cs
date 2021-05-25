@@ -2,11 +2,21 @@ using System;
 
 static class Function
 {
+    public static int[] AlternatelyWritingValues(int[] array1, int[] array2)
+    {
+        int[] result = new int[array1.Length + array2.Length];
+        for (int x = 0; x < array1.Length; x++)
+        {
+            result[x * 2] = array1[x];
+            result[x * 2 + 1] = array2[x];
+        }
+        return result;
+    }
     public static int[] FindingMismatchedValues(int[] array1, int[] array2)
     {
         int[] mismatches = new int[array1.Length];
         int iterationForMisMatchesArray1 = 0;
-        
+
         for (int x = 0; x < array1.Length; x++)
         {
             for (int y = 0; y < array2.Length; y++)
