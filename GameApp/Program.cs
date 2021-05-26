@@ -17,4 +17,5 @@
 // ArithmeticMeanOfTheArray.Run();
 // FindingMatchesInAnArray.Run();
 // FindingMismatchesInAnArray.Run();
-AlternatelyWritingArrayValues.Run();
+// AlternatelyWritingArrayValues.Run();
+WriteAnArrayToAShuffle.Run();

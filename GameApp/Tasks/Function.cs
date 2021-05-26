@@ -2,6 +2,18 @@ using System;
 
 static class Function
 {
+    public static int[] AaddToTheMix(int[] array)
+    {
+        Random rnd = new Random();
+        for (int x = array.Length - 1; x >= 0; x--)
+        {
+            int random = rnd.Next(x);
+            int temp = array[x];
+            array[x] = array[random];
+            array[random] = temp;
+        }
+        return array;
+    }
     public static int[] AlternatelyWritingValues(int[] array1, int[] array2)
     {
         int[] result = new int[array1.Length + array2.Length];
