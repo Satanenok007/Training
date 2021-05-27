@@ -2,6 +2,20 @@ using System;
 
 static class Function
 {
+    public static int[] SortingAndWritingTheLargestArrayNumbers(int[] array, int number)
+    {
+        int[] result = new int[number];
+        int[] Array = SortInAscendingOrder(array, array.Length);
+        for (int i = 0; i < number; i++)
+        {
+            bool isContaiend = IsArrayContainsNumber(result, array[i]);
+            if (isContaiend == false)
+            {
+                result[i] = Array[i];
+            }
+        }
+        return result;
+    }
     public static int[] AaddToTheMix(int[] array)
     {
         Random rnd = new Random();
@@ -180,7 +194,7 @@ static class Function
         }
         for (int x = 0; x < Array.Length; x++)
         {
-            for (int y = 1; y < Array.Length - 1; y++)
+            for (int y = 0; y < Array.Length - 1; y++)
             {
                 if (Array[x] > Array[y])
                 {
@@ -231,7 +245,7 @@ static class Function
         Random random = new Random();
         for (int i = 0; i < length; i++)
         {
-            array[i] = random.Next(1, 10);
+            array[i] = random.Next(0, 10);
         }
         return array;
     }
