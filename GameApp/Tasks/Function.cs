@@ -2,6 +2,19 @@ using System;
 
 static class Function
 {
+    public static bool FindingTheKey(int[] array, int[] key)
+    {
+        bool contains = false;
+        int iterationKey = 0;
+        for (int x = 0; x < array.Length; x++)
+        {
+            if (array[x] == key[iterationKey] && array[x + 1] == key[iterationKey + 1] && iterationKey < key.Length)
+            {
+                contains = true;
+            }
+        }
+        return contains;
+    }
     public static int[] SortingAndWritingTheLargestArrayNumbers(int[] array, int number)
     {
         int[] result = new int[number];

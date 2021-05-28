@@ -4,55 +4,27 @@ static class Key
 {
     public static void Run()
     {
-        int Length = 7;
-        char[] OriginalArray = new char[Length];
-        char[] CopyArray = new char[Length];
+        int length = 7;
+        int [] originalArray = new int [length];
+        int [] copyArray = new int [length];
+        bool result;
         int keyLength = 2;
-        char[] key = new char[keyLength];
-        char Space = ' ';
-        Random rnd = new Random();
-        for (int x = 0; x < Length; x++)
-        {
-            OriginalArray[x] = (rnd.Next(1, 5).ToString())[0];
-            CopyArray[x] = OriginalArray[x];
-        }
+        int [] key = new int [keyLength];
+        int[] copyKey;
 
-        for (int x = 0; x < Length; x++)
-        {
-            Console.Write(OriginalArray[x]);
-        }
-
+        copyArray = Function.CreateArrayWithRandomValues(originalArray, length);
+        Function.PrintArray(copyArray);
         Console.WriteLine();
 
-        for (int y = 0; y < keyLength; y++)
-        {
-            key[y] = (rnd.Next(1, 5).ToString())[0];
-        }
-
-        for (int r = 0; r < keyLength; r++)
-        {
-            Console.Write(key[r]);
-        }
-
-
-        for (int x = 0; x < Length; x++)
-
-        {
-            for (int k = 0; k < keyLength; k++)
-            {
-                if (OriginalArray[x] == key[k])
-                {
-                    CopyArray[x] = Space;
-
-                }
-                continue;
-            }
-        }
+        copyKey = Function.CreateArrayWithRandomValues(key, keyLength);
+        Console.Write("Key: ");
+        Function.PrintArray(key);
         Console.WriteLine();
-        for (int i = 0; i < Length; i++)
-        {
-            Console.Write(CopyArray[i]);
-        }
+
+        result = Function.FindingTheKey(originalArray, copyKey);
+        Console.Write("Key content in the array: ");
+        Console.Write(result);
+        Console.WriteLine();
     }
 }
 
