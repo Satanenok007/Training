@@ -2,10 +2,25 @@ using System;
 
 static class Function
 {
+    public static int[] WriteValuesLessThanTheSpecifiedValue(int[] array, int number)
+    {
+        int[] result = new int[array.Length];
+        int iterationResult = 0;
+        for (int x = 0; x < array.Length; x++)
+        {
+            if (array[x] < number)
+            {
+                result[iterationResult] = array[x];
+                iterationResult++;
+            }
+        }
+        int[] copyResult = Function.ArrayWithoutZeros(result);
+        return copyResult;
+    }
     public static int[] WriteValuesGreaterThanTheSpecifiedValue(int[] array, int number)
     {
         int[] result = new int[array.Length];
-         int iterationResult = 0;
+        int iterationResult = 0;
         for (int x = 0; x < array.Length; x++)
         {
             if (array[x] > number)
