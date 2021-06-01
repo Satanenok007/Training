@@ -5,7 +5,6 @@ static class Function
     public static bool FindingTheKey(int[] array, int[] key)
     {
         bool contains = false;
-        int[] resultKey = new int[key.Length];
         int iterationKey = 0;
         for (int x = 0; x < array.Length; x++)
         {
