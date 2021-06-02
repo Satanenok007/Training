@@ -8,9 +8,10 @@ static class Function
         int iterationKey = 0;
         for (int x = 0; x < array.Length; x++)
         {
-            if (array[x] == key[iterationKey] && array[x + 1] == key[iterationKey + 1] && iterationKey < key.Length)
+            if (array[x] == key[iterationKey] && iterationKey < key.Length)
             {
                 contains = true;
+                iterationKey++;
             }
         }
         return contains;
