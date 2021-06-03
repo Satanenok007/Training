@@ -5,24 +5,7 @@ static class Function
 
     public static bool CompareTwoArrays(int[] array1, int[] array2)
     {
-        // int[] copyArray1 = new int[array1.Length];
         bool coincidence = false;
-
-        // for (int y = 0; y < array1.Length; y++)
-        // {
-        //     copyArray1[y] = array1[y];
-        // }
-        // for (int y = 0; y < array1.Length; y++)
-        // {
-        //     if (copyArray1[y] == array1[y])
-        //     {
-        //         coincidence = true;
-        //     }
-        //     else
-        //     {
-        //         coincidence = false;
-        //     }
-        // }
 
         for (int x = 0; x < array1.Length; x++)
         {
@@ -33,6 +16,7 @@ static class Function
             else
             {
                 coincidence = false;
+                break;
             }
         }
         return coincidence;
