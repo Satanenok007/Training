@@ -8,20 +8,21 @@ static class Key
         int [] originalArray = new int [length];
         int [] copyArray = new int [length];
         bool result;
-        int keyLength = 2;
+        int keyLength = 3;
         int [] key = new int [keyLength];
-        int[] copyKey;
+        int[] copyKey = new int[length];
 
         copyArray = Function.CreateArrayWithRandomValues(originalArray, length);
+        Console.Write("Array: ");
         Function.PrintArray(copyArray);
         Console.WriteLine();
 
         copyKey = Function.CreateArrayWithRandomValues(key, keyLength);
         Console.Write("Key: ");
-        Function.PrintArray(key);
+        Function.PrintArray(copyKey);
         Console.WriteLine();
 
-        result = Function.FindingTheKey(originalArray, copyKey);
+        result = Function.FindingTheKey(copyArray, copyKey);
         Console.Write("Key content in the array: ");
         Console.Write(result);
         Console.WriteLine();

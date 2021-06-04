@@ -2,38 +2,78 @@ using System;
 
 static class Function
 {
-
-    public static bool CompareTwoArrays(int[] array1, int[] array2)
-    {
-        bool coincidence = false;
-
-        for (int x = 0; x < array1.Length; x++)
-        {
-            if (array1[x] == array2[x])
-            {
-                coincidence = true;
-            }
-            else
-            {
-                coincidence = false;
-                break;
-            }
-        }
-        return coincidence;
-    }
     public static bool FindingTheKey(int[] array, int[] key)
     {
         bool contains = false;
-        int iterationKey = 0;
+        int iteration = 0;
         for (int x = 0; x < array.Length; x++)
         {
-            if (array[x] == key[iterationKey] && iterationKey < key.Length)
+            if (array.Length - x >= key.Length)
             {
-                contains = true;
-                iterationKey++;
+                if (array[x] == key[iteration] && iteration < key.Length)
+                {
+                    contains = true;
+                    iteration++;
+                }
+                else
+                {
+                    iteration = 0;
+                    contains = false;
+                    break;
+                }
             }
         }
         return contains;
+    }
+
+    public static bool FindingAnArray(int[] array, int[] key, int number)
+    {
+        bool coincidence = false;
+        int iteration = 0;
+        if (array.Length - number >= key.Length)
+        {
+            for (int x = number; x < array.Length; x++)
+            {
+                if (array[x] == key[iteration] && iteration < key.Length)
+                {
+                    coincidence = true;
+                    iteration++;
+                }
+                else
+                {
+                    coincidence = false;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("the key length is longer than the array");
+            Console.WriteLine();
+        }
+        return coincidence;
+    }
+
+    public static bool CompareTwoArrays(int[] array, int[] key)
+    {
+        bool coincidence = false;
+
+        if (array.Length == key.Length)
+        {
+            for (int x = 0; x < array.Length; x++)
+            {
+                if (array[x] == key[x])
+                {
+                    coincidence = true;
+                }
+                else
+                {
+                    coincidence = false;
+                    break;
+                }
+            }
+        }
+        return coincidence;
     }
     public static int[] WriteValuesLessThanTheSpecifiedValue(int[] array, int number)
     {
