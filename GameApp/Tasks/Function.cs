@@ -2,6 +2,22 @@ using System;
 
 static class Function
 {
+    public static int[] FindOnWhichIterationsTheKeyOccurs(int[] array, int[] key)
+    {
+        int[] iterations = new int[key.Length];
+        int iterationKey = 0;
+        bool contains = false;
+        for (int x = 0; x < array.Length; x++)
+        {
+            contains = Function.FindingTheKey(array, key);
+            if (contains == true)
+            {
+                iterations[iterationKey] = x;
+                iterationKey++;
+            }
+        }
+        return iterations;
+    }
     public static bool FindingTheKey(int[] array, int[] key)
     {
         bool contains = false;
