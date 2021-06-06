@@ -6,14 +6,19 @@ static class Function
     {
         int[] iterations = new int[key.Length];
         int iterationKey = 0;
-        bool contains = false;
         for (int x = 0; x < array.Length; x++)
         {
-            contains = Function.FindingTheKey(array, key);
-            if (contains == true)
+            if (array.Length - x >= key.Length)
             {
-                iterations[iterationKey] = x;
-                iterationKey++;
+                if (array[x] == key[iterationKey] && iterationKey < key.Length)
+                {
+                    iterations[iterationKey] = x;
+                    iterationKey++;
+                }
+                else
+                {
+                    continue;
+                }
             }
         }
         return iterations;
