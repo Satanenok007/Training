@@ -4,24 +4,21 @@ static class Function
 {
     public static int[] FindOnWhichIterationsTheKeyOccurs(int[] array, int[] key)
     {
-        int[] iterations = new int[key.Length];
-        int iterationKey = 0;
-        for (int x = 0; x < array.Length; x++)
+        int[] result = new int[array.Length];
+        int iterationResult = 0;
+        for (int x = 0; x <= array.Length - key.Length; x++)
         {
-            if (array.Length - x >= key.Length)
+            for (int y = 0; y < key.Length; y++)
             {
-                if (array[x] == key[iterationKey] && iterationKey < key.Length)
+                if (array[x] == key[y])
                 {
-                    iterations[iterationKey] = x;
-                    iterationKey++;
-                }
-                else
-                {
-                    continue;
+                    result[iterationResult] = x;
+                    iterationResult++;
+                    break;
                 }
             }
         }
-        return iterations;
+        return result;
     }
     public static bool FindingTheKey(int[] array, int[] key)
     {
