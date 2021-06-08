@@ -27,7 +27,7 @@ static class FindingTheSameValues
             {
                 if (Array1[y] == Array1[x])
                 {
-                    bool isContaiend = IsArrayContainsNumber(Result, Array1[x]);
+                    bool isContaiend = Function.IsArrayContainsNumber(Result, Array1[x]);
                     if (isContaiend == false)
                     {
                         Result[z] = Array1[x];
@@ -39,21 +39,6 @@ static class FindingTheSameValues
         PrintArray(Result, length);
 
 
-        static bool IsArrayContainsNumber(int[] m1, int value)
-        {
-            bool isContained = false;
-
-            for (int i = 0; i < m1.Length; i++)
-            {
-                if (m1[i] == value)
-                {
-                    isContained = true;
-                    break;
-                }
-            }
-
-            return isContained;
-        }
 
         static void PrintArray(int[] array, int length)
         {

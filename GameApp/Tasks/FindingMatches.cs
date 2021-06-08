@@ -3,7 +3,7 @@ public static class FindingMatchesInAnArray
 {
     public static void Run()
     {
-        int length = 15;
+        int length = 7;
         int[] m1 = new int[length];
         int[] m2 = new int[length];
         int[] result;

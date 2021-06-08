@@ -4,12 +4,13 @@ static public class CompareTwoArrays
     public static void Run()
     {
         int length = 7;
-        int[] array1 = new int[length];
+        int Length = 7;
+        int[] array1 = new int[Length];
         int[] array2 = new int[length];
         int[] copyArray1;
         int[] copyArray2;
         bool result;
-        copyArray1 = Function.CreateArrayWithRandomValues(array1, length);
+        copyArray1 = Function.CreateArrayWithRandomValues(array1, Length);
         copyArray2 = Function.CreateArrayWithRandomValues(array2, length);
         Function.PrintArray(array1);
         Console.WriteLine();
