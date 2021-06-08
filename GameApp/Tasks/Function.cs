@@ -10,15 +10,22 @@ static class Function
         {
             for (int y = 0; y < key.Length; y++)
             {
-                if (array[x] == key[y])
+                if (array[x + y] == key[y])
                 {
-                    result[iterationResult] = x;
-                    iterationResult++;
+                    if (y == key.Length - 1)
+                    {
+                        result[iterationResult] = x;
+                        iterationResult++;
+                    }
+                }
+                else
+                {
                     break;
                 }
             }
         }
-        return result;
+        int[] copyResult = Function.ArrayWithoutZeros(result);
+        return copyResult;
     }
     public static bool FindingTheKey(int[] array, int[] key)
     {
