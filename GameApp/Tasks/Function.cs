@@ -2,6 +2,35 @@ using System;
 
 static class Function
 {
+    public static char[] FindAndPaintOverTheKey(int[] array, int[] key)
+    {
+        char[] result = new char[array.Length];
+        for (int x = 0; x <= array.Length - key.Length; x++)
+        { 
+            for (int y = 0; y < key.Length; y++)
+            {
+                if (array[x + y] == key[y])
+                {
+                    if (y == key.Length - 1)
+                    {
+                        for (int i = x; i <= array.Length - (key.Length - 1); i++)
+                        {
+                            result[i] = '*';
+                        }
+                    }
+                }
+                else
+                {
+                    if (result[x] != '*')
+                    {
+                        result[x] = array[x].ToString()[0];
+                        break;
+                    }
+                }
+            }
+        }
+        return result;
+    }
     public static int[] FindOnWhichIterationsTheKeyOccurs(int[] array, int[] key)
     {
         int[] result = new int[array.Length];
@@ -25,7 +54,7 @@ static class Function
             }
         }
         int[] copyResult = Function.ArrayWithoutZeros(result);
-        return copyResult;
+        return result;
     }
     public static bool FindingTheKey(int[] array, int[] key)
     {
