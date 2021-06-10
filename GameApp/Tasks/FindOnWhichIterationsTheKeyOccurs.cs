@@ -27,21 +27,24 @@ static class FindOnWhichIterationsTheKeyOccurs
         // Function.PrintArray(result);
         // Console.WriteLine();
 
-            int[] m1 = new int[10] {2, 1, 4, 2, 1, 4, 1, 4, 1, 5};
-            int[] key2 = new int[3] {1, 4, 1};
-            int[] result;
+        int[] m1 = new int[10] { 2, 1, 4, 2, 1, 4, 1, 4, 1, 5};
+        int[] key2 = new int[3] { 1, 4, 1 };
+        char[] result;
 
-            Console.Write("Array: ");
-            Function.PrintArray(m1);
-            Console.WriteLine();
+        Console.Write("Array: ");
+        Function.PrintArray(m1);
+        Console.WriteLine();
 
-            Console.Write("Key: ");
-            Function.PrintArray(key2);
-            Console.WriteLine();
+        Console.Write("Key: ");
+        Function.PrintArray(key2);
+        Console.WriteLine();
 
-            result = Function.FindOnWhichIterationsTheKeyOccurs(m1, key2);
-            Console.Write("The key is on iterations: ");
-            Function.PrintArray(result);
-            Console.WriteLine();
+        result = Function.FindAndPaintOverTheKey(m1, key2);
+        Console.Write("The key is on iterations: ");
+        for (int x = 0; x < m1.Length; x++)
+        {
+            Console.Write(result[x]);
+        }
+        Console.WriteLine();
     }
 }

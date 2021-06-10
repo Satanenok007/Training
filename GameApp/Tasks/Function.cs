@@ -5,15 +5,15 @@ static class Function
     public static char[] FindAndPaintOverTheKey(int[] array, int[] key)
     {
         char[] result = new char[array.Length];
-        for (int x = 0; x <= array.Length - key.Length; x++)
-        { 
+        for (int x = 0; x < array.Length; x++)
+        {
             for (int y = 0; y < key.Length; y++)
             {
-                if (array[x + y] == key[y])
+                if (x + y < array.Length - 1 && array[x + y] == key[y])
                 {
                     if (y == key.Length - 1)
                     {
-                        for (int i = x; i <= array.Length - (key.Length - 1); i++)
+                        for (int i = x; i <= x + key.Length - 1; i++)
                         {
                             result[i] = '*';
                         }
