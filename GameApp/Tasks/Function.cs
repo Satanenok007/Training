@@ -2,12 +2,10 @@ using System;
 
 static class Function
 {
-    public static char[,] FindAKeyIATwoDimensionalArray(int[,] array, int[] key)
+    public static char[,] FindAKeyIATwoDimensionalArray(int[,] array, int[] key, int xLenght, int yLenght)
     {
-        char[,] result = new char[array.GetLength(0), array.GetLength(1)];
-        int xLenght = array.GetLength(1);
-        int yLenght = array.GetLength(0);
-
+        char[,] result = new char[yLenght, xLenght];
+        
         if (key.Length < xLenght)
         {
             for (int y = 0; y < yLenght; y++)
@@ -16,21 +14,21 @@ static class Function
                 {
                     for (int k = 0; k < key.Length; k++)
                     {
-                        if (x + k < xLenght - 1 && array[x + k, y] == key[k])
+                        if (x + k < xLenght - 1 && array[y, x + k] == key[k])
                         {
                             if (k == key.Length - 1)
                             {
                                 for (int i = x; i <= x + key.Length - 1; i++)
                                 {
-                                    result[x, y] = '*';
+                                    result[y, i] = '*';
                                 }
                             }
                         }
                         else
                         {
-                            if (result[x, y] != '*')
+                            if (result[y, x] != '*')
                             {
-                                result[x, y] = array[x, y].ToString()[0];
+                                result[y, x] = array[y, x].ToString()[0];
                                 break;
                             }
                         }
@@ -476,13 +474,13 @@ static class Function
 
         return isContained;
     }
-    public static int[,] PrintTwoDimensionalArray(int[,] array)
+    public static int[,] PrintTwoDimensionalArray(int[,] array, int yLength, int xLength)
     {
-        for (int x = 0; x < 5; x++)
+        for (int y = 0; y < yLength; y++)
         {
-            for (int y = 0; y < 5; y++)
+            for (int x = 0; x < xLength; x++)
             {
-                Console.Write(array[x, y]);
+                Console.Write(array[y, x]);
             }
             Console.WriteLine();
         }
