@@ -2,33 +2,33 @@ using System;
 
 static class Function
 {
-    public static char[,] FindAKeyIATwoDimensionalArray(int[,] array, int[] key, int xLenght, int yLenght)
+    public static char[,] FindAKeyIATwoDimensionalArray(int[,] array, int[] key, int ArrayXLenght, int ArrayYLenght)
     {
-        char[,] result = new char[yLenght, xLenght];
+        char[,] resultArray = new char[ArrayYLenght, ArrayXLenght];
         
-        if (key.Length < xLenght)
+        if (key.Length < ArrayXLenght)
         {
-            for (int y = 0; y < yLenght; y++)
+            for (int y = 0; y < ArrayYLenght; y++)
             {
-                for (int x = 0; x < xLenght; x++)
+                for (int x = 0; x < ArrayXLenght; x++)
                 {
                     for (int k = 0; k < key.Length; k++)
                     {
-                        if (x + k < xLenght - 1 && array[y, x + k] == key[k])
+                        if (x + k < ArrayXLenght - 1 && array[y, x + k] == key[k])
                         {
                             if (k == key.Length - 1)
                             {
                                 for (int i = x; i <= x + key.Length - 1; i++)
                                 {
-                                    result[y, i] = '*';
+                                    resultArray[y, i] = '*';
                                 }
                             }
                         }
                         else
                         {
-                            if (result[y, x] != '*')
+                            if (resultArray[y, x] != '*')
                             {
-                                result[y, x] = array[y, x].ToString()[0];
+                                resultArray[y, x] = array[y, x].ToString()[0];
                                 break;
                             }
                         }
@@ -37,7 +37,7 @@ static class Function
             }
         }
 
-        return result;
+        return resultArray;
     }
     public static string PrintTheStringTheSpecifiedNumberOfTimes(string line, int number)
     {
