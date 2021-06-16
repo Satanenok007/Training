@@ -2,36 +2,40 @@ using System;
 
 static class Function
 {
-    public static char[,] FindAKeyIATwoDimensionalArray(int[,] array, int[] key, int ArrayXLenght, int ArrayYLenght)
+    public static char[,] FindAKeyIATwoDimensionalArray(int[,] array, int[,] key, int ArrayXLenght, int ArrayYLenght, int keyLength1, int keyLength2)
     {
         char[,] resultArray = new char[ArrayYLenght, ArrayXLenght];
-        
-        if (key.Length < ArrayXLenght)
+
+        if (keyLength1 <= ArrayYLenght && keyLength2 <= ArrayXLenght)
         {
             for (int y = 0; y < ArrayYLenght; y++)
             {
                 for (int x = 0; x < ArrayXLenght; x++)
                 {
-                    for (int k = 0; k < key.Length; k++)
+                    for (int k = 0; k < keyLength1; k++)
                     {
-                        if (x + k < ArrayXLenght - 1 && array[y, x + k] == key[k])
+                        for (int i = 0; i < keyLength2; i++)
                         {
-                            if (k == key.Length - 1)
+                            if (x + i <= ArrayXLenght - 1 && array[y, x + i] == key[k, i])
                             {
-                                for (int i = x; i <= x + key.Length - 1; i++)
+                                if (i == keyLength2 - 1)
                                 {
-                                    resultArray[y, i] = '*';
+                                    for (int j = x; j < x + keyLength2; j++)
+                                    {
+                                        resultArray[y, j] = '*';
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (resultArray[y, x] != '*')
+                                {
+                                    resultArray[y, x] = array[y, x].ToString()[0];
+                                    break;
                                 }
                             }
                         }
-                        else
-                        {
-                            if (resultArray[y, x] != '*')
-                            {
-                                resultArray[y, x] = array[y, x].ToString()[0];
-                                break;
-                            }
-                        }
+
                     }
                 }
             }

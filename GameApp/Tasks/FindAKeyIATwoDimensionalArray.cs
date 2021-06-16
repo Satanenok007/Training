@@ -3,10 +3,12 @@ public static class FindAKeyIATwoDimensionalArray
 {
     public static void Run()
     {
-        const int arrayXLength = 6;
-        const int ArrayYLength = 3;
-        int[,] array = new int[ArrayYLength, arrayXLength] { { 1, 4, 1, 4, 1, 6 }, { 6, 7, 1, 4, 1, 2 }, { 2, 3, 6, 2, 1, 4 } };
-        int[] key = new int[3] { 1, 4, 1 };
+        const int arrayXLength = 4;
+        const int ArrayYLength = 4;
+        const int keyLength1 = 2;
+        const int keyLength2 = 2;
+        int[,] array = new int[ArrayYLength, arrayXLength] { { 1, 1, 0, 0 }, { 1, 1, 1, 0 }, { 0, 1, 1, 1 }, { 0, 0, 1, 1 } };
+        int[,] key = new int[keyLength1, keyLength2] { { 1, 1 }, { 1, 1 } };
 
 
         Console.Write("Array: ");
@@ -15,12 +17,13 @@ public static class FindAKeyIATwoDimensionalArray
         Console.WriteLine();
 
         Console.Write("Key: ");
-        Function.PrintArray(key);
+        Console.WriteLine();
+        int[,] copyKey = Function.PrintTwoDimensionalArray(key, keyLength1, keyLength2);
         Console.WriteLine();
 
         Console.Write("Result: ");
         Console.WriteLine();
-        char[,] result = Function.FindAKeyIATwoDimensionalArray(array, key, arrayXLength, ArrayYLength);
+        char[,] result = Function.FindAKeyIATwoDimensionalArray(array, key, arrayXLength, ArrayYLength, keyLength1, keyLength2);
         for (int y = 0; y < ArrayYLength; y++)
         {
             for (int x = 0; x < arrayXLength; x++)
