@@ -2,6 +2,10 @@ using System;
 
 static class Function
 {
+    public static int SearchForHare(int numberOfSteps, int jump) {
+        int result = 0;
+        return result;
+    }
     public static char[,] FindAKeyIATwoDimensionalArray(int[,] array, int[,] key, int ArrayXLenght, int ArrayYLenght, int keyLength1, int keyLength2)
     {
         char[,] resultArray = new char[ArrayYLenght, ArrayXLenght];
