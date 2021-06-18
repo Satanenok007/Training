@@ -4,6 +4,8 @@ static class Function
 {
     public static int SearchForHare(int numberOfSteps, int jump) {
         int result = 0;
+        for(int j = 1; j<= numberOfSteps; j++) {} 
+        // или другой цикл
         return result;
     }
     public static char[,] FindAKeyIATwoDimensionalArray(int[,] array, int[,] key, int ArrayXLenght, int ArrayYLenght, int keyLength1, int keyLength2)
