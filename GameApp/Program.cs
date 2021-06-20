@@ -28,4 +28,5 @@
 // FindOnWhichIterationsTheKeyOccurs.Run();
 // PrintTheStringTheSpecifiedNumberOfTimes.Run();
 // FindAKeyIATwoDimensionalArray.Run();
-SearchForHareRoutes.Run();
+// SearchForHareRoutes.Run();
+SmileyFaceGame.Run();

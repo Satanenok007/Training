@@ -2,6 +2,11 @@ using System;
 
 static class Function
 {
+    public static char[,] CreatingAField(char[,] field, int verticalLength, int horizontalLength)
+    {
+        char[,] box = new char[verticalLength, horizontalLength];
+        return box;
+    }
     public static int SearchForHare(int numberOfSteps, int jump)
     {
         int result = 0;
@@ -492,6 +497,19 @@ static class Function
         return isContained;
     }
     public static int[,] PrintTwoDimensionalArray(int[,] array, int yLength, int xLength)
+    {
+        for (int y = 0; y < yLength; y++)
+        {
+            for (int x = 0; x < xLength; x++)
+            {
+                Console.Write(array[y, x]);
+            }
+            Console.WriteLine();
+        }
+        return array;
+    }
+
+    public static char[,] PrintTwoDimensionalCharArray(char[,] array, int yLength, int xLength)
     {
         for (int y = 0; y < yLength; y++)
         {
