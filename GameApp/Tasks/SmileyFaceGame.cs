@@ -3,10 +3,12 @@ public static class SmileyFaceGame
 {
     public static void Run()
     {
-        int verticalLength = 15;
-        int horizontalLength = 15;
+        int verticalLength = 10;
+        int horizontalLength = 10;
         char[,] field = new char[verticalLength, horizontalLength];
         char[,] copyField = Function.CreatingAField(field, verticalLength, horizontalLength);
+        // Function.PrintTwoDimensionalCharArray(copyField, verticalLength, horizontalLength);
+        Function.CreatingObstacles(copyField, verticalLength, horizontalLength);
         Function.PrintTwoDimensionalCharArray(copyField, verticalLength, horizontalLength);
     }
 }

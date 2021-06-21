@@ -5,7 +5,50 @@ static class Function
     public static char[,] CreatingAField(char[,] field, int verticalLength, int horizontalLength)
     {
         char[,] box = new char[verticalLength, horizontalLength];
+        for (int y = 0; y < verticalLength; y++)
+        {
+            for (int x = 0; x < horizontalLength; x++)
+            {
+                if (y == 0 || y == verticalLength - 1)
+                {
+                    box[y, x] = '0';
+                }
+                else if (x == 0 || x == horizontalLength - 1)
+                {
+                    box[y, x] = '0';
+                }
+                else
+                {
+                    box[y, x] = '.';
+                }
+            }
+        }
         return box;
+    }
+
+    public static char[,] CreatingObstacles(char[,] field, int verticalLength, int horizontalLength)
+    {
+        char[,] barrier = new char[verticalLength, horizontalLength];
+        Random rnd = new Random();
+        for (int y = 0; y < verticalLength; y++)
+        {
+            for (int x = 0; x < horizontalLength; x++)
+            {
+                if (y != 0 || y != verticalLength - 1 && x != 0 || x != horizontalLength - 1)
+                {
+                    int randomY = rnd.Next(y);
+                    int randomX = rnd.Next(x);
+                    for (int j = 0; j < randomY; j++)
+                    {
+                        for (int i = 0; i < randomX; x++)
+                        {
+                            barrier[j, i] = '0';
+                        }
+                    }
+                }
+            }
+        }
+        return barrier;
     }
     public static int SearchForHare(int numberOfSteps, int jump)
     {
