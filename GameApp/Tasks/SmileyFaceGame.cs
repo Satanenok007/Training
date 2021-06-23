@@ -8,7 +8,6 @@ public static class SmileyFaceGame
         char[,] field = new char[verticalLength, horizontalLength];
         char[,] copyField = Function.CreatingAField(field, verticalLength, horizontalLength);
         Function.PrintTwoDimensionalCharArray(copyField, verticalLength, horizontalLength);
-        // Function.CreatingObstacles(copyField, verticalLength, horizontalLength);
-        // Function.PrintTwoDimensionalCharArray(copyField, verticalLength, horizontalLength);
+        Function.CreatingAndPromotingASmileyFace(verticalLength, horizontalLength);
     }
 }

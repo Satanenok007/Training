@@ -25,46 +25,68 @@ static class Function
         }
         return box;
     }
-    public static char[,] CreatingAndPromotingASmileyFace(char[,] field, int verticalLength, int horizontalLength)
+    public static void CreatingAndPromotingASmileyFace(int verticalLength, int horizontalLength)
     {
         int smilecoordinateX = 1;
         int smilecoordinateY = 1;
-        char[,] copyField = new char[verticalLength, horizontalLength];
+        ConsoleKeyInfo key = Console.ReadKey();
+        char symbol = key.KeyChar;
+
+        if (symbol == 's')
+        {
+            if (smilecoordinateY < verticalLength - 2)
+            {
+                smilecoordinateY++;
+            }
+        }
+        else if (symbol == 'w')
+        {
+            if (smilecoordinateY > 1)
+            {
+                smilecoordinateY--;
+            }
+        }
+        else if (symbol == 'd')
+        {
+            if (smilecoordinateX < horizontalLength - 2)
+            {
+                smilecoordinateX++;
+            }
+        }
+        else if (symbol == 'a')
+        {
+            if (smilecoordinateX > 1)
+            {
+                smilecoordinateX--;
+            }
+        }
+
+    }
+
+    public static char[,] CreatingObstacles(char[,] field, int verticalLength, int horizontalLength)
+    {
+        char[,] barrier = new char[verticalLength, horizontalLength];
+        Random rnd = new Random();
         for (int y = 0; y < verticalLength; y++)
         {
             for (int x = 0; x < horizontalLength; x++)
             {
-                copyField[y,x] = field[y,x];
+                if (y != 0 || y != verticalLength - 1 && x != 0 || x != horizontalLength - 1)
+                {
+                    int randomY = rnd.Next(y);
+                    int randomX = rnd.Next(x);
+                    for (int j = 1; j < randomY; j++)
+                    {
+                        for (int i = 1; i < randomX; x++)
+                        {
+                            barrier[j, i] = '0';
+                        }
+                    }
+                }
             }
         }
-        
-        return copyField;
+        return barrier;
     }
-
-    // public static char[,] CreatingObstacles(char[,] field, int verticalLength, int horizontalLength)
-    // {
-    //     char[,] barrier = new char[verticalLength, horizontalLength];
-    //     Random rnd = new Random();
-    //     for (int y = 0; y < verticalLength; y++)
-    //     {
-    //         for (int x = 0; x < horizontalLength; x++)
-    //         {
-    //             if (y != 0 || y != verticalLength - 1 && x != 0 || x != horizontalLength - 1)
-    //             {
-    //                 int randomY = rnd.Next(y);
-    //                 int randomX = rnd.Next(x);
-    //                 for (int j = 1; j < randomY; j++)
-    //                 {
-    //                     for (int i = 1; i < randomX; x++)
-    //                     {
-    //                         barrier[j, i] = '0';
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     return barrier;
-    // }
     public static int SearchForHare(int numberOfSteps, int jump)
     {
         int result = 0;
