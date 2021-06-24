@@ -63,6 +63,40 @@ static class Function
 
     }
 
+    public static char[,] CopyingAnArrayWithBarriersAndASmileyFace(char[,] field, int verticalLength, int horizontalLength) {
+       char[,] result = new char[verticalLength,horizontalLength];
+       for (int y = 0; y < verticalLength; y++)
+        {
+            for (int x = 0; x < horizontalLength; x++)
+            {
+                if (y == 0 || y == verticalLength - 1)
+                {
+                    result[y, x] = '0';
+                }
+                else if (x == 0 || x == horizontalLength - 1)
+                {
+                    result[y, x] = '0';
+                }
+                else
+                {
+                    result[y, x] = '.';
+                }
+                // if (y == smilecoordinateY && x == smilecoordinateX)
+                // {
+                //     result[y, x] = '*';
+                // }
+            }
+        }
+        for (int y = 0; y < verticalLength; y++)
+        {
+            for (int x = 0; x < horizontalLength; x++)
+            {
+                Console.Write(result[y, x]);
+            }
+        }
+       return result;
+    }
+
     public static char[,] CreatingObstacles(char[,] field, int verticalLength, int horizontalLength)
     {
         char[,] barrier = new char[verticalLength, horizontalLength];
