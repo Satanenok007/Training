@@ -63,9 +63,10 @@ static class Function
 
     }
 
-    public static char[,] CopyingAnArrayWithBarriersAndASmileyFace(char[,] field, int verticalLength, int horizontalLength) {
-       char[,] result = new char[verticalLength,horizontalLength];
-       for (int y = 0; y < verticalLength; y++)
+    public static char[,] CopyingAnArrayWithBarriersAndASmileyFace(char[,] field, int verticalLength, int horizontalLength)
+    {
+        char[,] result = new char[verticalLength, horizontalLength];
+        for (int y = 0; y < verticalLength; y++)
         {
             for (int x = 0; x < horizontalLength; x++)
             {
@@ -94,32 +95,19 @@ static class Function
                 Console.Write(result[y, x]);
             }
         }
-       return result;
+        return result;
     }
 
-    public static char[,] CreatingObstacles(char[,] field, int verticalLength, int horizontalLength)
+    public static void CreatingObstacles(char[,] field, int verticalLength, int horizontalLength)
     {
-        char[,] barrier = new char[verticalLength, horizontalLength];
+        int barrierX = 1;
+        int barrierY = 1;
         Random rnd = new Random();
-        for (int y = 0; y < verticalLength; y++)
+        if (barrierY != 0 || barrierY != verticalLength - 1 && barrierX != 0 || barrierX != horizontalLength - 1)
         {
-            for (int x = 0; x < horizontalLength; x++)
-            {
-                if (y != 0 || y != verticalLength - 1 && x != 0 || x != horizontalLength - 1)
-                {
-                    int randomY = rnd.Next(y);
-                    int randomX = rnd.Next(x);
-                    for (int j = 1; j < randomY; j++)
-                    {
-                        for (int i = 1; i < randomX; x++)
-                        {
-                            barrier[j, i] = '0';
-                        }
-                    }
-                }
-            }
+            int randomY = rnd.Next(barrierY);
+            int randomX = rnd.Next(barrierX);
         }
-        return barrier;
     }
     public static int SearchForHare(int numberOfSteps, int jump)
     {
