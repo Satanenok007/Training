@@ -49,14 +49,14 @@ static class Function
         }
         else if (symbol == 'd')
         {
-            if (smilecoordinateX < horizontalLength - 2)
+            if (smilecoordinateX < horizontalLength - 1)
             {
                 smilecoordinateX++;
             }
         }
         else if (symbol == 'a')
         {
-            if (smilecoordinateX > 2)
+            if (smilecoordinateX > 1)
             {
                 smilecoordinateX--;
             }
@@ -70,7 +70,7 @@ static class Function
     {
         char[,] result = new char[verticalLength, horizontalLength];
         int[] smilecoordinate = Function.CreatingAndPromotingASmileyFace(verticalLength, horizontalLength);
-        // int[] obstacles = Function.CreatingObstacles(field, verticalLength, horizontalLength);
+        int[] obstacles = Function.CreatingObstacles(verticalLength, horizontalLength);
         for (int y = 0; y < verticalLength; y++)
         {
             for (int x = 0; x < horizontalLength; x++)
@@ -83,13 +83,17 @@ static class Function
                 {
                     result[y, x] = '0';
                 }
+                else if (y == smilecoordinate[0] && x == smilecoordinate[1])
+                {
+                    result[y, x] = '*';
+                }
+                else if (y <= obstacles[0] && x <= obstacles[1])
+                {
+                    result[y, x] = '1';
+                }
                 else
                 {
                     result[y, x] = '.';
-                }
-                if (y == smilecoordinate[0] && x == smilecoordinate[1])
-                {
-                    result[y, x] = '*';
                 }
             }
         }
@@ -99,23 +103,26 @@ static class Function
             {
                 Console.Write(result[y, x]);
             }
+            Console.WriteLine();
         }
         return result;
     }
 
-    public static int[] CreatingObstacles(char[,] field, int verticalLength, int horizontalLength)
+    public static int[] CreatingObstacles(int verticalLength, int horizontalLength)
     {
         int[] barrier = new int[2];
         int barrierX = 1;
         int barrierY = 1;
         Random rnd = new Random();
-        if (barrierY != 0 || barrierY != verticalLength - 1 && barrierX != 0 || barrierX != horizontalLength - 1)
+        int randomY = rnd.Next(barrierY);
+        int randomX = rnd.Next(barrierX);
+        if (randomY != 0 || randomY != verticalLength - 2 && randomX != 0 || randomX != horizontalLength - 2)
         {
-            int randomY = rnd.Next(barrierY);
-            int randomX = rnd.Next(barrierX);
+            barrier[0] = barrierY;
+            barrier[1] = barrierX;
         }
-        barrier[0] = barrierY;
-        barrier[1] = barrierX;
+        Console.Write(randomY);
+        Console.Write(randomX);
         return barrier;
     }
     public static int SearchForHare(int numberOfSteps, int jump)
