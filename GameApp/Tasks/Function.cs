@@ -71,7 +71,7 @@ static class Function
         int smilecoordinateY = 1;
         char[,] result = new char[verticalLength, horizontalLength];
         int[] smilecoordinate = Function.CreatingAndPromotingASmileyFace(verticalLength, horizontalLength, smilecoordinateY, smilecoordinateX);
-        // int[] obstacles = Function.CreatingObstacles(verticalLength, horizontalLength);
+        int[] obstacles = Function.CreatingObstacles(verticalLength, horizontalLength);
         for (int y = 0; y < verticalLength; y++)
         {
             for (int x = 0; x < horizontalLength; x++)
@@ -108,16 +108,18 @@ static class Function
     public static int[] CreatingObstacles(int verticalLength, int horizontalLength)
     {
         int[] barrier = new int[2];
-        int barrierX = 1;
-        int barrierY = 1;
         Random rnd = new Random();
-        int randomY = rnd.Next(barrierY);
-        int randomX = rnd.Next(barrierX);
-        if (randomY != 0 || randomY != verticalLength - 2 && randomX != 0 || randomX != horizontalLength - 2)
-        {
-            barrier[0] = randomY;
-            barrier[1] = randomX;
-        }
+        int barrierX = rnd.Next(1, horizontalLength - 2);
+        int barrierY = rnd.Next(1, verticalLength - 2);
+
+        barrier[0] = barrierY;
+        barrier[1] = barrierX;
+
+        Console.Write(barrier[0]);
+        Console.WriteLine();
+        Console.Write(barrier[1]);
+        Console.WriteLine();
+        
         return barrier;
     }
     public static int SearchForHare(int numberOfSteps, int jump)
