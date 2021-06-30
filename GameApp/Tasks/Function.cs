@@ -88,6 +88,10 @@ static class Function
                 {
                     result[y, x] = '*';
                 }
+                else if (y == obstacles[0] && x <= obstacles[1])
+                {
+                    result[y, x] = '1';
+                }
                 else
                 {
                     result[y, x] = '.';
@@ -119,7 +123,7 @@ static class Function
         Console.WriteLine();
         Console.Write(barrier[1]);
         Console.WriteLine();
-        
+
         return barrier;
     }
     public static int SearchForHare(int numberOfSteps, int jump)
