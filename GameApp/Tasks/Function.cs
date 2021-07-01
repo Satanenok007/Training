@@ -34,7 +34,7 @@ static class Function
 
         if (symbol == 's')
         {
-            if (smilecoordinateY < verticalLength - 2)
+            if (smilecoordinateY < verticalLength - 1)
             {
                 smilecoordinateY++;
             }
@@ -65,48 +65,53 @@ static class Function
         return smilecoordinate;
     }
 
-    public static char[,] CopyingAnArrayWithBarriersAndASmileyFace(char[,] field, int verticalLength, int horizontalLength)
+    public static void CopyingAnArrayWithBarriersAndASmileyFace(char[,] field, int verticalLength, int horizontalLength)
     {
+        char[,] result = new char[verticalLength, horizontalLength];
         int smilecoordinateX = 1;
         int smilecoordinateY = 1;
-        char[,] result = new char[verticalLength, horizontalLength];
-        int[] smilecoordinate = Function.CreatingAndPromotingASmileyFace(verticalLength, horizontalLength, smilecoordinateY, smilecoordinateX);
         int[] obstacles = Function.CreatingObstacles(verticalLength, horizontalLength);
-        for (int y = 0; y < verticalLength; y++)
+        while (true)
         {
-            for (int x = 0; x < horizontalLength; x++)
+            int[] smilecoordinate = Function.CreatingAndPromotingASmileyFace(verticalLength, horizontalLength, smilecoordinateY, smilecoordinateX);
+            smilecoordinateY = smilecoordinate[0];
+            smilecoordinateX = smilecoordinate[1];
+            
+            for (int y = 0; y < verticalLength; y++)
             {
-                if (y == 0 || y == verticalLength - 1)
+                for (int x = 0; x < horizontalLength; x++)
                 {
-                    result[y, x] = '0';
-                }
-                else if (x == 0 || x == horizontalLength - 1)
-                {
-                    result[y, x] = '0';
-                }
-                else if (y == smilecoordinate[0] && x == smilecoordinate[1])
-                {
-                    result[y, x] = '*';
-                }
-                else if (y == obstacles[0] && x <= obstacles[1])
-                {
-                    result[y, x] = '1';
-                }
-                else
-                {
-                    result[y, x] = '.';
+                    if (y == 0 || y == verticalLength - 1)
+                    {
+                        result[y, x] = '0';
+                    }
+                    else if (x == 0 || x == horizontalLength - 1)
+                    {
+                        result[y, x] = '0';
+                    }
+                    else if (y == smilecoordinate[0] && x == smilecoordinate[1])
+                    {
+                        result[y, x] = '*';
+                    }
+                    else if (y == obstacles[0] && x <= obstacles[1])
+                    {
+                        result[y, x] = '1';
+                    }
+                    else
+                    {
+                        result[y, x] = '.';
+                    }
                 }
             }
-        }
-        for (int y = 0; y < verticalLength; y++)
-        {
-            for (int x = 0; x < horizontalLength; x++)
+            for (int y = 0; y < verticalLength; y++)
             {
-                Console.Write(result[y, x]);
+                for (int x = 0; x < horizontalLength; x++)
+                {
+                    Console.Write(result[y, x]);
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine();
         }
-        return result;
     }
 
     public static int[] CreatingObstacles(int verticalLength, int horizontalLength)
