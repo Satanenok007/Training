@@ -25,7 +25,7 @@ static class Function
         }
         return box;
     }
-    public static int[] CreatingAndPromotingASmileyFace(int verticalLength, int horizontalLength, int smilecoordinateY, int smilecoordinateX)
+    public static int[] CreatingAndPromotingASmileyFace(int verticalLength, int horizontalLength, int smilecoordinateY, int smilecoordinateX, int[] obstacles)
     {
         int[] smilecoordinate = new int[2];
         ConsoleKeyInfo key = Console.ReadKey();
@@ -36,28 +36,52 @@ static class Function
         {
             if (smilecoordinateY < verticalLength - 1)
             {
-                smilecoordinateY++;
+                if (smilecoordinateY == obstacles[0] - 1 && smilecoordinateX <= obstacles[1])
+                {
+                }
+                else
+                {
+                    smilecoordinateY++;
+                }
             }
         }
         else if (symbol == 'w')
         {
-            if (smilecoordinateY > 2)
+            if (smilecoordinateY > 1)
             {
-                smilecoordinateY--;
+                if (smilecoordinateY == obstacles[0] + 1 && smilecoordinateX <= obstacles[1])
+                {
+                }
+                else
+                {
+                    smilecoordinateY--;
+                }
             }
         }
         else if (symbol == 'd')
         {
             if (smilecoordinateX < horizontalLength - 1)
             {
-                smilecoordinateX++;
+                if (smilecoordinateY == obstacles[0] && smilecoordinateX == obstacles[1] - 1)
+                {
+                }
+                else
+                {
+                    smilecoordinateX++;
+                }
             }
         }
         else if (symbol == 'a')
         {
             if (smilecoordinateX > 1)
             {
-                smilecoordinateX--;
+                if (smilecoordinateY == obstacles[0] && smilecoordinateX == obstacles[1] + 1)
+                {
+                }
+                else
+                {
+                    smilecoordinateX--;
+                }
             }
         }
         smilecoordinate[0] = smilecoordinateY;
@@ -73,10 +97,10 @@ static class Function
         int[] obstacles = Function.CreatingObstacles(verticalLength, horizontalLength);
         while (true)
         {
-            int[] smilecoordinate = Function.CreatingAndPromotingASmileyFace(verticalLength, horizontalLength, smilecoordinateY, smilecoordinateX);
+            int[] smilecoordinate = Function.CreatingAndPromotingASmileyFace(verticalLength, horizontalLength, smilecoordinateY, smilecoordinateX, obstacles);
             smilecoordinateY = smilecoordinate[0];
             smilecoordinateX = smilecoordinate[1];
-            
+
             for (int y = 0; y < verticalLength; y++)
             {
                 for (int x = 0; x < horizontalLength; x++)
