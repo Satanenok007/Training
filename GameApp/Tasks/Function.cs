@@ -34,12 +34,13 @@ static class Function
 
         if (symbol == 's')
         {
-            if (smilecoordinateY < verticalLength - 1)
+
+            if (smilecoordinateY == obstacles[0] - 1 && smilecoordinateX <= obstacles[1])
             {
-                if (smilecoordinateY == obstacles[0] - 1 && smilecoordinateX <= obstacles[1])
-                {
-                }
-                else
+            }
+            else
+            {
+                if (smilecoordinateY < verticalLength - 2)
                 {
                     smilecoordinateY++;
                 }
@@ -60,12 +61,13 @@ static class Function
         }
         else if (symbol == 'd')
         {
-            if (smilecoordinateX < horizontalLength - 1)
+
+            if (smilecoordinateY == obstacles[0] && smilecoordinateX == obstacles[1] - 1)
             {
-                if (smilecoordinateY == obstacles[0] && smilecoordinateX == obstacles[1] - 1)
-                {
-                }
-                else
+            }
+            else
+            {
+                if (smilecoordinateX < horizontalLength - 2)
                 {
                     smilecoordinateX++;
                 }
