@@ -109,11 +109,11 @@ static class Function
                 {
                     if (y == 0 || y == verticalLength - 1)
                     {
-                        result[y, x] = '0';
+                        result[y, x] = '▨';
                     }
                     else if (x == 0 || x == horizontalLength - 1)
                     {
-                        result[y, x] = '0';
+                        result[y, x] = '▨';
                     }
                     else if (y == smilecoordinate[0] && x == smilecoordinate[1])
                     {
@@ -121,11 +121,11 @@ static class Function
                     }
                     else if (y == obstacles[0] && x <= obstacles[1])
                     {
-                        result[y, x] = '1';
+                        result[y, x] = '▨';
                     }
                     else
                     {
-                        result[y, x] = '.';
+                        result[y, x] = ' ';
                     }
                 }
             }
