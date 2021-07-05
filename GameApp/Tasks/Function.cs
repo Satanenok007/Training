@@ -150,11 +150,6 @@ static class Function
         barrier[0] = barrierY;
         barrier[1] = barrierX;
 
-        Console.Write(barrier[0]);
-        Console.WriteLine();
-        Console.Write(barrier[1]);
-        Console.WriteLine();
-
         return barrier;
     }
     public static int SearchForHare(int numberOfSteps, int jump)
