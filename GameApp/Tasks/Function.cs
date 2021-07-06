@@ -35,7 +35,7 @@ static class Function
         if (symbol == 's')
         {
 
-            if (smilecoordinateY == obstacles[0] - 1 && smilecoordinateX <= obstacles[1])
+            if (smilecoordinateY == obstacles[0] - 1 && smilecoordinateX == obstacles[1])
             {
             }
             else
@@ -50,7 +50,7 @@ static class Function
         {
             if (smilecoordinateY > 1)
             {
-                if (smilecoordinateY == obstacles[0] + 1 && smilecoordinateX <= obstacles[1])
+                if (smilecoordinateY == obstacles[0] + 1 && smilecoordinateX == obstacles[1])
                 {
                 }
                 else
@@ -119,7 +119,7 @@ static class Function
                     {
                         result[y, x] = '*';
                     }
-                    else if (y == obstacles[0] && x <= obstacles[1])
+                    else if (y == obstacles[0] && x == obstacles[1])
                     {
                         result[y, x] = '▨';
                     }
