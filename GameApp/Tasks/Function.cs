@@ -2,29 +2,6 @@ using System;
 
 static class Function
 {
-    public static char[,] CreatingAField(char[,] field, int verticalLength, int horizontalLength)
-    {
-        char[,] box = new char[verticalLength, horizontalLength];
-        for (int y = 0; y < verticalLength; y++)
-        {
-            for (int x = 0; x < horizontalLength; x++)
-            {
-                if (y == 0 || y == verticalLength - 1)
-                {
-                    box[y, x] = '0';
-                }
-                else if (x == 0 || x == horizontalLength - 1)
-                {
-                    box[y, x] = '0';
-                }
-                else
-                {
-                    box[y, x] = '.';
-                }
-            }
-        }
-        return box;
-    }
     public static int[] CreatingAndPromotingASmileyFace(int verticalLength, int horizontalLength, int smilecoordinateY, int smilecoordinateX, int[] obstacles)
     {
         int[] smilecoordinate = new int[2];
@@ -91,7 +68,7 @@ static class Function
         return smilecoordinate;
     }
 
-    public static void CopyingAnArrayWithBarriersAndASmileyFace(char[,] field, int verticalLength, int horizontalLength)
+    public static void CreatingAnArrayWithBarriersAndASmileyFace(char[,] field, int verticalLength, int horizontalLength)
     {
         char[,] result = new char[verticalLength, horizontalLength];
         int smilecoordinateX = 1;
@@ -144,9 +121,9 @@ static class Function
     public static int[] CreatingObstacles(int verticalLength, int horizontalLength)
     {
         int[] barrier = new int[2];
-        Random rnd = new Random();
-        int barrierX = rnd.Next(1, horizontalLength - 2);
-        int barrierY = rnd.Next(1, verticalLength - 2);
+        Random random = new Random();
+        int barrierX = random.Next(1, horizontalLength - 2);
+        int barrierY = random.Next(1, verticalLength - 2);
 
         barrier[0] = barrierY;
         barrier[1] = barrierX;
