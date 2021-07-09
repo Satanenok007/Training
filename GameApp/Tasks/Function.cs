@@ -8,7 +8,6 @@ static class Function
         ConsoleKeyInfo key = Console.ReadKey();
         Console.WriteLine();
         char symbol = key.KeyChar;
-
         if (symbol == 's')
         {
 
@@ -120,14 +119,26 @@ static class Function
 
     public static int[] CreatingObstacles(int verticalLength, int horizontalLength)
     {
-        int[] barrier = new int[2];
+        int[] barrier = new int[4];
         Random random = new Random();
         int barrierX = random.Next(1, horizontalLength - 2);
         int barrierY = random.Next(1, verticalLength - 2);
 
-        barrier[0] = barrierY;
-        barrier[1] = barrierX;
-
+        for (int i = 0; i < barrier.Length; i++)
+        {
+            if (i / 2 == 0)
+            {
+                barrier[i] = random.Next(1, verticalLength - 2);
+            }
+            else
+            {
+                barrier[i] = random.Next(1, horizontalLength - 2);
+            }
+        }
+        for (int j = 0; j < barrier.Length; j++)
+        {
+            Console.Write(barrier[j]);
+        }
         return barrier;
     }
     public static int SearchForHare(int numberOfSteps, int jump)
