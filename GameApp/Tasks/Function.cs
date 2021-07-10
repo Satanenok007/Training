@@ -96,13 +96,16 @@ static class Function
                     {
                         result[y, x] = '☹';
                     }
-                    else if (y == obstacles[0] && x == obstacles[1])
-                    {
-                        result[y, x] = '▨';
-                    }
                     else
                     {
                         result[y, x] = ' ';
+                    }
+                    for (int i = 0; i < obstacles.Length; i++)
+                    {
+                        if (y == obstacles[i] && x == obstacles[i])
+                        {
+                            result[y,x] = '▨';
+                        }
                     }
                 }
             }
