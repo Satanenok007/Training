@@ -102,10 +102,14 @@ static class Function
                     }
                     for (int i = 0; i < obstacles.Length; i++)
                     {
-                        if (y == obstacles[i] && x == obstacles[i])
+                        if (i + 1 <= obstacles.Length - 1)
                         {
-                            result[y,x] = '▨';
+                            if (y == obstacles[i] && x == obstacles[i + 1])
+                            {
+                                result[y, x] = '▨';
+                            }
                         }
+                        continue;
                     }
                 }
             }
