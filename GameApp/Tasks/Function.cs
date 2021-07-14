@@ -4,7 +4,7 @@ static class Function
 {
     public static int[] CreatingAndPromotingASmileyFace(int verticalLength, int horizontalLength, int smilecoordinateY, int smilecoordinateX, int[] obstacles)
     {
-        int[] smilecoordinate = new int[2];
+        int[] smilecoordinate = new int[obstacles.Length];
         ConsoleKeyInfo key = Console.ReadKey();
         Console.WriteLine();
         char symbol = key.KeyChar;
@@ -66,8 +66,14 @@ static class Function
             }
         }
 
-        smilecoordinate[0] = smilecoordinateY;
-        smilecoordinate[1] = smilecoordinateX;
+        for (int j = 0; j < smilecoordinate.Length; j++)
+        {
+            if (j + 1 < smilecoordinate.Length - 1)
+            {
+                smilecoordinate[j] = smilecoordinateY;
+                smilecoordinate[j + 1] = smilecoordinateX;
+            }
+        }
         return smilecoordinate;
     }
 
@@ -81,8 +87,6 @@ static class Function
         while (true)
         {
             int[] smilecoordinate = Function.CreatingAndPromotingASmileyFace(verticalLength, horizontalLength, smilecoordinateY, smilecoordinateX, obstacles);
-            smilecoordinateY = smilecoordinate[0];
-            smilecoordinateX = smilecoordinate[1];
 
             for (int y = 0; y < verticalLength; y++)
             {
@@ -103,6 +107,17 @@ static class Function
                     else
                     {
                         result[y, x] = ' ';
+                    }
+                    for (int j = 0; j < smilecoordinate.Length; j++)
+                    {
+                        if (j + 1 <= smilecoordinate.Length - 1)
+                        {
+                            if (y == smilecoordinate[j] && x == smilecoordinate[j + 1])
+                            {
+                                result[y, x] = '☹';
+                            }
+                        }
+                        continue;
                     }
                     for (int i = 0; i < obstacles.Length; i++)
                     {
