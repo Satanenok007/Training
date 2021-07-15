@@ -8,72 +8,62 @@ static class Function
         ConsoleKeyInfo key = Console.ReadKey();
         Console.WriteLine();
         char symbol = key.KeyChar;
-        for (int i = 0; i < obstacles.Length; i++)
+        if (symbol == 's')
         {
-            if (symbol == 's')
-            {
 
-                if (smilecoordinateY == obstacles[i] - 1 && smilecoordinateX == obstacles[i + 1])
+            if (smilecoordinateY == obstacles[0] - 1 && smilecoordinateX == obstacles[1])
+            {
+            }
+            else
+            {
+                if (smilecoordinateY < verticalLength - 2)
+                {
+                    smilecoordinateY++;
+                }
+            }
+        }
+        else if (symbol == 'w')
+        {
+            if (smilecoordinateY > 1)
+            {
+                if (smilecoordinateY == obstacles[0] + 1 && smilecoordinateX == obstacles[1])
                 {
                 }
                 else
                 {
-                    if (smilecoordinateY < verticalLength - 2)
-                    {
-                        smilecoordinateY++;
-                    }
+                    smilecoordinateY--;
                 }
             }
-            else if (symbol == 'w')
-            {
-                if (smilecoordinateY > 1)
-                {
-                    if (smilecoordinateY == obstacles[i] + 1 && smilecoordinateX == obstacles[i + 1])
-                    {
-                    }
-                    else
-                    {
-                        smilecoordinateY--;
-                    }
-                }
-            }
-            else if (symbol == 'd')
-            {
+        }
+        else if (symbol == 'd')
+        {
 
-                if (smilecoordinateY == obstacles[i] && smilecoordinateX == obstacles[i + 1] - 1)
+            if (smilecoordinateY == obstacles[0] && smilecoordinateX == obstacles[1] - 1)
+            {
+            }
+            else
+            {
+                if (smilecoordinateX < horizontalLength - 2)
+                {
+                    smilecoordinateX++;
+                }
+            }
+        }
+        else if (symbol == 'a')
+        {
+            if (smilecoordinateX > 1)
+            {
+                if (smilecoordinateY == obstacles[0] && smilecoordinateX == obstacles[1] + 1)
                 {
                 }
                 else
                 {
-                    if (smilecoordinateX < horizontalLength - 2)
-                    {
-                        smilecoordinateX++;
-                    }
-                }
-            }
-            else if (symbol == 'a')
-            {
-                if (smilecoordinateX > 1)
-                {
-                    if (smilecoordinateY == obstacles[i] && smilecoordinateX == obstacles[i] + 1)
-                    {
-                    }
-                    else
-                    {
-                        smilecoordinateX--;
-                    }
+                    smilecoordinateX--;
                 }
             }
         }
-
-        for (int j = 0; j < smilecoordinate.Length; j++)
-        {
-            if (j + 1 < smilecoordinate.Length - 1)
-            {
-                smilecoordinate[j] = smilecoordinateY;
-                smilecoordinate[j + 1] = smilecoordinateX;
-            }
-        }
+        smilecoordinate[0] = smilecoordinateY;
+        smilecoordinate[1] = smilecoordinateX;
         return smilecoordinate;
     }
 
@@ -108,17 +98,6 @@ static class Function
                     {
                         result[y, x] = ' ';
                     }
-                    for (int j = 0; j < smilecoordinate.Length; j++)
-                    {
-                        if (j + 1 <= smilecoordinate.Length - 1)
-                        {
-                            if (y == smilecoordinate[j] && x == smilecoordinate[j + 1])
-                            {
-                                result[y, x] = '☹';
-                            }
-                        }
-                        continue;
-                    }
                     for (int i = 0; i < obstacles.Length; i++)
                     {
                         if (i + 1 <= obstacles.Length - 1)
@@ -126,6 +105,7 @@ static class Function
                             if (y == obstacles[i] && x == obstacles[i + 1])
                             {
                                 result[y, x] = '▨';
+                                
                             }
                         }
                         continue;
