@@ -77,6 +77,8 @@ static class Function
         while (true)
         {
             int[] smilecoordinate = Function.CreatingAndPromotingASmileyFace(verticalLength, horizontalLength, smilecoordinateY, smilecoordinateX, obstacles);
+            smilecoordinateY = smilecoordinate[0];
+            smilecoordinateX = smilecoordinate[1];
 
             for (int y = 0; y < verticalLength; y++)
             {
@@ -105,7 +107,7 @@ static class Function
                             if (y == obstacles[i] && x == obstacles[i + 1])
                             {
                                 result[y, x] = '▨';
-                                
+
                             }
                         }
                         continue;
