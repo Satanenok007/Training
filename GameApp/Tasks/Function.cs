@@ -8,62 +8,68 @@ static class Function
         ConsoleKeyInfo key = Console.ReadKey();
         Console.WriteLine();
         char symbol = key.KeyChar;
-        if (symbol == 's')
+        for (int i = 0; i < obstacles.Length; i++)
         {
+            if (symbol == 's')
+            {
 
-            if (smilecoordinateY == obstacles[0] - 1 && smilecoordinateX == obstacles[1])
-            {
-            }
-            else
-            {
-                if (smilecoordinateY < verticalLength - 2)
-                {
-                    smilecoordinateY++;
-                }
-            }
-        }
-        else if (symbol == 'w')
-        {
-            if (smilecoordinateY > 1)
-            {
-                if (smilecoordinateY == obstacles[0] + 1 && smilecoordinateX == obstacles[1])
+                if (smilecoordinateY == obstacles[i] - 1 && smilecoordinateX == obstacles[i])
                 {
                 }
                 else
                 {
-                    smilecoordinateY--;
+                    if (smilecoordinateY < verticalLength - 2)
+                    {
+                        smilecoordinateY++;
+                    }
                 }
             }
-        }
-        else if (symbol == 'd')
-        {
-
-            if (smilecoordinateY == obstacles[0] && smilecoordinateX == obstacles[1] - 1)
+            else if (symbol == 'w')
             {
-            }
-            else
-            {
-                if (smilecoordinateX < horizontalLength - 2)
+                if (smilecoordinateY > 1)
                 {
-                    smilecoordinateX++;
+                    if (smilecoordinateY == obstacles[i] + 1 && smilecoordinateX == obstacles[i])
+                    {
+                    }
+                    else
+                    {
+                        smilecoordinateY--;
+                    }
                 }
             }
-        }
-        else if (symbol == 'a')
-        {
-            if (smilecoordinateX > 1)
+            else if (symbol == 'd')
             {
-                if (smilecoordinateY == obstacles[0] && smilecoordinateX == obstacles[1] + 1)
+
+                if (smilecoordinateY == obstacles[i] && smilecoordinateX == obstacles[i] - 1)
                 {
                 }
                 else
                 {
-                    smilecoordinateX--;
+                    if (smilecoordinateX < horizontalLength - 2)
+                    {
+                        smilecoordinateX++;
+                    }
                 }
             }
+            else if (symbol == 'a')
+            {
+                if (smilecoordinateX > 1)
+                {
+                    if (smilecoordinateY == obstacles[i] && smilecoordinateX == obstacles[i] + 1)
+                    {
+                    }
+                    else
+                    {
+                        smilecoordinateX--;
+                    }
+                }
+            }
+
         }
+
         smilecoordinate[0] = smilecoordinateY;
         smilecoordinate[1] = smilecoordinateX;
+        
         return smilecoordinate;
     }
 
