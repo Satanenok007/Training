@@ -10,66 +10,68 @@ static class Function
         char symbol = key.KeyChar;
         for (int i = 0; i < obstacles.Length; i++)
         {
-            if (symbol == 's')
+            if (i + 1 < obstacles.Length - 1)
             {
+                if (symbol == 's')
+                {
 
-                if (smilecoordinateY == obstacles[i] - 1 && smilecoordinateX == obstacles[i])
-                {
-                }
-                else
-                {
-                    if (smilecoordinateY < verticalLength - 2)
-                    {
-                        smilecoordinateY++;
-                    }
-                }
-            }
-            else if (symbol == 'w')
-            {
-                if (smilecoordinateY > 1)
-                {
-                    if (smilecoordinateY == obstacles[i] + 1 && smilecoordinateX == obstacles[i])
+                    if (smilecoordinateY + 1 == obstacles[i] && smilecoordinateX == obstacles[i + 1])
                     {
                     }
                     else
                     {
-                        smilecoordinateY--;
+                        if (smilecoordinateY < verticalLength - 2)
+                        {
+                            smilecoordinateY++;
+                        }
                     }
                 }
-            }
-            else if (symbol == 'd')
-            {
-
-                if (smilecoordinateY == obstacles[i] && smilecoordinateX == obstacles[i] - 1)
+                else if (symbol == 'w')
                 {
-                }
-                else
-                {
-                    if (smilecoordinateX < horizontalLength - 2)
+                    if (smilecoordinateY > 1)
                     {
-                        smilecoordinateX++;
+                        if (smilecoordinateY - 1 == obstacles[i] && smilecoordinateX == obstacles[i + 1])
+                        {
+                        }
+                        else
+                        {
+                            smilecoordinateY--;
+                        }
                     }
                 }
-            }
-            else if (symbol == 'a')
-            {
-                if (smilecoordinateX > 1)
+                else if (symbol == 'd')
                 {
-                    if (smilecoordinateY == obstacles[i] && smilecoordinateX == obstacles[i] + 1)
+
+                    if (smilecoordinateY == obstacles[i] && smilecoordinateX + 1 == obstacles[i + 1])
                     {
                     }
                     else
                     {
-                        smilecoordinateX--;
+                        if (smilecoordinateX < horizontalLength - 2)
+                        {
+                            smilecoordinateX++;
+                        }
                     }
                 }
+                else if (symbol == 'a')
+                {
+                    if (smilecoordinateX > 1)
+                    {
+                        if (smilecoordinateY == obstacles[i] && smilecoordinateX - 1 == obstacles[i + 1])
+                        {
+                        }
+                        else
+                        {
+                            smilecoordinateX--;
+                        }
+                    }
+                }
+                smilecoordinate[0] = smilecoordinateY;
+                smilecoordinate[1] = smilecoordinateX;
             }
-
         }
 
-        smilecoordinate[0] = smilecoordinateY;
-        smilecoordinate[1] = smilecoordinateX;
-        
+
         return smilecoordinate;
     }
 
