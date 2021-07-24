@@ -169,8 +169,66 @@ namespace HelloApp
             // result = number == 3 ? true : false;
             // Console.Write(result);
             // Console.WriteLine();
-        }
 
+
+            //Передача параметров по ссылке.Выходные параметры
+
+            // int x = 10;
+            // int y = 15;
+            // int temp;
+            // Addition(ref x, y);
+            // Console.WriteLine(x);
+
+            // static void Addition(ref int x, int y)
+            // {
+            //     x += y;
+            // }
+
+            // static void Sum(int x, int y, out int a)
+            // {
+            //     a = x + y;
+            // }
+            // Sum(10, 45, out temp);
+
+
+            //Сокращение методов
+            // static int Y1(int x)
+            // {
+            //     return x * x - 2 / x;
+            // }
+            // Y1(20);
+
+            // static int Y2(int x) => x * x - 2 / x;
+            // Y2(20);
+
+
+            //Кортежи
+            // var tuple1 = Method();
+            // Console.WriteLine(tuple1.Item1);
+            // Console.WriteLine(tuple1.Item2);
+            // static (int, int) Method()
+            // {
+            //     var res = (5, 10);
+            //     return res;
+            // }
+
+
+            //Перечисление enum
+            Console.Write(WeekDays.Friday);
+
+        }
+        enum WeekDays
+        {
+            Monday,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday,
+            Sunday,
+
+        }
     }
 }
+
 
