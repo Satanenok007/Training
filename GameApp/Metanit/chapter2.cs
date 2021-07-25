@@ -111,22 +111,6 @@ namespace HelloApp
             // }
             // while (j > 5);
 
-            // //Рекурсивные функции
-            // static int Function(int fibonacci)
-            // {
-            //     int x1 = 0;
-            //     int x2 = 1;
-            //     int temp;
-
-            //     for (int i = 0; i < fibonacci; i++)
-            //     {
-            //         temp = x1;
-            //         x1 = x2;
-            //         x2 += temp;
-            //     }
-
-            //     return x1;
-            // }
 
             //Ключевое слово params
 
@@ -213,20 +197,39 @@ namespace HelloApp
             // }
 
 
-            //Перечисление enum
-            Console.Write(WeekDays.Friday);
+            // //Рекурсивные функции
+            static int TheAreaOfTheTriangle(int x, int y)
+            {
+                if ((x == 1) && (y == 1))
+                {
+                    return 1;
+                }
+                else if (x > 1)
+                {
+                    return TheAreaOfTheTriangle(x - 1, y) + y;
+                }
+                else
+                {
+                    return TheAreaOfTheTriangle(x, y - 1) + 1;
+                }
+            }
+            int result = TheAreaOfTheTriangle(9, 2);
+            Console.WriteLine(result);
 
-        }
-        enum WeekDays
-        {
-            Monday,
-            Tuesday,
-            Wednesday,
-            Thursday,
-            Friday,
-            Saturday,
-            Sunday,
 
+            static int TheSquareOfTheNumber(int x)
+            {
+                if (x == 1)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return TheSquareOfTheNumber(x - 1) + 2 * x - 1;
+                }
+            }
+            int Result = TheSquareOfTheNumber(9);
+            Console.WriteLine(Result);
         }
     }
 }
