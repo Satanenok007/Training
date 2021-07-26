@@ -198,38 +198,72 @@ namespace HelloApp
 
 
             // //Рекурсивные функции
-            static int TheAreaOfTheTriangle(int x, int y)
-            {
-                if ((x == 1) && (y == 1))
-                {
-                    return 1;
-                }
-                else if (x > 1)
-                {
-                    return TheAreaOfTheTriangle(x - 1, y) + y;
-                }
-                else
-                {
-                    return TheAreaOfTheTriangle(x, y - 1) + 1;
-                }
-            }
-            int result = TheAreaOfTheTriangle(9, 2);
-            Console.WriteLine(result);
+            // static int TheAreaOfTheTriangle(int x, int y)
+            // {
+            //     if ((x == 1) && (y == 1))
+            //     {
+            //         return 1;
+            //     }
+            //     else if (x > 1)
+            //     {
+            //         return TheAreaOfTheTriangle(x - 1, y) + y;
+            //     }
+            //     else
+            //     {
+            //         return TheAreaOfTheTriangle(x, y - 1) + 1;
+            //     }
+            // }
+            // int result = TheAreaOfTheTriangle(9, 2);
+            // Console.WriteLine(result);
 
 
-            static int TheSquareOfTheNumber(int x)
+            // static int TheSquareOfTheNumber(int x)
+            // {
+            //     if (x == 1)
+            //     {
+            //         return 1;
+            //     }
+            //     else
+            //     {
+            //         return TheSquareOfTheNumber(x - 1) + 2 * x - 1;
+            //     }
+            // }
+            // int Result = TheSquareOfTheNumber(9);
+            // Console.WriteLine(Result);
+
+            //enum
+            static void MathOp(double x, double y, Operation op)
             {
-                if (x == 1)
+                double result = 0.0;
+
+                switch (op)
                 {
-                    return 1;
+                    case Operation.Add:
+                        result = x + y;
+                        break;
+                    case Operation.Subtract:
+                        result = x - y;
+                        break;
+                    case Operation.Multiply:
+                        result = x * y;
+                        break;
+                    case Operation.Divide:
+                        result = x / y;
+                        break;
                 }
-                else
-                {
-                    return TheSquareOfTheNumber(x - 1) + 2 * x - 1;
-                }
+
+                Console.WriteLine("Результат операции равен {0}", result);
             }
-            int Result = TheSquareOfTheNumber(9);
-            Console.WriteLine(Result);
+
+            MathOp(10, 5, Operation.Add);
+            MathOp(11, 5, Operation.Multiply);
+        }
+        enum Operation
+        {
+            Add = 1,
+            Subtract,
+            Multiply,
+            Divide
         }
     }
 }
