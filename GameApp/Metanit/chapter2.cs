@@ -231,40 +231,72 @@ namespace HelloApp
             // int Result = TheSquareOfTheNumber(9);
             // Console.WriteLine(Result);
 
-            //enum
-            static void MathOp(double x, double y, Operation op)
+
+            static void Foo(int i)
             {
-                double result = 0.0;
-
-                switch (op)
+                Console.WriteLine(i);
+                if (i >= 3)
                 {
-                    case Operation.Add:
-                        result = x + y;
-                        break;
-                    case Operation.Subtract:
-                        result = x - y;
-                        break;
-                    case Operation.Multiply:
-                        result = x * y;
-                        break;
-                    case Operation.Divide:
-                        result = x / y;
-                        break;
+                    return;
                 }
-
-                Console.WriteLine("Результат операции равен {0}", result);
+                i++;
+                Foo(i);
             }
+            Foo(0);
 
-            MathOp(10, 5, Operation.Add);
-            MathOp(11, 5, Operation.Multiply);
+
+            int[] A = { 5, 7, 2, -1 };
+            int n = 4;
+            int sum;
+            sum = Sum(0, A, n);
+
+            static int Sum(int i, int[] A, int n)
+            {
+                if (i == n - 1)
+                {
+                    return A[i];
+                }
+                else
+                {
+                    return A[i] + Sum(i + 1, A, n);
+                }
+            }
+            Console.WriteLine(sum);
+
+            //enum
+            // static void MathOp(double x, double y, Operation op)
+            // {
+            //     double result = 0.0;
+
+            //     switch (op)
+            //     {
+            //         case Operation.Add:
+            //             result = x + y;
+            //             break;
+            //         case Operation.Subtract:
+            //             result = x - y;
+            //             break;
+            //         case Operation.Multiply:
+            //             result = x * y;
+            //             break;
+            //         case Operation.Divide:
+            //             result = x / y;
+            //             break;
+            //     }
+
+            //     Console.WriteLine("Результат операции равен {0}", result);
+            // }
+
+            // MathOp(10, 5, Operation.Add);
+            // MathOp(11, 5, Operation.Multiply);
         }
-        enum Operation
-        {
-            Add = 1,
-            Subtract,
-            Multiply,
-            Divide
-        }
+        // enum Operation
+        // {
+        //     Add = 1,
+        //     Subtract,
+        //     Multiply,
+        //     Divide
+        // }
     }
 }
 
