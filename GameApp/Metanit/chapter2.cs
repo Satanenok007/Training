@@ -263,41 +263,66 @@ namespace HelloApp
             }
             Console.WriteLine(sum);
 
-            //enum
-            // static void MathOp(double x, double y, Operation op)
-            // {
-            //     double result = 0.0;
 
-            //     switch (op)
-            //     {
-            //         case Operation.Add:
-            //             result = x + y;
-            //             break;
-            //         case Operation.Subtract:
-            //             result = x - y;
-            //             break;
-            //         case Operation.Multiply:
-            //             result = x * y;
-            //             break;
-            //         case Operation.Divide:
-            //             result = x / y;
-            //             break;
-            //     }
-
-            //     Console.WriteLine("Результат операции равен {0}", result);
-            // }
-
-            // MathOp(10, 5, Operation.Add);
-            // MathOp(11, 5, Operation.Multiply);
+            static string recursion(int a, int b)
+            {
+                if (a > b)
+                {
+                    if (a == b)
+                    {
+                        return a.ToString();
+                    }
+                    return a + " " + recursion(a - 1, b);
+                }
+                else
+                {
+                    if (a == b)
+                    {
+                        return a.ToString();
+                    }
+                    return a + " " + recursion(a + 1, b);
+                }
+            }
+            string result = recursion(20, 15);
+            string Result = recursion(10, 15);
+            Console.WriteLine(result);
+            Console.WriteLine(Result);
         }
-        // enum Operation
+
+        //enum
+        // static void MathOp(double x, double y, Operation op)
         // {
-        //     Add = 1,
-        //     Subtract,
-        //     Multiply,
-        //     Divide
+        //     double result = 0.0;
+
+        //     switch (op)
+        //     {
+        //         case Operation.Add:
+        //             result = x + y;
+        //             break;
+        //         case Operation.Subtract:
+        //             result = x - y;
+        //             break;
+        //         case Operation.Multiply:
+        //             result = x * y;
+        //             break;
+        //         case Operation.Divide:
+        //             result = x / y;
+        //             break;
+        //     }
+
+        //     Console.WriteLine("Результат операции равен {0}", result);
         // }
+
+        // MathOp(10, 5, Operation.Add);
+        // MathOp(11, 5, Operation.Multiply);
     }
+    // enum Operation
+    // {
+    //     Add = 1,
+    //     Subtract,
+    //     Multiply,
+    //     Divide
+    // }
 }
 
 
