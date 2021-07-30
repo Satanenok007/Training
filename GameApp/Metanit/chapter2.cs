@@ -287,6 +287,17 @@ namespace HelloApp
             string Result = recursion(10, 15);
             Console.WriteLine(result);
             Console.WriteLine(Result);
+
+
+            static String recursions(int n)
+            {
+                if (n == 1)
+                {
+                    return "1";
+                }
+                return recursions(n - 1) + " " + n;
+            }
+            recursions(10);
         }
 
         //enum
