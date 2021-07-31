@@ -289,15 +289,15 @@ namespace HelloApp
             Console.WriteLine(Result);
 
 
-            static String recursions(int n)
+            static string PrintNumbersFromZeroToN(int n)
             {
                 if (n == 1)
                 {
                     return "1";
                 }
-                return recursions(n - 1) + " " + n;
+                return PrintNumbersFromZeroToN(n - 1) + " " + n;
             }
-            recursions(10);
+            PrintNumbersFromZeroToN(10);
         }
 
         //enum
