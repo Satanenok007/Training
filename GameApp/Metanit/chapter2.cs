@@ -232,72 +232,97 @@ namespace HelloApp
             // Console.WriteLine(Result);
 
 
-            static void Foo(int i)
+            // static void Foo(int i)
+            // {
+            //     Console.WriteLine(i);
+            //     if (i >= 3)
+            //     {
+            //         return;
+            //     }
+            //     i++;
+            //     Foo(i);
+            // }
+            // Foo(0);
+
+
+            // int[] A = { 5, 7, 2, -1 };
+            // int n = 4;
+            // int sum;
+            // sum = Sum(0, A, n);
+
+            // static int Sum(int i, int[] A, int n)
+            // {
+            //     if (i == n - 1)
+            //     {
+            //         return A[i];
+            //     }
+            //     else
+            //     {
+            //         return A[i] + Sum(i + 1, A, n);
+            //     }
+            // }
+            // Console.WriteLine(sum);
+
+
+            // static string recursion(int a, int b)
+            // {
+            //     if (a > b)
+            //     {
+            //         if (a == b)
+            //         {
+            //             return a.ToString();
+            //         }
+            //         return a + " " + recursion(a - 1, b);
+            //     }
+            //     else
+            //     {
+            //         if (a == b)
+            //         {
+            //             return a.ToString();
+            //         }
+            //         return a + " " + recursion(a + 1, b);
+            //     }
+            // }
+            // string result = recursion(20, 15);
+            // string Result = recursion(10, 15);
+            // Console.WriteLine(result);
+            // Console.WriteLine(Result);
+
+
+            // static string PrintNumbersFromZeroToN(int n)
+            // {
+            //     if (n == 1)
+            //     {
+            //         return "1";
+            //     }
+            //     return PrintNumbersFromZeroToN(n - 1) + " " + n;
+            // }
+            // PrintNumbersFromZeroToN(10);
+
+            static bool CheckingTheNumberForSimplicity(int x, int y)
             {
-                Console.WriteLine(i);
-                if (i >= 3)
+                if (x < 2)
                 {
-                    return;
+                    return false;
                 }
-                i++;
-                Foo(i);
-            }
-            Foo(0);
-
-
-            int[] A = { 5, 7, 2, -1 };
-            int n = 4;
-            int sum;
-            sum = Sum(0, A, n);
-
-            static int Sum(int i, int[] A, int n)
-            {
-                if (i == n - 1)
+                else if (x == 2)
                 {
-                    return A[i];
+                    return true;
+                }
+                else if (x % y == 0)
+                {
+                    return false;
+                }
+                else if (y < x / 2)
+                {
+                    return CheckingTheNumberForSimplicity(x, y + 1);
                 }
                 else
                 {
-                    return A[i] + Sum(i + 1, A, n);
+                    return true;
                 }
             }
-            Console.WriteLine(sum);
-
-
-            static string recursion(int a, int b)
-            {
-                if (a > b)
-                {
-                    if (a == b)
-                    {
-                        return a.ToString();
-                    }
-                    return a + " " + recursion(a - 1, b);
-                }
-                else
-                {
-                    if (a == b)
-                    {
-                        return a.ToString();
-                    }
-                    return a + " " + recursion(a + 1, b);
-                }
-            }
-            string result = recursion(20, 15);
-            string Result = recursion(10, 15);
-            Console.WriteLine(result);
-            Console.WriteLine(Result);
-
-
-            static string PrintNumbersFromZeroToN(int n)
-            {
-                if (n == 1)
-                {
-                    return "1";
-                }
-                return PrintNumbersFromZeroToN(n - 1) + " " + n;
-            }
-            PrintNumbersFromZeroToN(10);
+            CheckingTheNumberForSimplicity(18, 2);
         }
 
         //enum
@@ -335,5 +360,4 @@ namespace HelloApp
     //     Divide
     // }
 }
-
 
