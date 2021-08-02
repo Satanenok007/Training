@@ -4,8 +4,8 @@ namespace HelloApp
 {
     public static class Program
     {
-        public static void Main()
-        {
+        // public static void Main()
+        // {
             // Console.Write("Введите свое имя: ");
             // string myName = Console.ReadLine();
             // Console.WriteLine($"Привет {myName}");
@@ -299,31 +299,31 @@ namespace HelloApp
             // }
             // PrintNumbersFromZeroToN(10);
 
-            static bool CheckingTheNumberForSimplicity(int x, int y)
-            {
-                if (x < 2)
-                {
-                    return false;
-                }
-                else if (x == 2)
-                {
-                    return true;
-                }
-                else if (x % y == 0)
-                {
-                    return false;
-                }
-                else if (y < x / 2)
-                {
-                    return CheckingTheNumberForSimplicity(x, y + 1);
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            CheckingTheNumberForSimplicity(18, 2);
-        }
+        //     static bool CheckingTheNumberForSimplicity(int x, int y)
+        //     {
+        //         if (x < 2)
+        //         {
+        //             return false;
+        //         }
+        //         else if (x == 2)
+        //         {
+        //             return true;
+        //         }
+        //         else if (x % y == 0)
+        //         {
+        //             return false;
+        //         }
+        //         else if (y < x / 2)
+        //         {
+        //             return CheckingTheNumberForSimplicity(x, y + 1);
+        //         }
+        //         else
+        //         {
+        //             return true;
+        //         }
+        //     }
+        //     CheckingTheNumberForSimplicity(18, 2);
+        // }
 
         //enum
         // static void MathOp(double x, double y, Operation op)
