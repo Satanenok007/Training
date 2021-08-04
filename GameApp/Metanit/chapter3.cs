@@ -1,4 +1,6 @@
 using System;
+using Person = HelloApp.User;
+using Printer = System.Console;
 public class Programs
 {
     // class Person
@@ -113,11 +115,11 @@ public class Programs
         // Console.WriteLine(state2.country.x); // 8
 
 
-        Person p = new Person { name = "Tom", age = 23 };
-        ChangePerson(ref p);
+        // Person p = new Person { name = "Tom", age = 23 };
+        // ChangePerson(ref p);
 
-        Console.WriteLine(p.name); // Alice
-        Console.WriteLine(p.age); // 23
+        // Console.WriteLine(p.name); // Alice
+        // Console.WriteLine(p.age); // 23
     }
 
     // static void Calculate(int t)
@@ -141,18 +143,37 @@ public class Programs
     // }
 
 
-    static void ChangePerson(ref Person person)
+    // static void ChangePerson(ref Person person)
+    // {
+    //     // сработает
+    //     person.name = "Alice";
+    //     // тоже сработает, поскольку есть ключевое слово ref
+    //     person = new Person { name = "Bill", age = 45 };
+    //     //сработает только в рамках данного метода
+    //     person = new Person {name = "Kate", age = 28};
+    // }
+    // class Person
+    // {
+    //     public string name;
+    //     public int age;
+    // }
+}
+namespace HelloApp
+{
+    class Test
     {
-        // сработает
-        person.name = "Alice";
-        // тоже сработает, поскольку есть ключевое слово ref
-        person = new Person { name = "Bill", age = 45 };
-        //сработает только в рамках данного метода
-        person = new Person {name = "Kate", age = 28};
+        static void Main(string[] args)
+        {
+            Person person = new Person();
+            person.name = "Tom";
+            Printer.WriteLine(person.name);
+            Printer.Read();
+        }
     }
-    class Person
+
+    class User
     {
         public string name;
-        public int age;
     }
 }
+
