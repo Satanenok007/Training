@@ -497,7 +497,7 @@ using System;
 // class  MathLibs
 // {
 //     public readonly double K = 23;  // можно так инициализировать
- 
+
 //     public  MathLibs
 // (double _k)
 //     {
@@ -509,7 +509,7 @@ using System;
 //         //K = 34;
 //     }
 // }
- 
+
 // class Programs
 // {
 //     static void Main(string[] args)
@@ -518,10 +518,10 @@ using System;
 //          mathLib = new  MathLibs
 //         (3.8);
 //         Console.WriteLine(mathLib.K); // 3.8
- 
+
 //         //mathLib.K = 7.6; // поле для чтения нельзя установить вне своего класса
 //         Console.ReadLine();
- 
+
 //     }
 // }
 
@@ -543,4 +543,90 @@ using System;
 //         this.Name = name;
 //         this.Age = age;
 //     }
+// }
+
+
+
+//Перегрузка операторов
+
+// Counter c1 = new Counter { Value = 23 };
+// Counter c2 = new Counter { Value = 45 };
+
+// static void Main(string[] args)
+// {
+//     Counter c1 = new Counter { Value = 23 };
+//     Counter c2 = new Counter { Value = 45 };
+//     bool result = c1 > c2;
+//     Console.WriteLine(result); // false
+
+//     Counter c3 = c1 + c2;
+//     Console.WriteLine(c3.Value);  // 23 + 45 = 68
+// }
+// bool result = c1 > c2;
+// Counter c3 = c1 + c2;
+// class Counter
+// {
+//     public int Value { get; set; }
+
+// }
+
+// class Counter
+// {
+//     public int Value { get; set; }
+
+//     public static Counter operator +(Counter c1, Counter c2)
+//     {
+//         return new Counter { Value = c1.Value + c2.Value };
+//     }
+//     public static bool operator >(Counter c1, Counter c2)
+//     {
+//         return c1.Value > c2.Value;
+//     }
+//     public static bool operator <(Counter c1, Counter c2)
+//     {
+//         return c1.Value < c2.Value;
+//     }
+// }
+
+// public static Counter operator +(Counter c1, Counter c2)
+// {
+//     return new Counter { Value = c1.Value + c2.Value };
+// }
+
+
+//Значение null
+
+// object o = null;
+// string s = null;
+
+// object x = null;
+// object y = x ?? 100;  // равно 100, так как x равен null
+
+// object z = 200;
+// object t = z ?? 44; // равно 200, так как z не равен null
+
+
+// class User
+// {
+//     public Phone Phone { get; set; }
+// }
+
+// class Phone
+// {
+//     public Company Company { get; set; }
+// }
+
+// class Company
+// {
+//     public string Name { get; set; }
+// }
+
+// User user = new User();
+// Console.WriteLine(user.Phone.Company.Name);
+
+
+// if(user!=null && user.Phone!=null && user.Phone.Company!=null)
+// {
+//     string companyName = user.Phone.Company.Name;
+//     Console.WriteLine(companyName);
 // }
