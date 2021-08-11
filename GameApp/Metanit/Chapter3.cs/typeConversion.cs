@@ -1,9 +1,9 @@
 using System;
 
-int i;
-float f;
-i = 10;
-f = i; // присвоить целое значение переменной типа float
+// int i;
+// float f;
+// i = 10;
+// f = i; // присвоить целое значение переменной типа float
 
 
 //Неявное приведение типов(автоматическое)
@@ -30,7 +30,7 @@ f = i; // присвоить целое значение переменной т
 
 //Приведение несовместимых типов
 
-// namespace ConsoleApplication1
+// namespace ConsoleApplication
 // {
 //     class TypeConversion
 //     {
