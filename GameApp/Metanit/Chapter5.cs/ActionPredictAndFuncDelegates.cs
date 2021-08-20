@@ -26,6 +26,33 @@ namespace ActionPredictAndFuncDelegates
             {
                 Console.WriteLine("Сумма чисел: " + (x1 + x2));
             }
+
+
+            static void Mains(string[] args)
+            {
+                Action<double, double> actiondelegate;
+                actiondelegate = Sum;
+                Operation(11.88, 6.55, actiondelegate);
+                actiondelegate = Substract;
+                Operation(100.22, 9.64, actiondelegate);
+                Console.Read();
+            }
+
+            static void Operation(double a, double b, Action<double, double> actiondelegate)
+            {
+                if (a > b)
+                    actiondelegate(a, b);
+            }
+
+            static void Sum(double a, double b)
+            {
+                Console.WriteLine("Сумма чисел: " + (a + b));
+            }
+
+            static void Substract(double a, double b)
+            {
+                Console.WriteLine("Разность чисел: " + (a - b));
+            }
         }
 
         class Predict
@@ -36,6 +63,9 @@ namespace ActionPredictAndFuncDelegates
                 Console.WriteLine(isPositive(20));
                 Console.WriteLine(isPositive(-20));
             }
+
+
+            
         }
 
         class Func
@@ -70,5 +100,7 @@ namespace ActionPredictAndFuncDelegates
             }
 
         }
+
+
     }
 }
