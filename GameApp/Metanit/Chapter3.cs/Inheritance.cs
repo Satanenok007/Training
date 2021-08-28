@@ -30,8 +30,8 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            Person p = new Person("Bill");
-            p.Display();
+            Person p1 = new Person("Bill");
+            p1.Display();
             Employee emp = new Employee("Tom", "Microsoft");
             emp.Display();
             Console.Read();
@@ -71,7 +71,7 @@ namespace Inheritance
         {
             static void Main(string[] args)
             {
-                Employee tom = new Employee("Tom", 22, "Microsoft");
+                Employee person1 = new Employee("Alise", 25, "Microsoft");
             }
         }
     }
