@@ -2,14 +2,13 @@ using System;
 
 namespace CreatingExceptionClasses
 {
-    class Program
+    class Book
     {
-
         static void Main(string[] args)
         {
             try
             {
-                Person p = new Person { Name = "Tom", Age = 17 };
+                Person p1 = new Person { Name = "Sofia", Age = 16 };
             }
             catch (Exception ex)
             {
@@ -18,7 +17,6 @@ namespace CreatingExceptionClasses
             Console.Read();
         }
     }
-
     class Person
     {
         private int age;
@@ -30,7 +28,7 @@ namespace CreatingExceptionClasses
             {
                 if (value < 18)
                 {
-                    throw new Exception("Лицам до 18 регистрация запрещена");
+                    throw new Exception($"Лицам до 18 регистрация запрещена {value}");
                 }
                 else
                 {
@@ -40,86 +38,36 @@ namespace CreatingExceptionClasses
         }
     }
 
-    class PersonException : Exception
+    class PersonException : ArgumentException
     {
         public PersonException(string message)
             : base(message)
         { }
     }
 
-    class ExceptionHandlingInTheMainProgram
+    class PersonExceptions : ArgumentException
     {
-        class Program
+        public int Value { get; }
+        public PersonExceptions(string message, int val)
+            : base(message)
         {
-            static void Main(string[] args)
-            {
-                try
-                {
-                    Person p = new Person { Age = 17 };
-                }
-                catch (PersonException ex)
-                {
-                    Console.WriteLine("Ошибка: " + ex.Message);
-                }
-                Console.Read();
-            }
-        }
-        class Person
-        {
-            private int age;
-            public int Age
-            {
-                get { return age; }
-                set
-                {
-                    if (value < 18)
-                    {
-                        throw new PersonException("Лицам до 18 регистрация запрещена");
-                    }
-                    else
-                    {
-                        age = value;
-                    }
-                }
-            }
+            Value = val;
         }
     }
 
-    // class GettingAProperty
-    // {
-    //     class Person
-    //     {
-    //         private int age;
-    //         public int Age
-    //         {
-    //             get { return age; }
-    //             set
-    //             {
-    //                 if (value < 18)
-    //                 {
-    //                     throw new PersonException("Лицам до 18 регистрация запрещена", value);
-    //                 }
-    //                 else
-    //                 {
-    //                     age = value;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     class Program
-    //     {
-    //         static void Main(string[] args)
-    //         {
-    //             try
-    //             {
-    //                 Person p = new Person { Age = 13 };
-    //             }
-    //             catch (PersonException ex)
-    //             {
-    //                 Console.WriteLine($"Ошибка: {ex.Message}");
-    //                 Console.WriteLine($"Некорректное значение: {ex.Value}");
-    //             }
-    //         }
-    //     }
-    // }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                Person p = new Person { Name = "Tom", Age = 13 };
+            }
+            catch (PersonException ex)
+            {
+                Console.WriteLine($"Ошибка: {ex.Message}");
+            }
+            Console.Read();
+        }
+    }
 }
