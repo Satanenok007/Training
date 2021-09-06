@@ -8,25 +8,18 @@ namespace ExceptionGenerationAndTheThrowStatement
         {
             try
             {
-                try
+                Console.Write("Введите строку: ");
+                string message = Console.ReadLine();
+                if (message.Length > 6)
                 {
-                    Console.Write("Введите строку: ");
-                    string message = Console.ReadLine();
-                    if (message.Length > 6)
-                    {
-                        throw new Exception("Длина строки больше 6 символов");
-                    }
-                }
-                catch
-                {
-                    Console.WriteLine("Возникло исключение");
-                    throw;
+                    throw new Exception("Длина строки больше 6 символов");
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Ошибка: {e.Message}");
             }
+            Console.Read();
         }
     }
 }
