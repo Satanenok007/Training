@@ -2,24 +2,63 @@ using System;
 
 namespace AnonymousMethods
 {
-    class Program
+    class Examlpe1
     {
-        delegate void MessageHandler(string message);
-        static void Main(string[] args)
+        class Program
         {
-            ShowMessage("hello!", delegate (string mes)
+            delegate void MessageHandler(string message);
+            static void Main(string[] args)
             {
-                Console.WriteLine(mes);
-            });
+                MessageHandler handler = delegate (string mes)
+                {
+                    Console.WriteLine(mes);
+                };
+                handler("hello");
+
+            }
         }
-        static void ShowMessage(string mes, MessageHandler handler)
+    }
+
+    class Example2
+    {
+        class Program
         {
-            handler(mes);
+            delegate void MessageHandler(string message);
+            static void Main(string[] args)
+            {
+                ShowMessage("hello)", delegate (string mes)
+                {
+                    Console.WriteLine(mes);
+                });
+
+            }
+            static void ShowMessage(string mes, MessageHandler handler)
+            {
+                handler(mes);
+            }
         }
+    }
 
+    class Example3
+    {
+        class Program
+        {
+            delegate void MessageHandler(string message);
+            static void Main(string[] args)
+            {
+                MessageHandler handler = delegate
+                {
+                    Console.WriteLine("анонимный метод");
+                };
+                handler("hello");
+            }
+        }
+    }
 
+    class Example4
+    {
         delegate int Operation(int x, int y);
-        static void Mains(string[] args)
+        static void Main(string[] args)
         {
             Operation operation = delegate (int x, int y)
             {
