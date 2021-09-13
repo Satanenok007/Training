@@ -236,4 +236,40 @@ namespace Delegates
             }
         }
     }
+
+    class Example2
+    {
+        delegate int IntOperation(int i, int j);
+
+        class Program
+        {
+            static int Sum(int x, int y)
+            {
+                return x + y;
+            }
+
+            static int Prz(int x, int y)
+            {
+                return x * y;
+            }
+
+            static int Del(int x, int y)
+            {
+                return x / y;
+            }
+
+            static void Main()
+            {
+                IntOperation op1 = new IntOperation(Sum);
+
+                int result = op1(5, 10);
+                Console.WriteLine("Сумма: " + result);
+
+                op1 = new IntOperation(Prz);
+                result = op1(5, 10);
+                Console.WriteLine("Произведение: " + result);
+
+            }
+        }
+    }
 }
