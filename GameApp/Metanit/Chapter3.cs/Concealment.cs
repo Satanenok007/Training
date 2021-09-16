@@ -57,4 +57,24 @@ namespace Concealment
             public new const int G = 15;
         }
     }
+
+    class Example2
+    {
+        class FirstClass
+        {
+            public void DoSomthing()
+            {
+                Console.WriteLine("FirstClass.DoSomething");
+            }
+        }
+        class SecondClass : FirstClass
+        {
+            public new void DoSomthing()
+            {
+                Console.WriteLine("SecondClass.DoSomething");
+            }
+        }
+
+
+    }
 }
