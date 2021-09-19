@@ -38,4 +38,45 @@ namespace Structures
             }
         }
     }
+
+    class Example2
+    {
+        class Movies
+        {
+            struct Films
+            {
+                public string name;
+                public int yearOfRelease;
+                public int time;
+
+                public Films(string name, int yearOfRelease, int time)
+                {
+                    this.name = name;
+                    this.yearOfRelease = yearOfRelease;
+                    this.time = time;
+
+                }
+
+                public void InformationAboutTheFilms()
+                {
+                    Console.WriteLine($"Name: {name}  Year of realease: {yearOfRelease}, time: {time}");
+                }
+            }
+
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    Films f1;
+                    f1.name = "The silence of the lambs";
+                    f1.yearOfRelease = 1991;
+                    f1.time = 144;
+                    f1.InformationAboutTheFilms();
+
+                    Films f2 = new Films("White captivity", 2006, 120);
+                    f2.InformationAboutTheFilms();
+                }
+            }
+        }
+    }
 }
