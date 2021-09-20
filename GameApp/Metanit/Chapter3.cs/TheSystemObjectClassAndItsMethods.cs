@@ -58,4 +58,23 @@ namespace TheSystemObjectClassAndItsMethods
 
         }
     }
+
+    class Example2
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                var m = Environment.Version;
+
+                Console.WriteLine("Тип m: " + m.GetType());
+
+                string s = m.ToString();
+                Console.WriteLine("Моя версия .NET Framework: " + s);
+
+                Version v = (Version)m.Clone();
+                Console.WriteLine("Значение переменной v: " + v);
+            }
+        }
+    }
 }

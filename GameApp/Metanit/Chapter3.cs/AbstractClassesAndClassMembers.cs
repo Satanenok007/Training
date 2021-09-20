@@ -34,4 +34,44 @@ namespace AbstractClassesAndClassMembers
             series.Info();
         }
     }
+
+    class Example2
+    {
+        abstract class A_Abstract
+        {
+            public int a;
+        }
+
+        class B : A_Abstract
+        {
+            public int b;
+        }
+
+        abstract class C_Abstract : B
+        {
+            public int c;
+        }
+
+        class D : C_Abstract
+        {
+            public int d;
+        }
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                B objB = new B();
+                D objD = new D();
+
+                objB.a = 23;
+                objB.b = 33;
+
+                objD.a = 77;
+                objD.b = 777;
+                objD.c = 7777;
+                objD.d = 7777;
+            }
+        }
+    }
 }
