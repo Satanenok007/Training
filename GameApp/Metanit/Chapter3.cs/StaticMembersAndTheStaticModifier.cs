@@ -54,6 +54,54 @@ namespace StaticMembersAndTheStaticModifier
 
             }
         }
+    }
+    class Example2
+    {
+        class MyCircle
+        {
+            public static double SqrCircle(int radius)
+            {
+                return Math.PI * radius * radius;
+            }
+            public static double LongCircle(int radius)
+            {
+                return 2 * Math.PI * radius;
+            }
+        }
 
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int r = 10;
+                Console.WriteLine("Площадь круга радиусом {0} = {1:#.##}", r, MyCircle.SqrCircle(r));
+                Console.WriteLine("Длина круга равна {0:#.##}", MyCircle.LongCircle(r));
+            }
+        }
+    }
+    class Example3
+    {
+        class MyClass
+        {
+            public static int a;
+            public static int b;
+
+            static MyClass()
+            {
+                a = 12;
+            }
+            public MyClass()
+            {
+                b = 12;
+            }
+        }
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Console.WriteLine("Доступ к экземпляру класса a: " + MyClass.a);
+                Console.WriteLine("Доступ к экземпляру класса b: " + MyClass.b);
+            }
+        }
     }
 }
