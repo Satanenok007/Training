@@ -38,4 +38,20 @@ namespace ValueNull
             }
         }
     }
+
+    class Example2
+    {
+        static void Main(string[] args)
+        {
+            int? x;
+            int? y;
+
+            x = null;
+            y = x ?? 50;
+            Console.WriteLine("y = {0}", y);
+            x = 20;
+            y = x ?? 50;
+            Console.WriteLine("y = {0}", y);
+        }
+    }
 }
