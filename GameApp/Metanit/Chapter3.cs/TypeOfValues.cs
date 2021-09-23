@@ -49,10 +49,67 @@ namespace TypeOfValues
 
             person4.country.city = "New Orlean";
             person3 = person4;
-            person4.country.city = "New York"; // теперь и state1.country.x=8, так как person3.country и person4.country указывают на один объект в хипе
+            person4.country.city = "New York"; // теперь и person3 = "New York", так как person3.country и person4.country указывают на один объект в хипе
 
             Console.WriteLine(person3.country.city); // New York
             Console.WriteLine(person4.country.city); // New York
+        }
+    }
+
+    class Example2
+    {
+        struct Person
+        {
+            public string name;
+            public int age;
+            public PlaceOfWork company;
+        }
+        class PlaceOfWork
+        {
+            public string position;
+            public string company;
+        }
+        class Program
+        {
+            private static void Main(string[] args)
+            {
+                Person p1 = new Person(); // Структура
+                Person p2 = new Person();
+
+                p2.name = "Liam";
+                p2.age = 27;
+                p1 = p2;
+                p2.name = "Mason";
+
+                Console.WriteLine(p1.name);
+                Console.WriteLine(p2.name);
+
+
+                PlaceOfWork pl1 = new PlaceOfWork(); // Класс
+                PlaceOfWork pl2 = new PlaceOfWork();
+
+                pl2.position = "Menager";
+                pl2.company = "KFC";
+                pl1 = pl2;
+                pl2.position = "Order collector";
+
+                Console.WriteLine(pl1.position);
+                Console.WriteLine(pl2.position);
+
+
+
+                Person p3 = new Person();
+                Person p4 = new Person();
+
+                p4.company = new PlaceOfWork();
+
+                p4.company.company = "McDonald's";
+                p3 = p4;
+                p4.company.company = "KFC";
+
+                Console.WriteLine(p3.company.company);
+                Console.WriteLine(p4.company.company);
+            }
         }
     }
 }
