@@ -41,6 +41,36 @@ namespace Lambdas
                 Console.WriteLine("Привет мир!");
             }
         }
+
+        static void Examplew2(string[] args)
+        {
+            Operation operation = (x, y) => x + y;
+            Console.WriteLine(operation(10, 20));
+            Console.WriteLine(operation(40, 20));
+
+            Square square = i => i * i;
+            int z = square(6);
+            Console.WriteLine(z);
+
+            Hello h1 = () => Console.WriteLine("Hello");
+            Hello h2 = () => Console.WriteLine("Welcome");
+            h1();
+            h2();
+
+
+            int x = 9;
+            ChangeHandler ch = (ref int n) => n = n * 2;
+            ch(ref x);
+            Console.WriteLine(x);
+
+
+            Hello mes = () => Message();
+            mes();
+            static void Message()
+            {
+                Console.WriteLine("Hello World!");
+            }
+        }
     }
 
     class LambdasMethods
