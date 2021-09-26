@@ -54,4 +54,58 @@ namespace FindingTheCatchBlockWhenHandlingExceptions
             Console.WriteLine("Конец M2");
         }
     }
+
+    class Example2
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                try
+                {
+                    Test.Method1();
+                }
+                catch (DivideByZeroException ex)
+                {
+                    Console.WriteLine($"Catch в Main : {ex.Message}");
+                }
+                finally
+                {
+                    Console.WriteLine("Finally в Main");
+                }
+            }
+        }
+        class Test
+        {
+            public static void Method1()
+            {
+                try
+                {
+                    Method2();
+                }
+                catch (IndexOutOfRangeException ex)
+                {
+                    Console.WriteLine($"Catch в Method1 : {ex.Message}");
+                }
+                finally
+                {
+                    Console.WriteLine("Finally в Method1");
+                }
+                Console.WriteLine("Конец Method1");
+            }
+            static void Method2()
+            {
+                try
+                {
+                    int i = 25;
+                    int j = i / 0;
+                }
+                finally
+                {
+                    Console.WriteLine("Finally в Method2");
+                }
+                Console.WriteLine("Конец Method2");
+            }
+        }
+    }
 }
