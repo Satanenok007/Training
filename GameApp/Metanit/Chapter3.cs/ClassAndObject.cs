@@ -75,5 +75,48 @@ namespace ClassAndObject
 
         }
     }
+    class Exeption3
+    {
+
+        class Person
+        {
+            public string name;
+            public string surname;
+            public int age;
+            public string placeOfResidence;
+            public string placeOfWork;
+            public string position;
+            public void Print()
+            {
+                Console.WriteLine($"Name: {name}");
+                Console.WriteLine($"Surname: {surname}");
+                Console.WriteLine($"Age: {age}");
+                Console.WriteLine($"Plase of residence: {placeOfResidence}");
+                Console.WriteLine($"Place of work: {placeOfWork}");
+                Console.WriteLine($"Position: {position}");
+            }
+        }
+        class Program
+        {
+            static Person GetPerson()
+            {
+                Person p1 = new Person();
+                p1.name = "Frank";
+                p1.surname = "Pitt";
+                p1.age = 31;
+                p1.placeOfResidence = "Mexico";
+                p1.placeOfWork = "Dr.Vet";
+                p1.position = "doctor";
+                return p1;
+            }
+
+            static void Main(string[] args)
+            {
+                var person1 = GetPerson();
+                person1.Print();
+            }
+
+        }
+    }
 }
 

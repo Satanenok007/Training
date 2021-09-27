@@ -2,7 +2,7 @@ using System;
 
 namespace ExceptionGenerationAndTheThrowStatement
 {
-    class Program
+    class Exeption1
     {
         static void Main(string[] args)
         {
@@ -20,6 +20,25 @@ namespace ExceptionGenerationAndTheThrowStatement
                 Console.WriteLine($"Ошибка: {e.Message}");
             }
             Console.Read();
+        }
+    }
+    class Exeption2
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                Console.Write("Введите номер: ");
+                string mes = Console.ReadLine();
+                if (mes.Length < 10)
+                {
+                    throw new Exception("Номер меньше 10-ти символов");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка: {ex.Message}");
+            }
         }
     }
 }
