@@ -27,4 +27,31 @@ namespace NamespacesAliasesAndStaticImports
     {
         public string name;
     }
+
+    class Example2
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Order order1 = new Order(6);
+                Person person1 = new Person();
+                person1.name = "Jack";
+                Printer.WriteLine(person1.name);
+            }
+        }
+        class Order
+        {
+            public int Id { get; private set; }
+            public Order(int _id)
+            {
+                Id = _id;
+            }
+        }
+
+        class User
+        {
+            public string name;
+        }
+    }
 }

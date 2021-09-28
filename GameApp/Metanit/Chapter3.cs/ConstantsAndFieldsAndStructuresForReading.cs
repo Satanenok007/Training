@@ -47,4 +47,29 @@ namespace ConstantsAndFieldsAndStructuresForReading
         }
 
     }
+
+    class Example3
+    {
+        class Films
+        {
+            public const int moviesWithoutASubscription = 1000;
+            public readonly int moviesBySubscription = 100000;
+
+            public Films(int _film)
+            {
+                moviesBySubscription = _film;
+            }
+        }
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int p1 = Films.moviesWithoutASubscription + 10;
+                Console.WriteLine(p1);
+                Films p2 = new Films(15);
+                Console.WriteLine(p2.moviesBySubscription);
+            }
+        }
+
+    }
 }
