@@ -1,5 +1,5 @@
 using System;
-using Person = NamespacesAliasesAndStaticImports.User;
+using Persons = NamespacesAliasesAndStaticImports.User;
 using Printer = System.Console;
 
 namespace NamespacesAliasesAndStaticImports
@@ -9,7 +9,7 @@ namespace NamespacesAliasesAndStaticImports
         static void Main(string[] args)
         {
             Account account = new Account(4);
-            Person person = new Person();
+            Persons person = new Persons();
             person.name = "Mason";
             Printer.WriteLine(person.name);
         }
@@ -35,7 +35,7 @@ namespace NamespacesAliasesAndStaticImports
             static void Main(string[] args)
             {
                 Order order1 = new Order(6);
-                Person person1 = new Person();
+                Persons person1 = new Persons();
                 person1.name = "Jack";
                 Printer.WriteLine(person1.name);
             }
