@@ -40,7 +40,7 @@ namespace StaticMembersAndTheStaticModifier
         }
         class Programs
         {
-            static void Main(string[] args)
+            static void MainAccount(string[] args)
             {
                 Console.WriteLine(Account.book);
                 Account.book += 10;
@@ -71,7 +71,7 @@ namespace StaticMembersAndTheStaticModifier
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainMyCircle(string[] args)
             {
                 int r = 10;
                 Console.WriteLine("Площадь круга радиусом {0} = {1:#.##}", r, MyCircle.SqrCircle(r));
@@ -97,7 +97,7 @@ namespace StaticMembersAndTheStaticModifier
         }
         class Program
         {
-            static void Main(string[] args)
+            static void MainMyClass(string[] args)
             {
                 Console.WriteLine("Доступ к экземпляру класса a: " + MyClass.a);
                 Console.WriteLine("Доступ к экземпляру класса b: " + MyClass.b);

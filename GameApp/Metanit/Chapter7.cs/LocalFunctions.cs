@@ -4,7 +4,7 @@ namespace LocalFunctions
 {
     class Program
     {
-        static void Main(string[] args)
+        static void MainLocalFunctions(string[] args)
         {
             var result = GetResult(new int[] { -3, -2, -1, 0, 1, 2, 3 });
             Console.WriteLine(result);

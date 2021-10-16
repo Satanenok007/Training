@@ -33,7 +33,7 @@ namespace TheDifferenceBetweenOverridingAndHidingMethods
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainRedefinition(string[] args)
             {
                 People tom = new Employee("Tom", "Microsoft");
                 tom.Info();
@@ -74,7 +74,7 @@ namespace TheDifferenceBetweenOverridingAndHidingMethods
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainConcealment(string[] args)
             {
                 Person tom = new Employee("Tom", "Microsoft");
                 tom.Display();

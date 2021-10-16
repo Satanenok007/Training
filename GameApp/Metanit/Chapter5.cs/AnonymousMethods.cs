@@ -7,7 +7,7 @@ namespace AnonymousMethods
         class Program
         {
             delegate void MessageHandler(string message);
-            static void Main(string[] args)
+            static void MainDel(string[] args)
             {
                 MessageHandler handler = delegate (string mes)
                 {
@@ -24,7 +24,7 @@ namespace AnonymousMethods
         class Program
         {
             delegate void MessageHandler(string message);
-            static void Main(string[] args)
+            static void MainDel2(string[] args)
             {
                 ShowMessage("hello)", delegate (string mes)
                 {
@@ -44,7 +44,7 @@ namespace AnonymousMethods
         class Program
         {
             delegate void MessageHandler(string message);
-            static void Main(string[] args)
+            static void MainDel3(string[] args)
             {
                 MessageHandler handler = delegate
                 {
@@ -58,7 +58,7 @@ namespace AnonymousMethods
     class Example4
     {
         delegate int Operation(int x, int y);
-        static void Main(string[] args)
+        static void MainDel4(string[] args)
         {
             Operation operation = delegate (int x, int y)
             {
@@ -76,7 +76,7 @@ namespace AnonymousMethods
             class Program
             {
                 delegate void MessageHandler(string message);
-                static void Main(string[] args)
+                static void MainDel5(string[] args)
                 {
                     MessageHandler handler = delegate (string mes)
                     {
@@ -93,7 +93,7 @@ namespace AnonymousMethods
             class Program
             {
                 delegate void MessageHandler(string message);
-                static void Main(string[] args)
+                static void MainOption2(string[] args)
                 {
                     ShowMessage("Option2", delegate (string mes)
                     {
@@ -113,7 +113,7 @@ namespace AnonymousMethods
             class Program
             {
                 delegate void MessageHandler(string message);
-                static void Main(string[] args)
+                static void MainDel6(string[] args)
                 {
                     MessageHandler handler = delegate
                     {
@@ -127,7 +127,7 @@ namespace AnonymousMethods
         class Option4
         {
             delegate int Operation(int x, int y);
-            static void Main(string[] args)
+            static void MainOption4(string[] args)
             {
                 Operation operation = delegate (int x, int y)
                 {

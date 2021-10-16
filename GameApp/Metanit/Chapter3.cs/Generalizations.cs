@@ -11,7 +11,7 @@ namespace Generalizations
 
     class Program
     {
-        static void Main(string[] args)
+        static void MainGeneralizations(string[] args)
         {
             User<int> user1 = new User<int> { Name = "Gera" };
             User<int>.session = 4657;
@@ -42,7 +42,7 @@ namespace Generalizations
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainGeneralization(string[] args)
             {
                 User<int> acc1 = new User<int> { Id = 1857, Name = "Billi" };
                 User<int> acc2 = new User<int> { Id = 3453, Name = "Deniel" };

@@ -23,7 +23,7 @@ namespace InheritanceOfGeneralizedTypes
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainOp1(string[] args)
             {
                 Account<string> acc1 = new Account<string>("34");
                 Account<int> acc3 = new UniversalAccount<int>(45);
@@ -55,7 +55,7 @@ namespace InheritanceOfGeneralizedTypes
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainOp2(string[] args)
             {
                 StringAccount acc4 = new StringAccount("438767");
                 Account<string> acc5 = new StringAccount("43875");
@@ -86,7 +86,7 @@ namespace InheritanceOfGeneralizedTypes
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainOp3(string[] args)
             {
                 IntAccount<string> acc7 = new IntAccount<string>(5) { Code = "r4556" };
                 Account<int> acc8 = new IntAccount<long>(7) { Code = 4587 };
@@ -119,7 +119,7 @@ namespace InheritanceOfGeneralizedTypes
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainOp4(string[] args)
             {
                 MixedAccount<string, int> acc9 = new MixedAccount<string, int>("456") { Code = 356 };
                 Account<string> acc10 = new MixedAccount<string, int>("9867") { Code = 35678 };

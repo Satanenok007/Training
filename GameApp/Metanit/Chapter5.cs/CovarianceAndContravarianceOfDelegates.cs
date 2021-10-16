@@ -13,7 +13,7 @@ namespace CovarianceAndContravarianceOfDelegates
         class Program
         {
             delegate Person PersonFactory(string name);
-            static void Main(string[] args)
+            static void MainDelPerson(string[] args)
             {
                 PersonFactory personDel;
                 personDel = BuildClient;
@@ -42,7 +42,7 @@ namespace CovarianceAndContravarianceOfDelegates
         class Program
         {
             delegate T Builder<out T>(string name);
-            static void Main(string[] args)
+            static void MainDelBilder(string[] args)
             {
                 Builder<Client> clientBuilder = GetClient;
                 Builder<Person> personBuilder1 = clientBuilder;
@@ -79,7 +79,7 @@ namespace CovarianceAndContravarianceOfDelegates
         class Program
         {
             delegate void GetInfo<in T>(T item);
-            static void Main(string[] args)
+            static void MainDelGetInfo(string[] args)
             {
                 GetInfo<Person> personInfo = PersonInfo;
                 GetInfo<Client> clientInfo = personInfo;

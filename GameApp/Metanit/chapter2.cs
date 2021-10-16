@@ -363,7 +363,7 @@ namespace HelloApp
             return Tuple.Create<int, float, string, char>(sqr, sqrt, s, ch);
         }
 
-        static void Main(string[] args)
+        static void Mains(string[] args)
         {
             var myTuple = Corteg(25, "Alexandr");
             Console.WriteLine("{0}\n25 в квадрате: {1}\nКвадратный корень из 25: "

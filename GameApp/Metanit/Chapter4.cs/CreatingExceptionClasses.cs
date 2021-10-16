@@ -4,7 +4,7 @@ namespace CreatingExceptionClasses
 {
     class Book
     {
-        static void Main(string[] args)
+        static void MainBookClass(string[] args)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace CreatingExceptionClasses
 
     class Program
     {
-        static void Main(string[] args)
+        static void MainPersonException(string[] args)
         {
             try
             {

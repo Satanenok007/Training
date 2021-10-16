@@ -57,7 +57,7 @@ namespace UsingDelegates
     class Program
     {
 
-        static void Main(string[] args)
+        static void MainUsingDelegates(string[] args)
         {
             Account account = new Account(200);
             Account.AccountStateHandler colorDelegate = new Account.AccountStateHandler(Color_Message);

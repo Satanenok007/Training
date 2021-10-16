@@ -28,7 +28,7 @@ namespace SwitchPatterns
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainSwitchPatterns(string[] args)
             {
                 try
                 {
@@ -63,7 +63,7 @@ namespace SwitchPatterns
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainPropertyPattern(string[] args)
             {
                 Person pierre = new Person { Language = "french", Status = "user", Name = "Pierre" };
                 string message = GetMessage(pierre);
@@ -92,7 +92,7 @@ namespace SwitchPatterns
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainTuplePatterns(string[] args)
             {
                 string message = GetWelcome("english", "evening", "user");
                 Console.WriteLine(message);
@@ -131,7 +131,7 @@ namespace SwitchPatterns
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainMessageDetails(string[] args)
             {
                 MessageDetails details1 = new MessageDetails { Language = "english", DateTime = "evening", Status = "user" };
                 string message = GetWelcome(details1);
@@ -162,7 +162,7 @@ namespace SwitchPatterns
 
             class Program
             {
-                static void Main(string[] args)
+                static void MainRelationalAndLogicalPatterns(string[] args)
                 {
                     Console.WriteLine(Calculate(-200));
                     Console.WriteLine(Calculate(0));
@@ -187,7 +187,7 @@ namespace SwitchPatterns
 
             class Program
             {
-                static void Main(string[] args)
+                static void MainLogicalPattern(string[] args)
                 {
                     Console.WriteLine(CheckAge(200));
                     Console.WriteLine(CheckAge(0));

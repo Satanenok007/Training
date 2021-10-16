@@ -41,7 +41,7 @@ namespace ExplicitImplementationOfInterfaces
 
         class Programs
         {
-            static void Main(string[] args)
+            static void MainExplicitImplementationOfInterfaces(string[] args)
             {
                 BaseAction action = new BaseAction();
                 ((IAction)action).Move();
@@ -83,7 +83,7 @@ namespace ExplicitImplementationOfInterfaces
             }
             class Program
             {
-                static void Main(string[] args)
+                static void MainAccessModifiers(string[] args)
                 {
                     IMovable mov = new Person();
                     mov.MoveEvent += () => Console.WriteLine("IMovable is moving");

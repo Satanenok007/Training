@@ -4,7 +4,7 @@ namespace CopyingObjectsICloneableInterface
 {
     class Program
     {
-        static void Main(string[] args)
+        static void MainCopyingObjectsICloneableInterface(string[] args)
         {
             Person p1 = new Person { Name = "Naiton", Age = 25 };
             Person p2 = p1;
@@ -33,7 +33,7 @@ namespace CopyingObjectsICloneableInterface
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainExample2Class(string[] args)
             {
                 Person p1 = new Person { Name = "Joch", Age = 17 };
                 Person p2 = (Person)p1.Clone();
@@ -76,7 +76,7 @@ namespace CopyingObjectsICloneableInterface
 
             class Program
             {
-                static void Main(string[] args)
+                static void MainMethodMemberwiseClone(string[] args)
                 {
                     Person p1 = new Person { Name = "Mike", Age = 31, Work = new Company { Name = "Microsoft" } };
                     Person p2 = (Person)p1.Clone();

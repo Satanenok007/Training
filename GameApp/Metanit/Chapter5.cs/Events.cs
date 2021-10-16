@@ -43,7 +43,7 @@ namespace Events
 
     class Program
     {
-        static void Main(string[] args)
+        static void MainAccountEventArgs(string[] args)
         {
             Account acc = new Account(100);
             acc.Notify += DisplayMessage;
@@ -106,7 +106,7 @@ class ManagingHandlers
 
     class Program
     {
-        static void Main(string[] args)
+        static void MainManagingHandlers(string[] args)
         {
             Account acc = new Account(100);
             acc.Notify += DisplayMessage;
@@ -152,7 +152,7 @@ class ManagingHandlers
 
             class Program
             {
-                static void Main()
+                static void MainEvent()
                 {
                     MyEvent evt = new MyEvent();
                     UserInfo user1 = new UserInfo(Name: "Sofia", Family: "Kmita", Age: 16);

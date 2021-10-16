@@ -4,7 +4,7 @@ namespace TheSystemObjectClassAndItsMethods
 {
     class Program
     {
-        private static void Main(string[] args)
+        private static void MainTheSystemObjectClassAndItsMethods(string[] args)
         {
             Person person1 = new Person { Name = "Alise" };
 
@@ -63,7 +63,7 @@ namespace TheSystemObjectClassAndItsMethods
     {
         class Program
         {
-            static void Main(string[] args)
+            static void MainExmp2(string[] args)
             {
                 var m = Environment.Version;
 

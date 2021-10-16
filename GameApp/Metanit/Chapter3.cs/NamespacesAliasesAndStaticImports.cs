@@ -6,7 +6,7 @@ namespace NamespacesAliasesAndStaticImports
 {
     class Program
     {
-        static void Main(string[] args)
+        static void MainNamespacesAliasesAndStaticImports(string[] args)
         {
             Account account = new Account(4);
             Persons person = new Persons();
@@ -32,7 +32,7 @@ namespace NamespacesAliasesAndStaticImports
     {
         class Program
         {
-            static void Main(string[] args)
+            static void MainExample2(string[] args)
             {
                 Order order1 = new Order(6);
                 Persons person1 = new Persons();

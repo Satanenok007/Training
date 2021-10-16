@@ -21,7 +21,7 @@ namespace PatternMatching
 
     class Program
     {
-        static void Main(string[] args)
+        static void MainEmployeeClass(string[] args)
         {
             Employee emp = new Manager();
             UseEmployee(emp);

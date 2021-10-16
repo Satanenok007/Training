@@ -4,7 +4,7 @@ namespace ExtensionMethods
 {
     class Program
     {
-        static void Main(string[] args)
+        static void MainExtensionMethods(string[] args)
         {
             string s = "Hello";
             char c = 'i';

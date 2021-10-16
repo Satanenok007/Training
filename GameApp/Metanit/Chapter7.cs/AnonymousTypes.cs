@@ -4,7 +4,7 @@ namespace AnonymousTypes
 {
     class Program
     {
-        static void Main(string[] args)
+        static void MainAnonymousTypes(string[] args)
         {
             var user1 = new { Name = "Maison", Age = 25 };
             Console.WriteLine(user1.Name);
@@ -27,7 +27,7 @@ namespace AnonymousTypes
         }
         class Program
         {
-            static void Main(string[] args)
+            static void MainProjectionInitializers(string[] args)
             {
                 User user3 = new User { Name = "Mike" };
                 int age = 25;

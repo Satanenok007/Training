@@ -4,7 +4,7 @@ namespace TypesOfExceptionsExceptionСlass
 {
     class Example1
     {
-        static void Main(string[] args)
+        static void MainTypesOfExceptionsExceptionСlass(string[] args)
         {
             try
             {
@@ -23,7 +23,7 @@ namespace TypesOfExceptionsExceptionСlass
 
     class Example2
     {
-        static void Main(string[] args)
+        static void MainExm2(string[] args)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace TypesOfExceptionsExceptionСlass
                 return x / y;
             }
 
-            static void Main()
+            static void MainExmp3()
             {
                 try
                 {

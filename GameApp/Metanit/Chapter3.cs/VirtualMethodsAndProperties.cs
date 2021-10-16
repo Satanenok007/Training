@@ -32,7 +32,7 @@ namespace VirtualMethodsAndProperties
 
     class Program
     {
-        static void Main(string[] args)
+        static void MainClassPeoples(string[] args)
         {
             People p1 = new People("Nastya");
             p1.Info(); // вызов метода Info из класса People
@@ -68,7 +68,7 @@ namespace VirtualMethodsAndProperties
         }
         class Program
         {
-            static void Main(string[] args)
+            static void MainLibrary(string[] args)
             {
                 MaxBooks book = new MaxBooks { Books = 20 };
                 book.Books = 47;
@@ -138,7 +138,7 @@ namespace VirtualMethodsAndProperties
 
         class Program
         {
-            public static void Main(String[] args)
+            public static void MainShareClass(String[] args)
             {
                 Square test = new Square();
                 test.saysSomething();

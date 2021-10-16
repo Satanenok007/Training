@@ -4,7 +4,7 @@ namespace Program
 {
     class Program
     {
-        static void Main(string[] args)
+        static void MainPArtialClass(string[] args)
         {
             Person1 p1 = new Person1();
             p1.Move();

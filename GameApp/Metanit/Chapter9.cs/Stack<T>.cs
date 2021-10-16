@@ -1,39 +1,38 @@
 using System;
 using System.Collections.Generic;
 
-namespace Collections
+namespace Stack
 {
+    class Persons
+    {
+        public string Name { get; set; }
+    }
     class Program
     {
-        static void Main(string[] args)
+        static void MainStack(string[] args)
         {
 
             Stack<int> numbers = new Stack<int>();
 
             numbers.Push(3);
-            numbers.Push(5);
-            numbers.Push(8);
+            numbers.Push(5);
+            numbers.Push(8);
 
             int stackElement = numbers.Pop();
-            Console.WriteLine(stackElement);
+            Console.WriteLine(stackElement);
 
-            Stack<Person> persons = new Stack<Person>();
-            persons.Push(new Person() { Name = "Sofia" });
-            persons.Push(new Person() { Name = "Nastya" });
-            persons.Push(new Person() { Name = "Maison" });
+            Stack<Persons> persons = new Stack<Persons>();
+            persons.Push(new Persons() { Name = "Sofia" });
+            persons.Push(new Persons() { Name = "Nastya" });
+            persons.Push(new Persons() { Name = "Maison" });
 
-            foreach (Person p in persons)
+            foreach (Persons p in persons)
             {
                 Console.WriteLine(p.Name);
             }
 
-            Person person = persons.Pop();
-            Console.WriteLine(person.Name);
+            Persons person = persons.Pop();
+            Console.WriteLine(person.Name);
         }
-    }
-
-    class Person
-    {
-        public string Name { get; set; }
     }
 }

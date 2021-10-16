@@ -19,7 +19,7 @@ namespace ClassAndObject
 
     class Program
     {
-        static void Main(string[] args)
+        static void Point(string[] args)
         {
             Point p = new Point();
 
@@ -67,7 +67,7 @@ namespace ClassAndObject
             }
 
 
-            static void Main(string[] args)
+            static void MainExample2(string[] args)
             {
                 var film1 = GetStudent();
                 film1.Print();
@@ -110,7 +110,7 @@ namespace ClassAndObject
                 return p1;
             }
 
-            static void Main(string[] args)
+            static void ClassAndObjects(string[] args)
             {
                 var person1 = GetPerson();
                 person1.Print();

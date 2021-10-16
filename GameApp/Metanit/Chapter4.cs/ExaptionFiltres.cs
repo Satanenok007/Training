@@ -3,7 +3,7 @@ namespace ExaptionFiltres
 {
     class Program
     {
-        static void Main(string[] args)
+        static void MainExaptionFiltres(string[] args)
         {
             try
             {

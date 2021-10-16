@@ -37,7 +37,7 @@ namespace OverloadingTypeConversionOperations
 
     class Program
     {
-        static void Main(string[] args)
+        static void MainOverloadingTypeConversionOperations(string[] args)
         {
             Counter counter1 = new Counter { Seconds = 115 };
 

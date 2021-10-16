@@ -28,7 +28,7 @@ namespace AbstractClassesAndClassMembers
 
     class Program
     {
-        static void Main(string[] args)
+        static void Primes(string[] args)
         {
             Series series = new Series("Firefly", 14);
             series.Info();
@@ -59,7 +59,7 @@ namespace AbstractClassesAndClassMembers
 
         class Program
         {
-            static void Main(string[] args)
+            static void Prime(string[] args)
             {
                 B objB = new B();
                 D objD = new D();

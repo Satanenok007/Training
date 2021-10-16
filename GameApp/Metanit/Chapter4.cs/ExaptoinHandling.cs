@@ -4,7 +4,7 @@ namespace ExaptionHadling
 {
     class Exaple1
     {
-        static void Main(string[] args)
+        static void MainExaple1(string[] args)
         {
             try
             {
@@ -26,7 +26,7 @@ namespace ExaptionHadling
 
     class Example2
     {
-        static void Main(string[] args)
+        static void MainExapml2(string[] args)
         {
             Console.WriteLine("Введите число");
             int x;

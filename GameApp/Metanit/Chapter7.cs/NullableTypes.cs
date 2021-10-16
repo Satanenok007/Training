@@ -16,7 +16,7 @@ namespace NullableTypes
 
     class Programs
     {
-        static void Main(string[] args)
+        static void MainNullableTypes(string[] args)
         {
             int? x = 7;
             Console.WriteLine(x.Value);
@@ -31,7 +31,7 @@ namespace NullableTypes
 
     class programs
     {
-        static void Main(string[] args)
+        static void MainStrucruteState(string[] args)
         {
             int? x = null;
             if (x.HasValue)
@@ -57,7 +57,7 @@ namespace NullableTypes
 
     class EqualityOfObjects
     {
-        static void Main(string[] args)
+        static void MainEqualityOfObjects(string[] args)
         {
             int? x1 = null;
             int? x2 = null;

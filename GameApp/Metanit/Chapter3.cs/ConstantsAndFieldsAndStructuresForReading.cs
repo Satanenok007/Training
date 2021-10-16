@@ -14,7 +14,7 @@ namespace ConstantsAndFieldsAndStructuresForReading
     }
     class Program
     {
-        static void Main(string[] args)
+        static void MainSum(string[] args)
         {
             int sum1 = Sum.x + 10;
             Console.WriteLine(sum1);
@@ -37,7 +37,7 @@ namespace ConstantsAndFieldsAndStructuresForReading
         }
         class Program
         {
-            static void Main(string[] args)
+            static void MainEx2(string[] args)
             {
                 int p1 = Library.youCanTakeBooksAtATime + 10;
                 Console.WriteLine(p1);
@@ -62,7 +62,7 @@ namespace ConstantsAndFieldsAndStructuresForReading
         }
         class Program
         {
-            static void Main(string[] args)
+            static void MainExample3(string[] args)
             {
                 int p1 = Films.moviesWithoutASubscription + 10;
                 Console.WriteLine(p1);

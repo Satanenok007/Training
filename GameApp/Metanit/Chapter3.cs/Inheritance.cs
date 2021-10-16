@@ -28,7 +28,7 @@ namespace Inheritance
     }
     class Program
     {
-        static void Main(string[] args)
+        static void MainPerson(string[] args)
         {
             Person p1 = new Person("Bill");
             p1.Display();
@@ -69,7 +69,7 @@ namespace Inheritance
 
         class Progmam
         {
-            static void Main(string[] args)
+            static void MainProg(string[] args)
             {
                 Employee person1 = new Employee("Alise", 25, "Microsoft");
             }

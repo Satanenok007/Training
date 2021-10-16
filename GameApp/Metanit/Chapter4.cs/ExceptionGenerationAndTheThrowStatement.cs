@@ -4,7 +4,7 @@ namespace ExceptionGenerationAndTheThrowStatement
 {
     class Exeption1
     {
-        static void Main(string[] args)
+        static void MainExeption1(string[] args)
         {
             try
             {
@@ -24,7 +24,7 @@ namespace ExceptionGenerationAndTheThrowStatement
     }
     class Exeption2
     {
-        static void Main(string[] args)
+        static void MainExeption2(string[] args)
         {
             try
             {

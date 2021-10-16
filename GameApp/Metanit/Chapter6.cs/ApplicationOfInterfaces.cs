@@ -30,7 +30,7 @@ namespace ApplicationOfInterfaces
             {
                 movable.Move();
             }
-            static void Main(string[] args)
+            static void MainMove(string[] args)
             {
                 Person person = new Person();
                 Car car = new Car();
@@ -43,7 +43,7 @@ namespace ApplicationOfInterfaces
         {
             class Program
             {
-                static void Main(string[] args)
+                static void MainImplementationOfDefaultInterfaces(string[] args)
                 {
                     IMovable p1 = new Person();
                     Car tesla = new Car();
@@ -105,7 +105,7 @@ namespace ApplicationOfInterfaces
             }
             class Program
             {
-                static void Main(string[] args)
+                static void MainMultipleImplementationOfInterfaces(string[] args)
                 {
                     Client client = new Client("Tom", 200);
                     client.Put(30);

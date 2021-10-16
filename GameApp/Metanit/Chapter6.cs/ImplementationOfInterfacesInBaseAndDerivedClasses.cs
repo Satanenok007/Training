@@ -102,7 +102,7 @@ namespace ImplementationOfInterfacesInBaseAndDerivedClasses
 
             class Program
             {
-                static void Main(string[] args)
+                static void Mainopt3(string[] args)
                 {
                     BaseAction action1 = new HeroAction();
                     action1.Move();
@@ -159,7 +159,7 @@ namespace ImplementationOfInterfacesInBaseAndDerivedClasses
 
         class Programs
         {
-            static void Main(string[] args)
+            static void MainOpt4(string[] args)
             {
                 BaseAction action1 = new HeroAction();
                 action1.Move();

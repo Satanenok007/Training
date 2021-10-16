@@ -5,7 +5,7 @@ namespace Collections
 {
     class Program
     {
-        static void Main(string[] args)
+        static void MainCollections(string[] args)
         {
             ArrayList list = new ArrayList();
             list.Add(2.3);

@@ -6,7 +6,7 @@ namespace IEnumerableAndIEnumeratorInterface
 {
     class Program
     {
-        static void Main(string[] args)
+        static void MainIEnumerableAndIEnumeratorInterfaces(string[] args)
         {
             int[] numbers = { 0, 2, 4, 6, 8, 10 };
 
@@ -34,7 +34,7 @@ namespace IEnumerableAndIEnumeratorInterface
         }
         class Program
         {
-            static void Main(string[] args)
+            static void MainRealise(string[] args)
             {
                 Week week = new Week();
                 foreach (var day in week)
@@ -97,7 +97,7 @@ namespace IEnumerableAndIEnumeratorInterface
         }
         class Program
         {
-            static void Main(string[] args)
+            static void MainRealiseIEnumerator(string[] args)
             {
                 Week week = new Week();
                 foreach (var day in week)
@@ -164,7 +164,7 @@ namespace IEnumerableAndIEnumeratorInterface
         }
         class Program
         {
-            static void Main(string[] args)
+            static void MainGeneralizedDoubles(string[] args)
             {
                 Week week = new Week();
                 foreach (var day in week)

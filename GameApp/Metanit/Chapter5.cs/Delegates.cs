@@ -6,7 +6,7 @@ namespace Delegates
     {
         delegate void Message();
 
-        static void Main(string[] args)
+        static void MainDelMassage(string[] args)
         {
             Message mes;
             if (DateTime.Now.Hour < 12)
@@ -33,7 +33,7 @@ namespace Delegates
         {
             delegate int Operation(int x, int y);
 
-            static void Main(string[] args)
+            static void MainOperation(string[] args)
             {
                 Operation del = Add;
                 int result = del(4, 5);
@@ -63,7 +63,7 @@ namespace Delegates
             {
                 delegate int Operation(int x, int y);
 
-                static void Main(string[] args)
+                static void MainDelegatesOfOtherMethodsFromClassesAndStructures(string[] args)
                 {
                     Math math = new Math();
                     Operation del = math.Sum;
@@ -78,7 +78,7 @@ namespace Delegates
         {
             delegate int Operation(int x, int y);
 
-            static void Main(string[] args)
+            static void MainAssigningAReferenceToAMethod(string[] args)
             {
                 Operation del = Add;
                 Operation del2 = new Operation(Add);
@@ -105,7 +105,7 @@ namespace Delegates
         {
             delegate void Message();
 
-            static void Main(string[] args)
+            static void MainAddingMethodsToTheDelegate(string[] args)
             {
                 Message mes1 = Hello;
                 mes1 += HowAreYou;
@@ -135,7 +135,7 @@ namespace Delegates
         {
             delegate void Message();
 
-            static void Main(string[] args)
+            static void MainCombiningDelegates(string[] args)
             {
                 Message mes1 = Hello;
                 Message mes2 = HowAreYou;
@@ -157,7 +157,7 @@ namespace Delegates
             delegate int Operation(int x, int y);
             delegate void Message();
 
-            static void Main(string[] args)
+            static void MainCallingADelegate(string[] args)
             {
                 Message mes = Hello;
                 mes.Invoke();
@@ -172,7 +172,7 @@ namespace Delegates
             {
                 delegate int Operation(int x, int y);
 
-                static void Main(string[] args)
+                static void MainAddMethod(string[] args)
                 {
                     Operation op = Subtract;
                     op += Multiply;
@@ -190,7 +190,7 @@ namespace Delegates
         {
             delegate void GetMessage();
 
-            static void Main(string[] args)
+            static void MainDelegatesAsMethodParameters(string[] args)
             {
                 if (DateTime.Now.Hour < 12)
                 {
@@ -222,7 +222,7 @@ namespace Delegates
 
             class Program
             {
-                static void Main(string[] args)
+                static void MainGeneralizedDelegates(string[] args)
                 {
                     Operation<decimal, int> op = Square;
 
@@ -258,7 +258,7 @@ namespace Delegates
                 return x / y;
             }
 
-            static void Main()
+            static void MainSums()
             {
                 IntOperation op1 = new IntOperation(Sum);
 

@@ -34,7 +34,7 @@ namespace Concealment
 
     class Program
     {
-        static void Main(string[] args)
+        static void Concealments(string[] args)
         {
             Person bob = new Person("Alise", "Robertson");
             bob.Info();

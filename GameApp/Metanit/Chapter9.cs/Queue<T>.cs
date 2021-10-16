@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
 
-namespace Collections
+namespace Queue
 {
     class Program
     {
-        static void Main(string[] args)
+        class Persons
+        {
+            public string Name { get; set; }
+        }
+        static void MainQueue(string[] args)
         {
             Queue<int> numbers = new Queue<int>();
 
@@ -16,28 +20,23 @@ namespace Collections
             int queueElement = numbers.Dequeue();
             Console.WriteLine(queueElement);
 
-            Queue<Person> persons = new Queue<Person>();
-            persons.Enqueue(new Person() { Name = "Maison" });
-            persons.Enqueue(new Person() { Name = "Billi" });
-            persons.Enqueue(new Person() { Name = "John" });
+            Queue<Persons> persons = new Queue<Persons>();
+            persons.Enqueue(new Persons() { Name = "Maison" });
+            persons.Enqueue(new Persons() { Name = "Billi" });
+            persons.Enqueue(new Persons() { Name = "John" });
 
-            Person pp = persons.Peek();
+            Persons pp = persons.Peek();
             Console.WriteLine(pp.Name);
 
             Console.WriteLine("Сейчас в очереди {0} человек", persons.Count);
 
-            foreach (Person p in persons)
+            foreach (Persons p in persons)
             {
                 Console.WriteLine(p.Name);
             }
 
-            Person person = persons.Dequeue();
+            Persons person = persons.Dequeue();
             Console.WriteLine(person.Name);
         }
-    }
-
-    class Person
-    {
-        public string Name { get; set; }
     }
 }

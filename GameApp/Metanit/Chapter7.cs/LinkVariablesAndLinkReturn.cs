@@ -4,7 +4,7 @@ namespace LinkVariablesAndLinkReturn
 {
     class LocalVariableReference
     {
-        static void Main(string[] args)
+        static void MainLinkVariablesAndLinkReturn(string[] args)
         {
             int x = 5;
             ref int xRef = ref x;
@@ -27,7 +27,7 @@ namespace LinkVariablesAndLinkReturn
     {
         class Exmple1
         {
-            static void Main(string[] args)
+            static void MainTheLinkAsAResultOfTheFunction(string[] args)
             {
                 int[] numbers = { 1, 2, 3, 4, 5, 6, 7 };
                 ref int numberRef = ref Find(4, numbers);
@@ -56,7 +56,7 @@ namespace LinkVariablesAndLinkReturn
                 else
                     return ref n2;
             }
-            static void Main(string[] args)
+            static void MainTheLinkAsAResultOfTheFunction2(string[] args)
             {
                 int a = 5;
                 int b = 8;

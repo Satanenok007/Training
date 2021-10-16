@@ -5,7 +5,7 @@ namespace IteratorsAndTheYieldOperator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void MainIteratorsAndTheYieldOperator(string[] args)
         {
             Numbers numbers = new Numbers();
             foreach (int n in numbers)
@@ -107,7 +107,7 @@ namespace IteratorsAndTheYieldOperator
 
         class Program
         {
-            static void Main()
+            static void MainNamedIterator()
             {
                 Library library = new Library();
 

@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
 
-namespace Collections
+namespace List
 {
+    class Persons
+    {
+        public string Name { get; set; }
+    }
     class Program
     {
-        static void Main(string[] args)
+        static void MainList(string[] args)
         {
             List<int> numbers = new List<int>() { 1, 2, 3, 45 };
             numbers.Add(6);
@@ -21,19 +25,14 @@ namespace Collections
                 Console.WriteLine(i);
             }
 
-            List<Person> people = new List<Person>(3);
-            people.Add(new Person() { Name = "Том" });
-            people.Add(new Person() { Name = "Билл" });
+            List<Persons> people = new List<Persons>(3);
+            people.Add(new Persons() { Name = "Holli" });
+            people.Add(new Persons() { Name = "Bill" });
 
-            foreach (Person p in people)
+            foreach (Persons p in people)
             {
                 Console.WriteLine(p.Name);
             }
         }
-    }
-
-    class Person
-    {
-        public string Name { get; set; }
     }
 }

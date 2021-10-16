@@ -25,7 +25,7 @@ namespace Structures
 
             class Program
             {
-                static void Main(string[] args)
+                static void MainStructures(string[] args)
                 {
                     Book book1;
                     book1.name = "A street cat named Bob";
@@ -65,7 +65,7 @@ namespace Structures
 
             class Program
             {
-                static void Main(string[] args)
+                static void MainMoves(string[] args)
                 {
                     Films f1;
                     f1.name = "The silence of the lambs";

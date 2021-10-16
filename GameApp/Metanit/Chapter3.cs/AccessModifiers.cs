@@ -37,7 +37,7 @@ namespace AccessModifiers
 
     class Program
     {
-        static void Main(string[] args)
+        static void AccessModifier(string[] args)
         {
             Person person1 = new Person();
             person1.name = "Sofia";

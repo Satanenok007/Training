@@ -4,7 +4,7 @@ namespace PropertiesWithTheInitModifier
 {
     class SettingAPropertyViaAnInitializer
     {
-        static void Main(string[] args)
+        static void MainSettingAPropertyViaAnInitializer(string[] args)
         {
             var person = new Person() { Name = "Maison" };
             Console.WriteLine(person.Name);
@@ -18,7 +18,7 @@ namespace PropertiesWithTheInitModifier
 
     class SettingAPropertyViaTheConstructor
     {
-        static void Main(string[] args)
+        static void MainSettingAPropertyViaAnInitializer(string[] args)
         {
             var person = new Persons("Sofia");
             Console.WriteLine(person.Name);
@@ -37,7 +37,7 @@ namespace PropertiesWithTheInitModifier
 
     class SettingThePropertyInitializerWithTheInitModifier
     {
-        static void Main(string[] args)
+        static void MainSettingThePropertyInitializerWithTheInitModifier(string[] args)
         {
             var person = new People() { Name = "Mike" };
             Console.WriteLine(person.Name);

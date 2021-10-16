@@ -4,9 +4,13 @@ using System.Collections.Specialized;
 
 namespace HelloApps
 {
+    class User
+    {
+        public string Name { get; set; }
+    }
     class Program
     {
-        static void Main(string[] args)
+        static void MainHelloApps(string[] args)
         {
             ObservableCollection<User> users = new ObservableCollection<User>
             {
@@ -35,24 +39,19 @@ namespace HelloApps
             switch (e.Action)
             {
                 case NotifyCollectionChangedAction.Add:
-                    User newUser = e.NewItems[0] as User;
+                    User newUser = e.NewItems[0] as User;
                     Console.WriteLine($"Добавлен новый объект: {newUser.Name}");
                     break;
                 case NotifyCollectionChangedAction.Remove:
-                    User oldUser = e.OldItems[0] as User;
+                    User oldUser = e.OldItems[0] as User;
                     Console.WriteLine($"Удален объект: {oldUser.Name}");
                     break;
                 case NotifyCollectionChangedAction.Replace:
-                    User replacedUser = e.OldItems[0] as User;
+                    User replacedUser = e.OldItems[0] as User;
                     User replacingUser = e.NewItems[0] as User;
                     Console.WriteLine($"Объект {replacedUser.Name} заменен объектом {replacingUser.Name}");
                     break;
             }
         }
-    }
-
-    class User
-    {
-        public string Name { get; set; }
     }
 }

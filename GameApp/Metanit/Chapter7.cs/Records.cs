@@ -4,7 +4,7 @@ namespace Records
 {
     class ComparisonForEquality
     {
-        static void Main(string[] args)
+        static void MainComparisonForEquality(string[] args)
         {
             var person1 = new Person() { Name = "Joch" };
             var person2 = new Person() { Name = "Joch" };

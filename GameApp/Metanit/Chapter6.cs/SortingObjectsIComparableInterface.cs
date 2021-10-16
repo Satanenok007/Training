@@ -4,7 +4,7 @@ namespace SortingObjectsIComparableInterface
 {
     class MethodSort
     {
-        static void Main()
+        static void MainSortingObjectsIComparableInterface()
         {
             int[] numbers = new int[] { 97, 45, 32, 65, 83, 23, 15 };
             Array.Sort(numbers);
@@ -46,7 +46,7 @@ namespace SortingObjectsIComparableInterface
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainMethodCompareTo(string[] args)
             {
                 Person p1 = new Person { Name = "Mike", Age = 17 };
                 Person p2 = new Person { Name = "Rubbi", Age = 23 };
@@ -107,7 +107,7 @@ namespace SortingObjectsIComparableInterface
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainApplicationOfTheComparator(string[] args)
             {
                 Person p1 = new Person { Name = "Sofia", Age = 34 };
                 Person p2 = new Person { Name = "Nastya", Age = 23 };

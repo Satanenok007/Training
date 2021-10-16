@@ -11,7 +11,7 @@ namespace TakeTheTeroubleToSpace
     }
     class Program
     {
-        static void Main(string[] args)
+        static void MainTakeTheTeroubleToSpace(string[] args)
         {
             Person p1 = new Person();
             p1.name = "Sosia";

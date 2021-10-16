@@ -35,7 +35,7 @@ namespace CovarianceAndContravarianceOfGeneralizedInterfaces
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainAccountsClass(string[] args)
             {
                 IBank<DepositAccount> depositBank = new Bank<DepositAccount>();
                 Account acc1 = depositBank.CreateAccount(34);
@@ -63,7 +63,7 @@ namespace CovarianceAndContravarianceOfGeneralizedInterfaces
 
         class Program
         {
-            static void Main(string[] args)
+            static void MainContravariantInterfaces(string[] args)
             {
                 ITransaction<Account> accTransaction = new Transaction<Account>();
                 accTransaction.DoOperation(new Account(), 400);

@@ -40,7 +40,7 @@ namespace Indexers
             }
             class Program
             {
-                static void Main(string[] args)
+                static void MainPorgrams(string[] args)
                 {
                     Person p1 = new Person();
                     p1["name"] = "Sofia";
@@ -68,7 +68,7 @@ namespace Indexers
 
             class Program
             {
-                static void Main(string[] args)
+                static void MainMatrix(string[] args)
                 {
                     Matrix matrix = new Matrix();
                     Console.WriteLine(matrix[0,0]);

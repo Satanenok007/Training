@@ -16,7 +16,7 @@ namespace Reenactors
 
     class Program
     {
-        static void Main(string[] args)
+        static void MainReenactors(string[] args)
         {
             Person p1 = new Person { Name = "Mike", Age = 23 };
 

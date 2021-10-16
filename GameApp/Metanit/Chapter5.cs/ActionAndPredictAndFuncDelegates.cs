@@ -4,7 +4,7 @@ namespace ActionAndPredictAndFuncDelegates
 {
     class Action
     {
-        static void Main(string[] args)
+        static void MainActionClass(string[] args)
         {
             Action<int, int> op;
             op = Add;
@@ -34,7 +34,7 @@ namespace ActionAndPredictAndFuncDelegates
 
     class Predicate
     {
-        static void Main(string[] args)
+        static void MainPredicateClass(string[] args)
         {
             Predicate<int> isPositive = delegate (int x) { return x > 0; };
 
@@ -45,7 +45,7 @@ namespace ActionAndPredictAndFuncDelegates
 
     class Func
     {
-        static void Main(string[] args)
+        static void MainFuncClass(string[] args)
         {
             Func<int, int> retFunc = Factorial;
             int n1 = GetInt(6, retFunc);

@@ -12,7 +12,7 @@ namespace Lambdas
         delegate void ChangeHandler(ref int x);
 
         delegate void World();
-        static void Main(string[] args)
+        static void MainLambdas(string[] args)
         {
             Operation operation = (x, y) => x + y;
             Console.WriteLine(operation(10, 20));
@@ -79,7 +79,7 @@ namespace Lambdas
         {
             delegate bool IsEqual(int x);
 
-            static void Main(string[] args)
+            static void MainLambdasMethods(string[] args)
             {
                 int[] integers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 

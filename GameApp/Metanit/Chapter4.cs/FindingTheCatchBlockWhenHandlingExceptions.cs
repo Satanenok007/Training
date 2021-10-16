@@ -5,7 +5,7 @@ namespace FindingTheCatchBlockWhenHandlingExceptions
 
     class Program
     {
-        static void Main(string[] args)
+        static void MainFindingTheCatchBlockWhenHandlingExceptions(string[] args)
         {
             try
             {
@@ -59,7 +59,7 @@ namespace FindingTheCatchBlockWhenHandlingExceptions
     {
         class Program
         {
-            static void Main(string[] args)
+            static void MainExamples2(string[] args)
             {
                 try
                 {

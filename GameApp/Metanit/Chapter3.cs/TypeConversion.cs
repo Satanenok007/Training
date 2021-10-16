@@ -35,7 +35,7 @@ namespace TypeConversion
 
     class Program
     {
-        static void Main(string[] args)
+        static void MainPeopleClass(string[] args)
         {
             Student student = new Student("Sofia", 586);
             People people1 = student;   // преобразование от Student к People
@@ -63,7 +63,7 @@ namespace TypeConversion
 
     class ConversionMethods
     {
-        static void Main(string[] args)
+        static void MainConversionMethods(string[] args)
         {
             People person1 = new People("Tom");
             Student stud1 = person1 as Student;

@@ -15,7 +15,7 @@ namespace TypeOfValues
     }
     class Program
     {
-        private static void Main(string[] args)
+        private static void MainStructureNames(string[] args)
         {
             Names person1 = new Names(); // Структура State
             Names person2 = new Names();
@@ -71,7 +71,7 @@ namespace TypeOfValues
         }
         class Program
         {
-            private static void Main(string[] args)
+            private static void MainStructurePerson(string[] args)
             {
                 Person p1 = new Person(); // Структура
                 Person p2 = new Person();

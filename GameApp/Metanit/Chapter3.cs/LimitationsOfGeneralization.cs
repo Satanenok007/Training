@@ -4,7 +4,7 @@ namespace LimitationsOfGeneralization
 {
     class Program
     {
-        private static void Main(string[] args)
+        private static void MainLimitationsOfGeneralizations(string[] args)
         {
             Account<int> acc1 = new Account<int>(1857) { Sum = 4500 };
             Account<int> acc2 = new Account<int>(3453) { Sum = 5000 };
@@ -52,14 +52,12 @@ namespace LimitationsOfGeneralization
 
     class LimitationsOfMethods
     {
-        private static void Main(string[] args)
+        private static void MainLimitationsOfMethods(string[] args)
         {
             Account<int> acc1 = new Account<int>(1857) { Sum = 4500 };
             Account<int> acc2 = new Account<int>(3453) { Sum = 5000 };
 
             Transact<Account<int>>(acc1, acc2, 900);
-
-            Console.Read();
         }
 
         public static void Transact<T>(T acc1, T acc2, int sum) where T : Account<int>

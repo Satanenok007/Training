@@ -30,7 +30,7 @@ namespace ValueNull
 
         class Program
         {
-            static void Main(string[] args)
+            static void Main1(string[] args)
             {
                 User user = new User();
                 string companyName = user?.Phone?.Company?.Name ?? "не установлено";
@@ -41,7 +41,7 @@ namespace ValueNull
 
     class Example2
     {
-        static void Main(string[] args)
+        static void Main2(string[] args)
         {
             int? x;
             int? y;
