@@ -35,6 +35,31 @@ namespace AbstractClassesAndClassMembers
         }
     }
 
+    abstract class C1
+    {
+        public string Name { get; set; }
+        public C1(string name)
+        {
+            Name = name;
+        }
+        public abstract void C3();
+    }
+
+    class C2 : C1
+    {
+        public int age { get; set; }
+        public C2(string name, int Age)
+         : base(name)
+        {
+            age = Age;
+        }
+        public override void C3()
+        {
+            Console.WriteLine($"имя: {Name}, возраст: {age}");
+        }
+    }
+
+
     class Example2
     {
         abstract class A_Abstract

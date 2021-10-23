@@ -79,4 +79,35 @@ namespace Structures
             }
         }
     }
+
+    class C1
+    {
+        struct C2
+        {
+            public string name;
+            public int age;
+
+            public C2(string name, int age)
+            {
+                this.name = name;
+                this.age = age;
+            }
+
+            public void C3()
+            {
+                Console.WriteLine($"Name: {name}, age: {age}");
+            }
+        }
+
+        class C4
+        {
+            static void C5(string args)
+            {
+                C2 p1;
+                p1.name = "Bill";
+                p1.age = 27;
+                p1.C3();
+            }
+        }
+    }
 }
