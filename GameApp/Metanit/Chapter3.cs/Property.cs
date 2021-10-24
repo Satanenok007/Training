@@ -62,4 +62,37 @@ namespace Property
             }
         }
     }
+
+    class C1
+    {
+        public int numb = 1234;
+
+        public int Numb
+        {
+            set
+            {
+                if (value > 1234)
+                {
+                    Console.WriteLine("Номер должен быть меньше 1234");
+                }
+                else
+                {
+                    numb = value;
+                }
+            }
+            get
+            {
+                return numb;
+            }
+        }
+    }
+
+    class C2
+    {
+        static void F1()
+        {
+            C1 numb1 = new C1();
+            numb1.numb = 12345;
+        }
+    }
 }

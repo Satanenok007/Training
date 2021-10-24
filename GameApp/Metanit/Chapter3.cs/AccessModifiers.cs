@@ -2,36 +2,29 @@ using System;
 
 namespace AccessModifiers
 {
-    public class Person
+    public class Class2
     {
-        int id;  // все равно, что private int defaultVar;
+        int id;
+        private int order;
+        protected private string keyword;
+        protected string city;
+        internal int age;
+        protected internal string email;
+        public string name;
 
-        private int salary; // поле доступно только из текущего класса
+        void Mdefault() => Console.WriteLine($"id: {id}");
 
-        protected private string placeOfResidence; // доступно из текущего класса и производных классов, которые определены в этом же проекте
+        private void Mprivate() => Console.WriteLine($"order: {order}");
 
-        protected string profession; // доступно из текущего класса и производных классов
+        protected private void MprotectedPrivate() => Console.WriteLine($"keyword: {keyword}");
 
-        internal int age; // доступно в любом месте текущего проекта
+        protected void Mprotected() => Console.WriteLine($"city: {city}");
 
-        protected internal string surname; // доступно в любом месте текущего проекта и из классов-наследников в других проектах
+        internal void Minternal() => Console.WriteLine($"age: {age}");
 
-        public string name; // доступно в любом месте программы, а также для других программ и сборок
+        protected internal void MprotectedInternal() => Console.WriteLine($"email: {email}");
 
-
-        void defaultMethod() => Console.WriteLine($"id: {id}"); // по умолчанию имеет модификатор private
-
-        private void privateMethod() => Console.WriteLine($"salary: {salary}"); // метод доступен только из текущего класса
-
-        protected private void protectedPrivateMethod() => Console.WriteLine($"place of residence: {placeOfResidence}"); // доступен из текущего класса и производных классов, которые определены в этом же проекте
-
-        protected void protectedMethod() => Console.WriteLine($"profession: {profession}"); // доступен из текущего класса и производных классов
-
-        internal void internalMethod() => Console.WriteLine($"age: {age}"); // доступен в любом месте текущего проекта
-
-        protected internal void protectedInternalMethod() => Console.WriteLine($"surname: {surname}"); // доступен в любом месте текущего проекта и из классов-наследников в других проектах
-
-        public void publicMethod() => Console.WriteLine($"name: {name}"); // доступен в любом месте программы, а также для других программ и сборок
+        public void Mpublic() => Console.WriteLine($"name: {name}");
     }
 
 
@@ -39,15 +32,14 @@ namespace AccessModifiers
     {
         static void AccessModifier(string[] args)
         {
-            Person person1 = new Person();
-            person1.name = "Sofia";
-            person1.surname = "Kmita";
-            person1.age = 16;
+            Class2 obj1 = new Class2();
+            obj1.name = "Naiton";
+            obj1.email = "Naiton123@gmail.com";
+            obj1.age = 16;
 
-            person1.internalMethod();
-            person1.protectedInternalMethod();
-            person1.publicMethod();
-            // другие поля и методы класса нам не доступны, поскольку имеют препядствующие модификаторы доступа
+            obj1.Minternal();
+            obj1.MprotectedInternal();
+            obj1.Mpublic();
         }
     }
 }
