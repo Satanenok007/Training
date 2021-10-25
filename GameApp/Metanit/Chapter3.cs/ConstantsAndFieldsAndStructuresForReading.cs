@@ -72,4 +72,27 @@ namespace ConstantsAndFieldsAndStructuresForReading
         }
 
     }
+
+    class C1
+    {
+        public const int x = 10;
+        public readonly int y = 100;
+
+        public C1(int _y)
+        {
+            y = _y;
+        }
+
+        class C2
+        {
+            static void F1(string[] args)
+            {
+                int z = C1.x + 10;
+                Console.WriteLine(z);
+                C1 t = new C1(21);
+                Console.WriteLine(t.y);
+            }
+        }
+
+    }
 }

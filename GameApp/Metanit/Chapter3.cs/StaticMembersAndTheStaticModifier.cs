@@ -104,4 +104,24 @@ namespace StaticMembersAndTheStaticModifier
             }
         }
     }
+
+    class C1
+    {
+        class C2
+        {
+            public static int x;
+
+            static C2()
+            {
+                x = 12;
+            }
+        }
+        class C3
+        {
+            static void MainMyClass(string[] args)
+            {
+                Console.WriteLine("Доступ к экземпляру класса a: " + C2.x);
+            }
+        }
+    }
 }
