@@ -54,4 +54,45 @@ namespace ValueNull
             Console.WriteLine("y = {0}", y);
         }
     }
+
+    class С1
+    {
+        class GetOrder
+        {
+            class Order
+            {
+                public Phone Phone { get; set; }
+            }
+
+            class Phone
+            {
+                public Email Email { get; set; }
+            }
+
+            class Email
+            {
+                public string Name { get; set; }
+            }
+
+            class Program
+            {
+                static void F1(string[] args)
+                {
+                    Order user = new Order();
+                    string companyName = user?.Phone?.Email?.Name ?? "не указано";
+                    Console.WriteLine(companyName);
+
+                    int? n1;
+                    int? n2;
+
+                    n1 = null;
+                    n2 = n1 ?? 12;
+                    Console.WriteLine("n2 = {0}", n2);
+                    n1 = 30;
+                    n2 = n1 ?? 100;
+                    Console.WriteLine("n2 = {0}", n2);
+                }
+            }
+        }
+    }
 }

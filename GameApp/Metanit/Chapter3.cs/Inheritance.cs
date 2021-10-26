@@ -34,7 +34,6 @@ namespace Inheritance
             p1.Display();
             Employee emp = new Employee("Tom", "Microsoft");
             emp.Display();
-            Console.Read();
         }
     }
 
@@ -72,6 +71,45 @@ namespace Inheritance
             static void MainProg(string[] args)
             {
                 Employee person1 = new Employee("Alise", 25, "Microsoft");
+            }
+        }
+    }
+
+    class C1
+    {
+        class User
+        {
+            public string Name { get; set; }
+
+            public User(string name)
+            {
+                Name = name;
+            }
+
+            public void Info()
+            {
+                Console.WriteLine(Name);
+            }
+        }
+
+        class Order : User
+        {
+            public string Email { get; set; }
+
+            public Order(string name, string email)
+                : base(name)
+            {
+                Email = email;
+            }
+        }
+        class Program
+        {
+            static void F1(string[] args)
+            {
+                User user1 = new User("Mike");
+                user1.Info();
+                Order order1 = new Order("Mike", "MMikeHandson@gmail.com");
+                order1.Info();
             }
         }
     }
