@@ -55,43 +55,40 @@ namespace ValueNull
         }
     }
 
-    class С1
+    class Registration
     {
-        class GetOrder
+        class C1
         {
-            class Order
+            public C2 c2 { get; set; }
+        }
+
+        class C2
+        {
+            public C3 c3 { get; set; }
+        }
+
+        class C3
+        {
+            public string name { get; set; }
+        }
+
+        class Program
+        {
+            static void F1(string[] args)
             {
-                public Phone Phone { get; set; }
-            }
+                C1 user = new C1();
+                string nameUser = user?.c2?.c3?.name ?? "не указано";
+                Console.WriteLine(nameUser);
 
-            class Phone
-            {
-                public Email Email { get; set; }
-            }
+                int? n1;
+                int? n2;
 
-            class Email
-            {
-                public string Name { get; set; }
-            }
-
-            class Program
-            {
-                static void F1(string[] args)
-                {
-                    Order user = new Order();
-                    string companyName = user?.Phone?.Email?.Name ?? "не указано";
-                    Console.WriteLine(companyName);
-
-                    int? n1;
-                    int? n2;
-
-                    n1 = null;
-                    n2 = n1 ?? 12;
-                    Console.WriteLine("n2 = {0}", n2);
-                    n1 = 30;
-                    n2 = n1 ?? 100;
-                    Console.WriteLine("n2 = {0}", n2);
-                }
+                n1 = null;
+                n2 = n1 ?? 12;
+                Console.WriteLine("n2 = {0}", n2);
+                n1 = 30;
+                n2 = n1 ?? 100;
+                Console.WriteLine("n2 = {0}", n2);
             }
         }
     }

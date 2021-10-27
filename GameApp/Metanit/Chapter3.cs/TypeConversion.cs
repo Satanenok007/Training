@@ -101,4 +101,97 @@ namespace TypeConversion
             }
         }
     }
+
+    class C1
+    {
+        class C2
+        {
+            public string c2 { get; set; }
+            public C2(string _c2)
+            {
+                c2 = _c2;
+            }
+            public void Info()
+            {
+                Console.WriteLine($"C2: {c2}");
+            }
+        }
+
+        class C3 : C2
+        {
+            public string c3 { get; set; }
+            public C3(string c2, string _c3) : base(c2)
+            {
+                c3 = _c3;
+            }
+
+        }
+
+        class C4 : C2
+        {
+            public string c4 { get; set; }
+            public C4(string c2, string _c4) : base(c2)
+            {
+                c4 = _c4;
+            }
+        }
+
+        class C5
+        {
+            static void F1(string[] args)
+            {
+                C3 n1 = new C3("Sofia", "Shop");
+                C2 n2 = n1;
+                Console.WriteLine(n2.c2);
+
+                object n3 = new C3("Inna", "RedStrim");
+                ((C2)n3).Info();
+                Console.WriteLine(n3);
+
+                C2 n4 = new C4("Nastya", "School");
+                Console.WriteLine(n4);
+
+                C4 n5 = (C4)n4;
+            }
+        }
+
+        class MethodsOfTransformation
+        {
+            static void F2(string[] args)
+            {
+                C2 x1 = new C2("Mike");
+                C3 x2 = x1 as C3;
+                if (x2 == null)
+                {
+                    Console.WriteLine("Преобразование прошло неудачно");
+                }
+                else
+                {
+                    Console.WriteLine(x2.c3);
+                }
+
+                C2 x3 = new C2("Billi");
+                try
+                {
+                    C3 x4 = (C3)x3;
+                    Console.WriteLine(x4.c3);
+                }
+                catch (InvalidCastException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+                C2 x5 = new C2("Jaison");
+                if (x5 is C3)
+                {
+                    C3 x6 = (C3)x5;
+                    Console.WriteLine(x6.c3);
+                }
+                else
+                {
+                    Console.WriteLine("Преобразование не допустимо");
+                }
+            }
+        }
+    }
 }

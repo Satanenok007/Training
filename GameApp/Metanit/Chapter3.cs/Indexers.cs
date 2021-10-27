@@ -71,10 +71,57 @@ namespace Indexers
                 static void MainMatrix(string[] args)
                 {
                     Matrix matrix = new Matrix();
-                    Console.WriteLine(matrix[0,0]);
-                    matrix[0,0] = 111;
-                    Console.WriteLine(matrix[0,0]);
+                    Console.WriteLine(matrix[0, 0]);
+                    matrix[0, 0] = 111;
+                    Console.WriteLine(matrix[0, 0]);
                 }
+            }
+        }
+    }
+
+    class C1
+    {
+        string fimls;
+        string serials;
+        string anime;
+
+        public string this[string name]
+        {
+            get
+            {
+                switch (name)
+                {
+                    case "films": return fimls;
+                    case "serials": return serials;
+                    case "anime": return anime;
+                    default: return null;
+                }
+            }
+            set
+            {
+                switch (name)
+                {
+                    case "films":
+                        fimls = value;
+                        break;
+                    case "serials":
+                        serials = value;
+                        break;
+                    case "anime":
+                        anime = value;
+                        break;
+                }
+            }
+        }
+        class Program
+        {
+            static void MainPorgrams(string[] args)
+            {
+                C1 result = new C1();
+                result["films"] = "Silence of the Lambs";
+                result["emaul"] = "Riverdale";
+                result["phone"] = "My neighbor Tottoro";
+                Console.WriteLine(result["name"]);
             }
         }
     }
