@@ -27,4 +27,50 @@ namespace Tuples
             }
         }
     }
+
+    class C1
+    {
+        static void F1(string[] args)
+        {
+            var n1 = (1, 2);
+            Console.WriteLine(n1);
+
+            (int, int, string) n2 = (1, 2, "string");
+            Console.WriteLine(n2);
+
+            var n3 = (x1: 1, x2: 2);
+            Console.WriteLine(n3.x1);
+            Console.WriteLine(n3.x2);
+
+            var (x1, x2) = (1, 2);
+            Console.WriteLine(x1);
+            Console.WriteLine(x2);
+
+            var n4 = F2();
+            Console.WriteLine(n4.Item1);
+            Console.WriteLine(n4.Item2);
+
+            var n5 = F3(new int[] { 1, 2, 3, 4, 5, 6, 7 });
+            Console.WriteLine(n5.quantity);
+            Console.WriteLine(n5.sumNumber);
+
+        }
+
+        private static (int, int) F2()
+        {
+            var result = (1, 2);
+            return result;
+        }
+
+        private static (int sumNumber, int quantity) F3(int[] numbers)
+        {
+            var result = (sumNumber: 0, quantity: 0);
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                result.sumNumber += numbers[i];
+                result.quantity++;
+            }
+            return result;
+        }
+    }
 }
