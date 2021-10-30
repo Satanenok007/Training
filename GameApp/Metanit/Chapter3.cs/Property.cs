@@ -4,95 +4,81 @@ namespace Property
 {
     class Program
     {
-        class Person
+        static void Main(string[] args)
         {
-            public string name;
-            internal int age;
+            Property1 p1 = new Property1();
+            p1.N1 = 123;
+            int temp1 = p1.N1;
+            Console.WriteLine(temp1);
 
-            public int Age
-            {
-                set
-                {
-                    if (value < 18)
-                    {
-                        Console.WriteLine("Возраст должен быть больше 17-ти");
-                    }
-                    else
-                    {
-                        age = value;
-                    }
-                }
-                get
-                {
-                    return age;
-                }
-            }
-            class BuyingABooks
-            {
-                public void Main(string[] args)
-                {
-                    Person p1 = new Person();
-                    p1.name = "Kate";
-                    p1.age = 17;
-                }
-            }
-        }
+            Property2 p2 = new Property2();
+            int temp2 = p2.N2;
+            Console.WriteLine(temp2);
 
-        class AutomaticProperties
-        {
-            class Person
-            {
-                public string Name { get; set; }
-                public int Age { get; set; }
+            Property3 p3 = new Property3();
+            p3.N3 = 1234;
 
-                public Person(string name, int age)
-                {
-                    Name = name;
-                    Age = age;
-                }
-            }
-        }
-
-        class AbbreviatedProperties
-        {
-            class Person
-            {
-                private string name;
-                public string Name => name; // public string Name { get { return name; } }
-            }
+            Property4 p4= new Property4();
+            p4.n4 = 1223;
+            Console.WriteLine(p4.n5);
         }
     }
 
-    class C1
+    class Property1
     {
-        public int numb = 1234;
+        private int n1;
 
-        public int Numb
+        public int N1
         {
-            set
-            {
-                if (value > 1234)
-                {
-                    Console.WriteLine("Номер должен быть меньше 1234");
-                }
-                else
-                {
-                    numb = value;
-                }
-            }
             get
             {
-                return numb;
+                return n1;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    n1 = value;
+                }
+            }
+        }
+    }
+    class Property2
+    {
+        private int n2;
+
+        public int N2
+        {
+            get
+            {
+                return n2;
+            }
+            private set
+            {
+                n2 = value;
             }
         }
     }
 
-    class C2
+    class Property3
     {
-        static void F1()
+        private int n3;
+        public int N3
         {
-            C1 numb1 = new C1();
-            numb1.numb = 12345;
+            private get
+            {
+                return n3;
+            }
+            set
+            {
+                n3 = value;
+            }
         }
+    }
+
+    class Property4
+    {
+        public int n4 { get; set; } = 1234;
+        public int n5 { get; private set; }
     }
 }
