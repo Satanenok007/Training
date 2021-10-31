@@ -2,97 +2,42 @@ using System;
 
 namespace ConstantsAndFieldsAndStructuresForReading
 {
-    class Sum
-    {
-        public const int x = 10;
-        public readonly int Y = 20;
-
-        public Sum(int _y)
-        {
-            Y = _y;
-        }
-    }
-    class Program
-    {
-        static void MainSum(string[] args)
-        {
-            int sum1 = Sum.x + 10;
-            Console.WriteLine(sum1);
-            Sum sum2 = new Sum(15);
-            Console.WriteLine(sum2.Y);
-        }
-    }
-
-    class Example2
-    {
-        class Library
-        {
-            public const int youCanTakeBooksAtATime = 5;
-            public readonly int books = 10000;
-
-            public Library(int _books)
-            {
-                books = _books;
-            }
-        }
-        class Program
-        {
-            static void MainEx2(string[] args)
-            {
-                int p1 = Library.youCanTakeBooksAtATime + 10;
-                Console.WriteLine(p1);
-                Library p2 = new Library(15);
-                Console.WriteLine(p2.books);
-            }
-        }
-
-    }
-
-    class Example3
-    {
-        class Films
-        {
-            public const int moviesWithoutASubscription = 1000;
-            public readonly int moviesBySubscription = 100000;
-
-            public Films(int _film)
-            {
-                moviesBySubscription = _film;
-            }
-        }
-        class Program
-        {
-            static void MainExample3(string[] args)
-            {
-                int p1 = Films.moviesWithoutASubscription + 10;
-                Console.WriteLine(p1);
-                Films p2 = new Films(15);
-                Console.WriteLine(p2.moviesBySubscription);
-            }
-        }
-
-    }
-
     class C1
     {
-        public const int x = 10;
-        public readonly int y = 100;
+        public const int n1 = 10;
+        public readonly int n2 = 100;
 
-        public C1(int _y)
+        public C1(int _n2)
         {
-            y = _y;
+            n2 = _n2;
         }
+    }
 
-        class C2
+    struct C2
+    {
+        public readonly int N1 { get; }
+        public int N2 { get; }
+        public C2(int n1, int n2)
         {
-            static void F1(string[] args)
-            {
-                int z = C1.x + 10;
-                Console.WriteLine(z);
-                C1 t = new C1(21);
-                Console.WriteLine(t.y);
-            }
+            this.N1 = n1;
+            this.N2 = n2;
         }
+    }
 
+    class C3
+    {
+        static void F1(string[] args)
+        {
+            Console.WriteLine(C1.n1);
+
+            const int x = 12;
+            Console.WriteLine(x);
+
+            int res1 = C1.n1 + 10;
+            Console.WriteLine(res1);
+
+            C1 res2 = new C1(21);
+            Console.WriteLine(res2.n2);
+        }
     }
 }

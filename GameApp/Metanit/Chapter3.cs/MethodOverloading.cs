@@ -2,40 +2,35 @@ using System;
 
 namespace MethodOverloading
 {
-    class MethodOverloading
+    class C1
     {
-        class C1
+        public void F1(int x, int y)
         {
-            public void F1(int x, int y)
-            {
-                int res = x + y;
-                Console.WriteLine($"result {res}");
-            }
-            public void F1(int x, int y, int z)
-            {
-                int res = x + y + z;
-                Console.WriteLine($"result {res}");
-            }
-            public int F1(int x, int y, int z, int i)
-            {
-                int res = x + y + z + i;
-                Console.WriteLine($"result {res}");
-                return res;
-            }
-            public void F1(double x, double y)
-            {
-                double res = x + y;
-                Console.WriteLine($"result {res}");
-            }
+            int result = x + y;
+            Console.WriteLine(result);
         }
-        static void F2()
-        {
 
-            C1 n1 = new C1();
-            n1.F1(17, 30);
-            n1.F1(19, 32, 22);
-            n1.F1(10, 34, 48, 60);
-            n1.F1(6.8, 3.5);
+        public void F1(int x, int y, int z)
+        {
+            int result = x + y + z;
+            Console.WriteLine(result);
+        }
+
+        public void F1(int x, int y, int z, int j)
+        {
+            int result = x + y + z + j;
+            Console.WriteLine(result);
+        }
+
+        class Program
+        {
+            static void F2(string[] args)
+            {
+                C1 obj1 = new C1();
+                obj1.F1(1,2);
+                obj1.F1(1,2,3);
+                obj1.F1(1,2,3,4);
+            }
         }
     }
 }
