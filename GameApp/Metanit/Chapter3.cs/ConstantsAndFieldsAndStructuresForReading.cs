@@ -6,7 +6,7 @@ namespace ConstantsAndFieldsAndStructuresForReading
     {
         public const int n1 = 10;
         public readonly int n2 = 100;
-
+    
         public C1(int _n2)
         {
             n2 = _n2;
