@@ -18,9 +18,15 @@ namespace Property
             Property3 p3 = new Property3();
             p3.N3 = 1234;
 
-            Property4 p4= new Property4();
+            Property4 p4 = new Property4();
             p4.n4 = 1223;
             Console.WriteLine(p4.n5);
+
+            Property5 p5 = new Property5();
+            p5.N6 = 1234;
+            p5.n7 = 1111;
+            Console.WriteLine(p5.N6);
+            Console.WriteLine(p5.n7);
         }
     }
 
@@ -80,5 +86,26 @@ namespace Property
     {
         public int n4 { get; set; } = 1234;
         public int n5 { get; private set; }
+    }
+
+    class Property5
+    {
+        private int n6;
+        public int n7 { get; set; } = 1111;
+
+        public int N6
+        {
+            get
+            {
+                return n6;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    n6 = value;
+                }
+            }
+        }
     }
 }
