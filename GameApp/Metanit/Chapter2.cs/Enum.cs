@@ -2,24 +2,43 @@ using System;
 
 namespace Enum
 {
-    class Enum
+    class C1
     {
-        static void F21()
+        static void Main()
         {
-            DayWeek D;
+            Colours(Colour.Green);
+            Colours(Colour.Yellow);
+            Colours(Colour.Pink);
 
-            D = DayWeek.Sunday;
-            D++;
-            D += 2;
-            D += 10;
-
-            D = DayWeek.Friday;
-            --D;
-            D = D - 8;
+            void Colours(Colour colour)
+            {
+                switch (colour)
+                {
+                    case Colour.Green:
+                        Console.WriteLine("green");
+                        break;
+                    case Colour.Red:
+                        Console.WriteLine("red");
+                        break;
+                    case Colour.Yellow:
+                        Console.WriteLine("yellow");
+                        break;
+                    case Colour.Gray:
+                        Console.WriteLine("grey");
+                        break;
+                    case Colour.Pink:
+                        Console.WriteLine("pink");
+                        break;
+                }
+            }
         }
     }
-    enum DayWeek
-    {
-        Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
-    }
+}
+enum Colour
+{
+    Green,
+    Red,
+    Yellow,
+    Gray,
+    Pink
 }
