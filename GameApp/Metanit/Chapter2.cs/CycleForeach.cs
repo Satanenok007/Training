@@ -4,7 +4,7 @@ namespace Foreach
 {
     class C1
     {
-        static void Main()
+        static void F1()
         {
             int[] m1 = new int[] { 1, 2, 3, 4 };
 
@@ -22,10 +22,7 @@ namespace Foreach
 
             foreach (int x in m1)
             {
-                if (x < m1.Length)
-                {
-                    Console.WriteLine(m1[x]);
-                }
+                Console.WriteLine(m1[x]);
             }
         }
     }

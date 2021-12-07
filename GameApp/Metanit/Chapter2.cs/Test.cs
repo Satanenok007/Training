@@ -4,7 +4,7 @@ namespace Test
 {
     class C1
     {
-        static void Main()
+        static void F1()
         {
             int[,] arr1 = new int[,] { { 1, 2, 3 }, { 4, 5, 6 } };
             int rows = arr1.GetUpperBound(0) + 1;

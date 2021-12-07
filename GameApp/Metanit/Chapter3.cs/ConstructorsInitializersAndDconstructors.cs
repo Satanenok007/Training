@@ -4,7 +4,7 @@ namespace ConstructorsInitializersAndDconstructors
 {
     class C1
     {
-        static void Main()
+        static void F1()
         {
             C2 obj1 = new C2();
             obj1.GetInfo();

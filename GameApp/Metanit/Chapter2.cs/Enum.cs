@@ -4,7 +4,7 @@ namespace Enum
 {
     class C1
     {
-        static void Main()
+        static void F1()
         {
             Colours(Colour.Green);
             Colours(Colour.Yellow);
