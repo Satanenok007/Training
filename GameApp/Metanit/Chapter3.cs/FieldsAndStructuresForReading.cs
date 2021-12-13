@@ -12,6 +12,10 @@ namespace FieldsAndStructuresForReading
             C3 st3 = new C3();
             Console.WriteLine(st3.n2);
             Console.WriteLine(st3.n3);
+
+            C4 st4 = new C4(11, 24);
+            Console.WriteLine(st4.n4);
+            Console.WriteLine(st4.n5);
         }
     }
 
@@ -35,6 +39,21 @@ namespace FieldsAndStructuresForReading
         {
             this.n2 = n2;
             this.n3 = n3;
+        }
+    }
+
+    class C4
+    {
+        public readonly int n4 = 10;
+        public int n5 { get; }
+        public C4(int n4, int n5)
+        {
+            this.n4 = n4;
+            this.n5 = n5;
+        }
+        public void Info()
+        {
+            Console.WriteLine($"n4: {n4}");
         }
     }
 }
