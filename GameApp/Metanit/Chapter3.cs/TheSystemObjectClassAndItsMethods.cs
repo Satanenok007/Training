@@ -13,6 +13,15 @@ namespace TheSystemObjectClassAndItsMethods
             Console.WriteLine(cl2.ToString());
             Console.WriteLine(cl2.GetHashCode());
             Console.WriteLine(cl2.GetType());
+
+            int n1 = 10;
+            Console.WriteLine(n1.ToString());
+            
+            C4 obj3 = new C4 {n1 = 1, n2 = 2};
+            Console.WriteLine(obj3.ToString());
+            Console.WriteLine(obj3.GetType());
+            Console.WriteLine(obj3.GetHashCode());
+
         }
     }
     class С2
@@ -31,5 +40,19 @@ namespace TheSystemObjectClassAndItsMethods
     class С3
     {
         public string n3 { get; set; }
+    }
+
+    class C4
+    {
+        public int n1 { get; set; }
+        public int n2 { get; set; }
+        public override string ToString()
+        {
+            return $"{n1},{n2}";
+        }
+        public override int GetHashCode()
+        {
+            return n1.GetHashCode();
+        }
     }
 }
