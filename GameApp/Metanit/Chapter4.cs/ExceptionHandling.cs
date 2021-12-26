@@ -6,12 +6,12 @@ namespace ExceptionHandling
     {
         static void F1()
         {
-            int n1;
+            int obj1;
             string temp = Console.ReadLine();
-            if (Int32.TryParse(temp, out n1))
+            if (Int32.TryParse(temp, out obj1))
             {
-                n1 += n1;
-                Console.WriteLine("sum: " + n1);
+                obj1 += obj1;
+                Console.WriteLine("sum: " + obj1);
             }
             else
             {
@@ -31,6 +31,31 @@ namespace ExceptionHandling
             finally
             {
                 Console.WriteLine("finally");
+            }
+
+            if (Int32.TryParse(temp, out obj1))
+            {
+                obj1 -= obj1;
+                Console.WriteLine("difference: " + obj1);
+            }
+            else
+            {
+                Console.WriteLine("error");
+            }
+
+            try
+            {
+                int obj2 = 100;
+                int obj3 = obj2 / 0;
+                Console.WriteLine($"Try: {obj2}");
+            }
+            catch
+            {
+                Console.WriteLine("Catch");
+            }
+            finally
+            {
+                Console.WriteLine("Finally");
             }
         }
     }
