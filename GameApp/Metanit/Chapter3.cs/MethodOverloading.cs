@@ -4,7 +4,7 @@ namespace MethodOverloading
 {
     class C1
     {
-        static void Main(string[] args)
+        static void F1(string[] args)
         {
             C2 cl2 = new C2();
             cl2.F2(1);
