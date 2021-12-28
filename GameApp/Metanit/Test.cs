@@ -16,6 +16,21 @@ namespace Tests
 
             C3 obj3 = new() { n4 = 2 };
             Console.WriteLine(obj2.n4);
+
+
+            C5 obj4 = new C5(1, 2);
+            C4 obj5 = obj4;
+            Console.WriteLine(obj5.n1);
+
+            object obj6 = new C5(3, 4);
+            ((C4)obj6).Info();
+            Console.WriteLine(obj6);
+
+            C4 obj7 = new C5(5, 6);
+            Console.WriteLine(obj7);
+
+            C4 obj8 = (C4)obj7;
+            Console.WriteLine(obj8);
         }
     }
 
@@ -61,6 +76,37 @@ namespace Tests
         {
             get => n4;
             set => value = n4;
+        }
+    }
+
+    class C4
+    {
+        public int n1 { get; set; }
+        public C4(int _n1)
+        {
+            n1 = _n1;
+        }
+        public void Info()
+        {
+            Console.WriteLine($"C2: {n1}");
+        }
+    }
+
+    class C5 : C4
+    {
+        public int n2 { get; set; }
+        public C5(int n1, int _n2) : base(n1)
+        {
+            n2 = _n2;
+        }
+
+    }
+    class C6 : C4
+    {
+        public int n3 { get; set; }
+        public C6(int c1, int _n3) : base(c1)
+        {
+            n3 = _n3;
         }
     }
 }
