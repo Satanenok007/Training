@@ -31,6 +31,11 @@ namespace Tests
 
             C4 obj8 = (C4)obj7;
             Console.WriteLine(obj8);
+
+            C7 obj9 = new C7();
+            obj9.F3(1);
+            obj9.F3(1, 2);
+            obj9.F3(1, 2, 3);
         }
     }
 
@@ -107,6 +112,25 @@ namespace Tests
         public C6(int c1, int _n3) : base(c1)
         {
             n3 = _n3;
+        }
+    }
+
+    class C7
+    {
+        public void F3(int n1)
+        {
+            int res = n1;
+            Console.WriteLine($"result : {res}");
+        }
+        public void F3(int n1, int n2)
+        {
+            int res = n1 + n2;
+            Console.WriteLine($"result : {res}");
+        }
+        public void F3(int n1, int n2, int n3)
+        {
+            int res = n1 + n2 + n3;
+            Console.WriteLine($"result : {res}");
         }
     }
 }
