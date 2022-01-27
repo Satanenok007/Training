@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DictionaryCollection<K, V>
+namespace DictionaryCollection
 {
     class C1
     {
@@ -25,14 +25,14 @@ namespace DictionaryCollection<K, V>
             };
             foreach (var ob1 in obj5)
             {
-                Console.WriteLine($"key: {obj5.Key}, value: {obj5.Value}");
+                Console.WriteLine($"key: {ob1.Key}, value: {ob1.Value}");
             }
             string obj6 = obj5[3];
             Console.WriteLine(obj6);
             obj5[3] = "10";
             Console.WriteLine(obj5[3]);
 
-            var obj7 = Dictionary<string, string>();
+            var obj7 = new Dictionary<string, string>();
             obj7.Add("1", "Nastya");
 
             var a = obj7.ContainsKey("1");

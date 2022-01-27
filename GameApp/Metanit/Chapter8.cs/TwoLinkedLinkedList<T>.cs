@@ -1,12 +1,13 @@
 using System;
+using System.Collections.Generic;
 
-namespace TwoLinkedLinkedList<T>
+namespace TwoLinkedLinkedList
 {
     class C1
     {
         static void F1(string[] args)
         {
-            var obj1 = new List<string>() { "cats", "dogs", "frog", "fox", "fish", "lion" };
+            LinkedList<string> obj1 = new LinkedList<string>(new[] { "cats", "dogs", "frog", "fox", "fish", "lion" });
 
             var elements = obj1.First;
             while (elements != null)
@@ -24,9 +25,9 @@ namespace TwoLinkedLinkedList<T>
 
 
             LinkedList<string> obj2 = new LinkedList<string>(obj1);
-            foreach (string obj2 in obj2)
+            foreach (string ob2 in obj2)
             {
-                Console.WriteLine(obj2);
+                Console.WriteLine(ob2);
             }
             Console.WriteLine(obj2.Count);
             Console.WriteLine(obj2.First?.Value);
@@ -49,11 +50,11 @@ namespace TwoLinkedLinkedList<T>
             var obj4 = new LinkedList<C2>();
             obj4.AddLast(new C2("s1"));
             obj4.AddLast(new C2("s2"));
-            obj4.AddLast(new C2("s3"));
+            obj4.AddFirst(new C2("s3"));
 
             foreach (var obj in obj4)
             {
-                Console.WriteLine(obj4.s1);
+                Console.WriteLine(obj.s1);
             }
         }
     }

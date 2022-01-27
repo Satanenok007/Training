@@ -1,6 +1,7 @@
 using System;
+using System.Collections.Generic;
 
-namespace List<T>
+namespace List
 {
     class C1
     {
@@ -20,21 +21,20 @@ namespace List<T>
 
             var range = obj1.GetRange(1, 3);
             string[] arr1 = new string[3];
-            obj1.Copy(0, arr1, 0, 3);
 
 
-            int obj2 = obj1[0];
+            string obj2 = obj1[0];
             Console.WriteLine(obj2);
             obj1[0] = "www";
             Console.WriteLine(obj1[0]);
 
 
             var obj3 = new List<string>() { "1", "2", "3" };
-            foreach (var obj3 in obj3)
+            foreach (var ob3 in obj3)
             {
-                Console.WriteLine(obj3);
+                Console.WriteLine(ob3);
             }
-            var obj4 = new List<string>(obj2) { "4" };
+            var obj4 = new List<string>(obj3) { "4" };
             Console.WriteLine(obj3.Count);
 
 
@@ -43,8 +43,6 @@ namespace List<T>
             var obj6 = new List<int>() { 1, 21, 300, 4130, 50000, 611, 67, 82, 900 };
             var n1 = obj6.Contains(10);
             var n2 = obj6.Contains(21);
-            var n3 = obj6.Exists(o => o.Length == 2);
-            obj6.Reserve(1, 5);
 
             List<C2> obj7 = new List<C2>()
             {

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace StackCollection<T>
+namespace StackCollection
 {
     class C1
     {
@@ -9,21 +9,21 @@ namespace StackCollection<T>
         {
             Stack<string> obj1 = new Stack<string>();
 
-            var obj2 = new Stack<string>() { "Frog", "Cat", "Elephand", "Fox" };
+            var obj2 = new List<string>() { "Frog", "Cat", "Elephand", "Fox" };
             Stack<string> obj3 = new Stack<string>(obj2);
-            foreach (var ob1 in obj3)
+            foreach (var obj in obj3)
             {
-                Console.WriteLine(ob1);
+                Console.WriteLine(obj);
             }
             Console.WriteLine(obj3.Count);
 
 
-            var obj3 = new Stack<string>();
-            obj3.Push("Cat");
-            obj3.Push("Kitten");
-            obj3.Push("Adult");
+            var obj4 = new Stack<string>();
+            obj4.Push("Cat");
+            obj4.Push("Kitten");
+            obj4.Push("Adult");
 
-            string headob = obj3.Peek();
+            string headob = obj4.Peek();
             Console.WriteLine(headob);
 
             string ob1 = obj3.Pop();
@@ -42,16 +42,16 @@ namespace StackCollection<T>
             }
 
 
-            var obj4 = new Stack<string>();
-            obj4.Push("Ponia");
+            var obj5 = new Stack<string>();
+            obj5.Push("Ponia");
 
-            var delete1 = obj4.TryPop(out var o1);
+            var delete1 = obj5.TryPop(out var o1);
             if (delete1)
             {
                 Console.WriteLine(o1);
             }
 
-            var delete2 = obj4.TryPeek(out var o2);
+            var delete2 = obj5.TryPeek(out var o2);
             if (delete2)
             {
                 Console.WriteLine(o2);
