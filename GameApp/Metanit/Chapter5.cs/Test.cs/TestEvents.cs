@@ -1,12 +1,11 @@
 using System;
 
-namespace Events
+namespace TestEvents
 {
     class C1
     {
         static void F1()
         {
-
             SumNumb obj1 = new SumNumb(1000);
             obj1.Put(10);
             Console.WriteLine($"{obj1.Sum}");
