@@ -7,7 +7,7 @@ namespace CheckingdForNullOperators
 
         static void F1(string[] args)
         {
-            string? s1 = null;
+            string s1 = null;
             s1 ??= "Hello";
             Console.WriteLine(s1);
 
@@ -15,7 +15,7 @@ namespace CheckingdForNullOperators
             n1 ??= 2;
             Console.WriteLine(n1);
         }
-        void F2(C2? c2)
+        void F2(C2 c2)
         {
 
             if (c2 != null && c2.C3 != null && c2.C3.C4 != null)
@@ -27,10 +27,10 @@ namespace CheckingdForNullOperators
 
     class C2
     {
-        public C3? C3 { get; set; }
+        public C3 C3 { get; set; }
     }
     class C3
     {
-        public string? C4 { get; set; }
+        public string C4 { get; set; }
     }
 }

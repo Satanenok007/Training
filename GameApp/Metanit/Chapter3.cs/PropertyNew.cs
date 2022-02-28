@@ -1,26 +1,28 @@
 using System;
 
-namespace Property
+namespace Proterty
 {
     class C1
     {
-        static void F1(string[] args)
+        static void F1()
         {
-            C2 obj1 = new C2();
-            Console.WriteLine(obj1.n1);
-            obj1.n1 = 1;
-            Console.WriteLine(obj1.n1);
+            C2 cl2 = new C2();
+            Console.WriteLine(cl2.n1);
+            cl2.n1 = 40;
+            Console.WriteLine(cl2.n1);
 
-            C2 obj2 = new() { n2 = 15 };
-            Console.WriteLine(obj2.n2);
+            C3 cl3 = new() { N3 = 12 };
+            Console.WriteLine(cl3.N3);
+
+            C4 cl4 = new C4();
+            cl4.N1 = 13;
+            Console.WriteLine(cl4.N1);
         }
     }
 
     class C2
     {
-        public int n1 { get; set; }
-        public int n2 { get; set; } = 0;
-        public int n3 { get; internal set; }
+        public int n1 = 18;
         public int N1
         {
             get
@@ -29,20 +31,32 @@ namespace Property
             }
             set
             {
-                if (value > 10)
+                if (value < 0 || value > 100)
                 {
-                    n1 = value;
+                    Console.WriteLine("Число уже существует");
                 }
                 else
                 {
-                    Console.WriteLine("число больше 10");
+                    n1 = value;
                 }
             }
         }
+    }
+
+    class C3
+    {
+        public int N1{ get; private set; }
+        public int N2 { get; set; } = 12;
+        public int N3 { get; init; }
+    }
+
+    class C4
+    {
+        public int N1;
         public int N2
         {
-            get => n2;
-            set => value = n2;
+            get => N1;
+            set => value = N1;
         }
     }
 }

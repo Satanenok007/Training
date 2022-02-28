@@ -2,56 +2,33 @@ using System;
 
 namespace MethodOverloading
 {
-    class C1
+    class A
     {
-        static void F1(string[] args)
+        void Main(string[] args)
         {
-            C2 cl2 = new C2();
-            cl2.F2(1);
-            cl2.F2(1, 2);
-            cl2.F2(1, 2, 3);
-
-            C3 obj2 = new C3();
-            obj2.F3(10);
-            obj2.F3(10, 12);
-            obj2.F3(11, 25, 32);
+            B b1 = new B();
+            b1.C(1, 2);
+            b1.C(1, 2, 3);
+            b1.C(1, 2, 3, 4);
         }
     }
-    class C2
+    class B
     {
-        public void F2(int n1)
+        public void C(int a, int b)
         {
-            int result = n1;
-            Console.WriteLine($"result : {result}");
+            int res = a + b;
+            Console.WriteLine($"res: {res}");
         }
-        public void F2(int n1, int n2)
+        public void C(int a, int b, int c)
         {
-            int result = n1 + n2;
-            Console.WriteLine($"result : {result}");
+            int res = a + b + c;
+            Console.WriteLine($"res: {res}");
         }
-        public void F2(int n1, int n2, int n3)
-        {
-            int result = n1 + n2 + n3;
-            Console.WriteLine($"result : {result}");
-        }
-    }
 
-    class C3
-    {
-        public void F3(int n1)
+        public void C(int a, int b, int c, int d)
         {
-            int res = n1;
-            Console.WriteLine($"result : {res}");
-        }
-        public void F3(int n1, int n2)
-        {
-            int res = n1 + n2;
-            Console.WriteLine($"result : {res}");
-        }
-        public void F3(int n1, int n2, int n3)
-        {
-            int res = n1 - n2 - n3;
-            Console.WriteLine($"result : {res}");
+            int res = a + b + c + d;
+            Console.WriteLine($"res: {res}");
         }
     }
 }

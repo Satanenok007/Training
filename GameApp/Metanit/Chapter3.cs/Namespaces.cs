@@ -1,35 +1,31 @@
 using System;
-using Namespaces.N1;
-using N1.N2;
+using Namespases.Namespases2;
 
-C1 cl1 = new C1(10);
-cl1.GetInfo();
-
-N1.N2.C2 cl2 = new(123);
-cl2.F1();
-
-namespace Namespaces
+namespace Namespases
 {
-    namespace N1
+    namespace Namespases2
     {
-        class C1
+        class A
         {
-            int n1;
-            public C1(int n1) => this.n1 = n1;
-            public void GetInfo() => Console.WriteLine(n1);
+            string a;
+            Namespases.B b;
+            public A(string a, Namespases.B b)
+            {
+                this.a = a;
+                this.b = b;
+            }
+            public void Info()
+            {
+                Console.WriteLine($"string: {a}");
+                b.Info();
+            }
         }
     }
-}
 
-namespace N1
-{
-    namespace N2
+    class B
     {
-        class C2
-        {
-            int obj1;
-            public C2(int obj1) => this.obj1 = obj1;
-            public void F1() => Console.WriteLine(obj1);
-        }
+        int b;
+        public B(int b) => this.b = b;
+        public void Info() => Console.WriteLine($"int: {b}");
     }
 }
